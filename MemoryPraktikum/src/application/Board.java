@@ -50,18 +50,22 @@ public class Board {
 	private double horizontalTiles, verticalTiles, width, heigth;
 	private Rectangle rectangleField[][];	
 	
+	
+	
+	
+	
 	public Color[][] randomize () {
+		
 		int tiles = (int) horizontalTiles * (int) verticalTiles;
 		
 		Color[][] randomColors = new Color[(int) horizontalTiles][(int) verticalTiles];
-		double[][] tile = new double[3][tiles];
+		double[][] tile = new double[2][tiles];
 		
 		
 		//each tile gets two random floats
 		for (int i = 0; i < tiles; i++) {
 			tile[0][i] = i; 
-			tile[1][i] = Math.random();
-			tile[2][i] = Math.random();
+			tile[1][i] = Math.random()*10*Math.random();
 		}
 		
 		//Bubble sort
@@ -71,48 +75,24 @@ public class Board {
 					
 					double helperZero = tile[0][j+1];
 					double helperOne = tile[1][j+1];
-					double helperTwo = tile[2][j+1];
 					tile[0][j+1] = tile[0][j];
 					tile[1][j+1] = tile[1][j];
-					tile[2][j+1] = tile[2][j];
 					tile[0][j] = helperZero;
 					tile[1][j] = helperOne;
-					tile[2][j] = helperTwo;
 				}
 			}
 		}
 		
 		//nummerieren
 		for(int j = 0; j < tiles; j++) {
-			tile[1][j] = j%horizontalTiles;
+			tile[1][j] = j;
 		}
 		
-		//sortieren zweiten Reihe
-		for (int i = 0; i < tiles; i++) {
-			for(int j = 0; j < tiles-1; j++) {
-				
-				if(tile[2][j] > tile[2][j+1]) {
-					
-					double helperZero = tile[0][j+1];
-					double helperOne = tile[1][j+1];
-					double helperTwo = tile[2][j+1];
-					tile[0][j+1] = tile[0][j];
-					tile[1][j+1] = tile[1][j];
-					tile[2][j+1] = tile[2][j];
-					tile[0][j] = helperZero;
-					tile[1][j] = helperOne;
-					tile[2][j] = helperTwo;
-				}
-			}
-		}
-		//nummerieren
-		for(int j = 0; j < tiles; j++) {
-			tile[2][j] = j/horizontalTiles;
-		}
+		
 		
 		for (int i = 0; i < tiles; i++) {
-			int hor = (int) tile[1][i];
-			int ver = (int) tile[2][i];
+			int hor = (int) ((int) tile[1][i]%horizontalTiles);
+			int ver = (int) ((int) tile[1][i]/horizontalTiles);
 			int col = (int) tile[0][i];
 			Color which = TileColors.getColortiles()[col];
 			System.out.println(i+".");

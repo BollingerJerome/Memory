@@ -30,7 +30,7 @@ public class Main extends Application {
 					{Color.RED, Color.BLUE, Color.RED}
 					};
 			
-			Board board = new Board( 4, 5, canvas.getWidth()/4, canvas.getHeight()/4);
+			Board board = new Board( 4, 4, canvas.getWidth()/4, canvas.getHeight()/4);
 			
 			for (int i = 0; i< board.getHorizontalTiles(); i++) {
 				for (int j = 0; j<board.getVerticalTiles(); j++) {
