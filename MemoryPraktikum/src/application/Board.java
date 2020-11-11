@@ -19,12 +19,12 @@ public class Board {
 							if(rectangleField[i][j].equals(rectangle) && !front[i][j]) {
 								front[i][j] = true;
 								turnCards();
-								
 							}
 							else {
 								if(rectangleField[i][j].equals(rectangle)) {
 									front[i][j] = false;
 									turnCards();
+									
 								}
 							}
 						}
@@ -33,6 +33,10 @@ public class Board {
 			}
 		};
 	};
+	
+	public void turn() {
+		
+	}
 	
 
 	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
@@ -73,6 +77,7 @@ public class Board {
 				this.front[i][j] = false;
 				rectangleField[i][j] = new Rectangle(i*rectWidth, j*rectHeigth, rectWidth, rectHeigth);
 				rectangleField[i][j].setFill(backColors[i][j]); //why isn't there a constructor for five variables?
+				rectangleField[i][j].addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}
 		}
 	}
@@ -146,9 +151,6 @@ public class Board {
 			int ver = (int) ((int) tile[1][i]/horizontalTiles);
 			int col = (int) tile[0][i];
 			Color which = TileColors.getColortiles()[col];
-			System.out.println(i+".");
-			System.out.println(hor +"|"+ver);
-			System.out.println();
 			randomColors[hor][ver] = which; 
 		}
 		
