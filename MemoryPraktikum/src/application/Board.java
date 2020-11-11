@@ -10,7 +10,7 @@ public class Board {
 
 	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
 		super();
-		this.colors = colors;
+		this.frontColors = colors;
 		this.horizontalTiles = horizontalTiles;
 		this.verticalTiles = verticalTiles;
 		this.width = width;
@@ -34,45 +34,71 @@ public class Board {
 		this.width = width;
 		this.heigth = heigth;
 		this.rectangleField = new Rectangle[(int) horizontalTiles][(int) verticalTiles];
-		this.colors = randomize();
+		this.front = new boolean[(int) horizontalTiles][(int) verticalTiles];
+		this.frontColors = randomize();
+		this.backColors = backOfCards();
 		double rectWidth = width/horizontalTiles;
 		double rectHeigth = heigth/verticalTiles;
 		for (int i = 0; i< horizontalTiles; i++) {
 			for (int j = 0; j<verticalTiles; j++) {
+				this.front[i][j] = false;
 				rectangleField[i][j] = new Rectangle(i*rectWidth, j*rectHeigth, rectWidth, rectHeigth);
-				rectangleField[i][j].setFill(colors[i][j]); //why isn't there a constructor for five variables?
+				rectangleField[i][j].setFill(backColors[i][j]); //why isn't there a constructor for five variables?
 			}
 		}
 	}
 	
 	
-	private Color[][] colors;
+	private Color[][] frontColors;
 	private double horizontalTiles, verticalTiles, width, heigth;
 	private Rectangle rectangleField[][];	
+	private boolean[][] front;
+	private Color[][] backColors;
+	
+	public void turnCards () {
+		for (int i = 0; i< horizontalTiles; i++) {
+			for (int j = 0; j<verticalTiles; j++) {
+				if(front[i][j]) {
+					rectangleField[i][j].setFill(frontColors[i][j]);
+				}
+				else {
+					rectangleField[i][j].setFill(backColors[i][j]);
+				}
+			}
+		}
+	}
 	
 	
-	
-	
+	public Color[][] backOfCards (){
+		Color[][] back = new Color[(int) horizontalTiles][(int) verticalTiles];
+		for (int i = 0; i < horizontalTiles; i++) {
+			for (int j = 0; j < verticalTiles; j++) {
+				if((j+i)%2 == 1) {
+					back[i][j] = TileColors.getBack()[1];
+				}
+				else {
+					back[i][j] = TileColors.getBack()[0];
+				}
+			}
+		}
+		
+		return back;
+	}
 	
 	public Color[][] randomize () {
 		
 		int tiles = (int) horizontalTiles * (int) verticalTiles;
-		
 		Color[][] randomColors = new Color[(int) horizontalTiles][(int) verticalTiles];
 		double[][] tile = new double[2][tiles];
-		
-		
 		//each tile gets two random floats
 		for (int i = 0; i < tiles; i++) {
 			tile[0][i] = i; 
 			tile[1][i] = Math.random()*10*Math.random();
 		}
-		
 		//Bubble sort
 		for (int i = 0; i < tiles; i++) {
 			for(int j = 0; j < tiles-1; j++) {
 				if(tile[1][j] > tile[1][j+1]) {
-					
 					double helperZero = tile[0][j+1];
 					double helperOne = tile[1][j+1];
 					tile[0][j+1] = tile[0][j];
@@ -82,14 +108,10 @@ public class Board {
 				}
 			}
 		}
-		
 		//nummerieren
 		for(int j = 0; j < tiles; j++) {
 			tile[1][j] = j;
 		}
-		
-		
-		
 		for (int i = 0; i < tiles; i++) {
 			int hor = (int) ((int) tile[1][i]%horizontalTiles);
 			int ver = (int) ((int) tile[1][i]/horizontalTiles);
@@ -106,10 +128,10 @@ public class Board {
 	
 	
 	public Color[][] getColors() {
-		return colors;
+		return frontColors;
 	}
 	public void setColors(Color[][] colors) {
-		this.colors = colors;
+		this.frontColors = colors;
 	}
 	public double getHorizontalTiles() {
 		return horizontalTiles;

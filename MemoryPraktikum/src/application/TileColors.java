@@ -3,7 +3,12 @@ package application;
 import javafx.scene.paint.Color;
 
 public class TileColors {
-
+	
+	public static Color[] Back = {
+			Color.BLACK,
+			Color.DARKGRAY
+	};
+	
 	public static Color[] colortiles = {
 			Color.CRIMSON, Color.CRIMSON,
 			Color.DARKBLUE, Color.DARKBLUE,
@@ -36,6 +41,14 @@ public class TileColors {
 
 	public static void setColortiles(Color[] colortiles) {
 		TileColors.colortiles = colortiles;
+	}
+
+	public static Color[] getBack() {
+		return Back;
+	}
+
+	public static void setBack(Color[] back) {
+		Back = back;
 	}
 	
 }
