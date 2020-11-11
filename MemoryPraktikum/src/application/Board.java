@@ -1,53 +1,72 @@
 package application;
 
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Board {
-	
+
+
+
 	private EventHandler<MouseEvent> getEventHandler (){
 		return new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				
 				if (event.getSource() instanceof Rectangle) {
+
+
 					Rectangle rectangle = (Rectangle) event.getSource();
 					for (int i = 0; i< horizontalTiles; i++) {
 						for (int j = 0; j<verticalTiles; j++) {
-							if(rectangleField[i][j].equals(rectangle) && !front[i][j]) {
-								front[i][j] = true;
-								turnCards();
-								currentFlippedX = i;
-								currentFlippedY = j;
-								if(turn()) {
-									rectangleField[currentFlippedX][currentFlippedY].removeEventFilter(MouseEvent.MOUSE_CLICKED, this);
-									rectangleField[lastFlippedX][lastFlippedY].removeEventFilter(MouseEvent.MOUSE_CLICKED, this);
-								}
-								lastFlippedX = i;
-								lastFlippedY = j;
-								flip++;
-							}
-							else {
-								if(rectangleField[i][j].equals(rectangle)) {
-									front[i][j] = false;
+
+							if(rectangleField[i][j].equals(rectangle)) {
+
+								switch (flip) {
+								case 0:
+									front[i][j] = true;
+									flip++;
+									lastFlippedX[0] = i;
+									lastFlippedY[0] = j;
 									turnCards();
-									flip--;
+									break;
+								case 1:
+									front[i][j] = true;
+									flip++;
+									lastFlippedX[1] = i;
+									lastFlippedY[1] = j;
+									equalColors(lastFlippedX[0], lastFlippedY[0], lastFlippedX[1], lastFlippedY[1], this);
+									turnCards();
+									won();
+									break;
+
+								case 2:
+									front[lastFlippedX[0]][lastFlippedY[0]] = false;
+									front[lastFlippedX[1]][lastFlippedY[1]] = false;
+									flip = 0;
+									turnCards();
+									break;
 								}
+
 							}
-						}
-					}	
+						}	
+					}
 				}
 			}
 		};
 	};
-	
-	public boolean turn() {
-		if(lastFlippedX != -1) {
-			if(frontColors[currentFlippedX][currentFlippedY] == frontColors[lastFlippedX][lastFlippedY] && 
-				!((currentFlippedX == lastFlippedX) && (currentFlippedY == lastFlippedY))) {
-				System.out.println("Yay");
+
+
+
+	public boolean equalColors(int cx, int cy, int lx, int ly, EventHandler<MouseEvent> eventHandler) {
+		if(lastFlippedX[0] >= 0) {
+			if(frontColors[cx][cy] == frontColors[lx][ly] && !((cx == lx) && (cy == ly))) {
+
+				System.out.println("Pair found!");
+				flip = 0;
+				rectangleField[cx][cy].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+				rectangleField[lx][ly].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
 				return true;
 			}
 			else {
@@ -57,10 +76,24 @@ public class Board {
 		else {
 			return false;
 		}
-		
-		
 	}
 	
+	public boolean won() {
+		for (int i = 0; i< horizontalTiles; i++) {
+			for (int j = 0; j<verticalTiles; j++) {
+				if(front[i][j]) {
+					
+				}
+				else{
+					return false;
+				}
+			}
+		}
+		System.out.println("SOMEONE WON!!!");
+		System.exit(0);
+		return true;
+	}
+
 
 	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
@@ -70,12 +103,11 @@ public class Board {
 		this.width = width;
 		this.heigth = heigth;
 		this.rectangleField = new Rectangle[(int) horizontalTiles][(int) verticalTiles];
-		this.lastFlippedX = -1;
-		this.lastFlippedY = -1;
+		this.lastFlippedX = new int[2];
+		this.lastFlippedY = new int[2];
 		this.flip = 0;
-		this.currentFlippedX = -1;
-		this.currentFlippedY = -1;
-		
+
+
 		double rectWidth = width/horizontalTiles;
 		double rectHeigth = heigth/verticalTiles;
 		for (int i = 0; i< horizontalTiles; i++) {
@@ -86,7 +118,7 @@ public class Board {
 			}
 		}
 	}
-	
+
 	//random color constructor
 	public Board(double horizontalTiles, double verticalTiles, double width, double heigth) {
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
@@ -98,12 +130,10 @@ public class Board {
 		this.front = new boolean[(int) horizontalTiles][(int) verticalTiles];
 		this.frontColors = randomize();
 		this.backColors = backOfCards();
-		this.lastFlippedX = -1;
-		this.lastFlippedY = -1;
+		this.lastFlippedX = new int[2];
+		this.lastFlippedY = new int[2];
 		this.flip = 0;
-		this.currentFlippedX = -1;
-		this.currentFlippedY = -1;
-		
+
 		double rectWidth = width/horizontalTiles;
 		double rectHeigth = heigth/verticalTiles;
 		for (int i = 0; i< horizontalTiles; i++) {
@@ -115,19 +145,19 @@ public class Board {
 			}
 		}
 	}
-	
-	
+
+
 	private Color[][] frontColors;
 	private double horizontalTiles, verticalTiles, width, heigth;
 	private Rectangle rectangleField[][];	
 	private boolean[][] front;
 	private Color[][] backColors;
-	private int lastFlippedX;
-	private int lastFlippedY;
+	private int[] lastFlippedX;
+	private int[] lastFlippedY;
 	private int flip;
-	private int currentFlippedX;
-	private int currentFlippedY;
-	
+
+
+
 	public void turnCards () {
 		for (int i = 0; i< horizontalTiles; i++) {
 			for (int j = 0; j<verticalTiles; j++) {
@@ -140,8 +170,8 @@ public class Board {
 			}
 		}
 	}
-	
-	
+
+
 	public Color[][] backOfCards (){
 		Color[][] back = new Color[(int) horizontalTiles][(int) verticalTiles];
 		for (int i = 0; i < horizontalTiles; i++) {
@@ -154,12 +184,12 @@ public class Board {
 				}
 			}
 		}
-		
+
 		return back;
 	}
-	
+
 	public Color[][] randomize () {
-		
+
 		int tiles = (int) horizontalTiles * (int) verticalTiles;
 		Color[][] randomColors = new Color[(int) horizontalTiles][(int) verticalTiles];
 		double[][] tile = new double[2][tiles];
@@ -192,11 +222,11 @@ public class Board {
 			Color which = TileColors.getColortiles()[col];
 			randomColors[hor][ver] = which; 
 		}
-		
+
 		return randomColors;	
 	}
-	
-	
+
+
 	public Color[][] getColors() {
 		return frontColors;
 	}
@@ -233,5 +263,41 @@ public class Board {
 	public void setRectangleField(Rectangle[][] rectangleField) {
 		this.rectangleField = rectangleField;
 	}
-	
+
+	public Color[][] getFrontColors() {
+		return frontColors;
+	}
+
+	public void setFrontColors(Color[][] frontColors) {
+		this.frontColors = frontColors;
+	}
+
+	public boolean[][] getFront() {
+		return front;
+	}
+
+	public void setFront(boolean[][] front) {
+		this.front = front;
+	}
+
+	public Color[][] getBackColors() {
+		return backColors;
+	}
+
+	public void setBackColors(Color[][] backColors) {
+		this.backColors = backColors;
+	}
+
+
+
+	public int getFlip() {
+		return flip;
+	}
+
+	public void setFlip(int flip) {
+		this.flip = flip;
+	}
+
+
+
 }
