@@ -19,12 +19,21 @@ public class Board {
 							if(rectangleField[i][j].equals(rectangle) && !front[i][j]) {
 								front[i][j] = true;
 								turnCards();
+								currentFlippedX = i;
+								currentFlippedY = j;
+								if(turn()) {
+									rectangleField[currentFlippedX][currentFlippedY].removeEventFilter(MouseEvent.MOUSE_CLICKED, this);
+									rectangleField[lastFlippedX][lastFlippedY].removeEventFilter(MouseEvent.MOUSE_CLICKED, this);
+								}
+								lastFlippedX = i;
+								lastFlippedY = j;
+								flip++;
 							}
 							else {
 								if(rectangleField[i][j].equals(rectangle)) {
 									front[i][j] = false;
 									turnCards();
-									
+									flip--;
 								}
 							}
 						}
@@ -34,7 +43,21 @@ public class Board {
 		};
 	};
 	
-	public void turn() {
+	public boolean turn() {
+		if(lastFlippedX != -1) {
+			if(frontColors[currentFlippedX][currentFlippedY] == frontColors[lastFlippedX][lastFlippedY] && 
+				!((currentFlippedX == lastFlippedX) && (currentFlippedY == lastFlippedY))) {
+				System.out.println("Yay");
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+		
 		
 	}
 	
@@ -47,6 +70,11 @@ public class Board {
 		this.width = width;
 		this.heigth = heigth;
 		this.rectangleField = new Rectangle[(int) horizontalTiles][(int) verticalTiles];
+		this.lastFlippedX = -1;
+		this.lastFlippedY = -1;
+		this.flip = 0;
+		this.currentFlippedX = -1;
+		this.currentFlippedY = -1;
 		
 		double rectWidth = width/horizontalTiles;
 		double rectHeigth = heigth/verticalTiles;
@@ -70,6 +98,12 @@ public class Board {
 		this.front = new boolean[(int) horizontalTiles][(int) verticalTiles];
 		this.frontColors = randomize();
 		this.backColors = backOfCards();
+		this.lastFlippedX = -1;
+		this.lastFlippedY = -1;
+		this.flip = 0;
+		this.currentFlippedX = -1;
+		this.currentFlippedY = -1;
+		
 		double rectWidth = width/horizontalTiles;
 		double rectHeigth = heigth/verticalTiles;
 		for (int i = 0; i< horizontalTiles; i++) {
@@ -88,6 +122,11 @@ public class Board {
 	private Rectangle rectangleField[][];	
 	private boolean[][] front;
 	private Color[][] backColors;
+	private int lastFlippedX;
+	private int lastFlippedY;
+	private int flip;
+	private int currentFlippedX;
+	private int currentFlippedY;
 	
 	public void turnCards () {
 		for (int i = 0; i< horizontalTiles; i++) {
