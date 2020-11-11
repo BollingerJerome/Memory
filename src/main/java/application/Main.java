@@ -18,19 +18,16 @@ import javafx.scene.shape.Rectangle;
 
 public class Main extends Application {
 
-	private BorderPane root = new BorderPane();
-	private Canvas canvas = new Canvas(2000, 2000);
-	private Group bord = new Group();
-	private Board board = new Board( 2, 2, canvas.getWidth()/4, canvas.getHeight()/4);
+	
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-
-
-
-
-
+			
+			BorderPane root = new BorderPane();
+			Canvas canvas = new Canvas(2000, 2000);
+			Group bord = new Group();
+			Board board = new Board( 2, 2, canvas.getWidth()/4, canvas.getHeight()/4);
 
 			for (int i = 0; i< board.getHorizontalTiles(); i++) {
 				for (int j = 0; j<board.getVerticalTiles(); j++) {
