@@ -17,18 +17,16 @@ import javafx.scene.shape.Rectangle;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
+		
+		
+		
+		
 		try {
-			
-			
 			
 			BorderPane root = new BorderPane();
 			Canvas canvas = new Canvas(800, 800);
-			GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 			Group bord = new Group();
-			Color[][] field = {{Color.RED, Color.BLUE, Color.RED},
-					{Color.BLUE,Color.RED, Color.BLUE},
-					{Color.RED, Color.BLUE, Color.RED}
-					};
+			
 			
 			Board board = new Board( 4, 4, canvas.getWidth()/4, canvas.getHeight()/4);
 			

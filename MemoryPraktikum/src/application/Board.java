@@ -18,10 +18,13 @@ public class Board {
 						for (int j = 0; j<verticalTiles; j++) {
 							if(rectangleField[i][j].equals(rectangle) && !front[i][j]) {
 								front[i][j] = true;
+								turnCards();
+								
 							}
 							else {
 								if(rectangleField[i][j].equals(rectangle)) {
 									front[i][j] = false;
+									turnCards();
 								}
 							}
 						}
@@ -33,7 +36,7 @@ public class Board {
 	
 
 	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
-		super();
+		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		this.frontColors = colors;
 		this.horizontalTiles = horizontalTiles;
 		this.verticalTiles = verticalTiles;
@@ -54,6 +57,7 @@ public class Board {
 	
 	//random color constructor
 	public Board(double horizontalTiles, double verticalTiles, double width, double heigth) {
+		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		this.horizontalTiles = horizontalTiles;
 		this.verticalTiles = verticalTiles;
 		this.width = width;
