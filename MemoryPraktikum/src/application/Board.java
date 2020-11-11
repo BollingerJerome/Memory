@@ -1,11 +1,35 @@
 package application;
 
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Board {
 	
-	
+	private EventHandler<MouseEvent> getEventHandler (){
+		return new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				
+				if (event.getSource() instanceof Rectangle) {
+					Rectangle rectangle = (Rectangle) event.getSource();
+					for (int i = 0; i< horizontalTiles; i++) {
+						for (int j = 0; j<verticalTiles; j++) {
+							if(rectangleField[i][j].equals(rectangle) && !front[i][j]) {
+								front[i][j] = true;
+							}
+							else {
+								if(rectangleField[i][j].equals(rectangle)) {
+									front[i][j] = false;
+								}
+							}
+						}
+					}	
+				}
+			}
+		};
+	};
 	
 
 	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
@@ -23,6 +47,7 @@ public class Board {
 			for (int j = 0; j<verticalTiles; j++) {
 				rectangleField[i][j] = new Rectangle(i*rectWidth, j*rectHeigth, rectWidth, rectHeigth);
 				rectangleField[i][j].setFill(colors[i][j]); //why isn't there a constructor for five variables?
+				rectangleField[i][j].addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}
 		}
 	}
