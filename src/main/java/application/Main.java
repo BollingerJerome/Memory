@@ -2,7 +2,7 @@ package application;
 
 //Test JEROME
 //hat es geklappt?
-//Ja von kissling Mischa
+//Ja von kisslingmischa
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
