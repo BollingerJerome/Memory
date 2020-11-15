@@ -1,6 +1,13 @@
 # MEMORY GAME
 Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
+#### TEAM
+Burtschy Alexis
+Bollinger Jérôme
+Kissling Mischa
+Pröbsting Jonas
+Wyser Jennifer
+
 # Chapter one example
 heading 1
 =============
