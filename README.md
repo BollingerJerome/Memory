@@ -8,6 +8,7 @@ Kissling Mischa\
 Pröbsting Jonas\
 Wyser Jennifer\
 
+
 # Chapter one example
 heading 1
 =============
@@ -58,6 +59,6 @@ heading 1
 #### Anreicherung der User Stories für die Umsetzung
 #### UML Package, Klassen und Sequenz-Diagramm
 #### Dokumentation wichtiger Code Snippets
-#### der Testfälle aus den Akzeptanzkriterien der User Stories
+#### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
 ## Dokumentation Sprint 2
