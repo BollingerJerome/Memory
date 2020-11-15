@@ -37,23 +37,31 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 ## Randbedingungen
 
-`Programmiersprache` JAVA
-`Test Coverage` Mit Unit Tests mindestens 50%
-`Blackbox Testing` Manuell mit Testfällen und Protokoll
-`Source Code Management` GitHub
-`Git-Workflow` Vincent Driessen
-`Build Automation` Maven
-`Vorgehensmodell` SCRUM
-`Anforderungen` Epic und User Stories mit Akzeptanzkriterien
-`Aufwandschätzung` Story Points für User Stories und Stundenschätzungpro Sprint und Task
-`Langfristige Planung` Releaseplan
-`Kurzfristige Planung` Pro Sprint
-`Langfristige Planung` Releaseplan
-`Design Artefakte` UML - Unified Modelling Language
+`Programmiersprache` JAVA\\
+`Test Coverage` Mit Unit Tests mindestens 50%\
+`Blackbox Testing` Manuell mit Testfällen und Protokoll\
+`Source Code Management` GitHub\\
+`Git-Workflow` Vincent Driessen\
+`Build Automation` Maven\
+`Vorgehensmodell` SCRUM\
+`Anforderungen` Epic und User Stories mit Akzeptanzkriterien\
+`Aufwandschätzung` Story Points für User Stories und Stundenschätzungpro Sprint und Task\
+`Langfristige Planung` Releaseplan\
+`Kurzfristige Planung` Pro Sprint\
+`Langfristige Planung` Releaseplan\
+`Design Artefakte` UML - Unified Modelling Language\
 
 ## Definition of Ready DoR
 
+- Backlog Items sind für jeden Beteiligten klar verständlich\
+- Jedes Backlog Item ist geschätzt.\
+- Jedes Backlog Item hat Akzeptanzkriterien
+- Jedes Backlog Item hat eine Priorisierung
+
 ## Definition of Done DoD
+
+- Alle Akzeptanzkriterien wurden erfüllt\
+- Dokumentation wurde durchgeführt\
 
 ## Build-Anleitung
 
