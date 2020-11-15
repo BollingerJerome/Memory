@@ -2,11 +2,11 @@
 Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
 #### TEAM
-Burtschy Alexis \t Programmierer / GUI-Design\
-Bollinger Jérôme    Programmierer / Software Architekt\
-Kissling Mischa     Programmierer / SCRUM Master\
-Pröbsting Jonas     Programmierer / GUI-Design\
-Wyser Jennifer      Programmiererin / Product Owner
+'Burtschy Alexis' Programmierer / GUI-Design\
+'Bollinger Jérôme' Programmierer / Software Architekt\
+'Kissling Mischa' Programmierer / SCRUM Master\
+'Pröbsting Jonas' Programmierer / GUI-Design\
+'Wyser Jennifer' Programmiererin / Product Owner
 
 
 # Chapter one example
