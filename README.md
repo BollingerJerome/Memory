@@ -70,7 +70,7 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 ## User Stories
 
 | **User Story Nr.** |   **User Story** | **Akzeptanzkriterien**  | **Storypoints**  |  **Priorität** |
-|:-:|-----|-----|:-:|:-:|
+|:-:|---|-----|:-:|:-:|
 | 1 | Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen | 1 Button um Spielmodus auszuwählen<br/>Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 2 |
 | 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8)<br/>Spiel startet mit entsprechender Grösse | 5 | 2 |
 | 3 | Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen | Zeit wird fortlaufend im Spiel angezeigt<br/>Zeit ist korrekt | 13 | 4 |
