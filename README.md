@@ -70,7 +70,7 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 ## User Stories
 
 | **Userstory Nr.** |   **Userstories / Akzeptanzkriterien**  | **Storypoints**  |  **Priorität** |
-|:-:|-----|:-:|:-:|
+
 
 ## Releaseplan
 
