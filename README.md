@@ -13,8 +13,8 @@ heading 1
 1. [Einleitung](##Einleitung)
 2. [Ziele](##Ziele)
 3. [Randbedingungen](##Randbedingungen)
-4. [Definition of Ready-DoR](##Definition of Ready-DoR)
-5. [Definition of Done-DoD](##Definition of Done-DoD)
+4. [Definition of Ready DoR](##Definition of Ready DoR)
+5. [Definition of Done DoD](##Definition of Done DoD)
 6. [Build-Anleitung](##Build-Anleitung)
 7. [Bedienungsanleitung](##Bedienungsanleitung)
 8. [User Stories](##User Stories)
@@ -29,9 +29,9 @@ heading 1
 
 ## Randbedingungen
 
-## Definition of Ready-DoR
+## Definition of Ready DoR
 
-## Definition of Done-DoD
+## Definition of Done DoD
 
 ## Build-Anleitung
 
