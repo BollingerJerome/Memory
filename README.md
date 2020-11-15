@@ -10,3 +10,6 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
 1. Einleitung
 2. Ziele
+3. Epic
+4. Definition of Ready - DoR
+5. Definition of Done - DoD
