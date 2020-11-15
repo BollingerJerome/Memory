@@ -8,14 +8,6 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 `Pröbsting Jonas` Programmierer / GUI-Design\
 `Wyser Jennifer` Programmiererin / Product Owner
 
-
-# Chapter one example
-heading 1
-=============
-## Chapter two example
-### Chapter three example
-#### Chapter four example
-
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#Einleitung)
@@ -44,6 +36,20 @@ Die Aufgabenstellung besteht darin, eine Java respektive JavaFX Programm zu erst
 Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den gelernten Stoff durch die Implemetierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Apllikation auf die individuellen Vorkenntnisse der Stidierenden abgestimmt.
 
 ## Randbedingungen
+
+`Programmiersprache` JAVA
+`Test Coverage` Mit Unit Tests mindestens 50%
+`Blackbox Testing` Manuell mit Testfällen und Protokoll
+`Source Code Management` GitHub
+`Git-Workflow` Vincent Driessen
+`Build Automation` Maven
+`Vorgehensmodell` SCRUM
+`Anforderungen` Epic und User Stories mit Akzeptanzkriterien
+`Aufwandschätzung` Story Points für User Stories und Stundenschätzungpro Sprint und Task
+`Langfristige Planung` Releaseplan
+`Kurzfristige Planung` Pro Sprint
+`Langfristige Planung` Releaseplan
+`Design Artefakte` UML - Unified Modelling Language
 
 ## Definition of Ready DoR
 
