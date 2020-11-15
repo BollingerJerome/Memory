@@ -6,7 +6,9 @@ Burtschy Alexis\
 Bollinger Jérôme\
 Kissling Mischa\
 Pröbsting Jonas\
-Wyser Jennifer\
+Wyser Jennifer
+
+
 
 
 # Chapter one example
@@ -30,7 +32,7 @@ heading 1
 10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories](#Taskliste-für-die-Umsetzung-der-User-Stories)
     + [Anreicherung der User Stories für die Umsetzung](#Anreicherung-der-User-Stories-für-die-Umsetzung)
-    + [UML Package, Klassen und Sequenz-Diagramm](#UML-Package,-Klassen-und-Sequenz-Diagramm)
+    + [UML Package, Klassen und Sequenzdiagramm](#UML-Package,-Klassen-und-Sequenzdiagramm)
     + [Dokumentation wichtiger Code Snippets](#Dokumentation-wichtiger-Code-Snippets)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories)
 11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
