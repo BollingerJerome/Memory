@@ -53,21 +53,31 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 `Langfristige Planung` Releaseplan\
 `Kurzfristige Planung` Pro Sprint\
 `Langfristige Planung` Releaseplan\
-`Design Artefakte` UML - Unified Modelling Language\
+`Design Artefakte` UML - Unified Modelling Language
 
 ## Definition of Ready DoR
 
-- Backlog Items sind für jeden Beteiligten klar verständlich\
-- Jedes Backlog Item ist geschätzt.\
+- Backlog Items sind für jeden Beteiligten klar verständlich
+- Jedes Backlog Item ist geschätzt.
 - Jedes Backlog Item hat Akzeptanzkriterien
 - Jedes Backlog Item hat eine Priorisierung
 
 ## Definition of Done DoD
 
-- Alle Akzeptanzkriterien wurden erfüllt\
-- Dokumentation wurde durchgeführt\
+- Alle Akzeptanzkriterien wurden erfüllt
+- Dokumentation wurde durchgeführt
 
 ## Build-Anleitung
+
+1. Laden Sie die .jar-Datei von unserem GitHub Repository herunter
+2. Entpacken Sie diese in den gewünschten Ordner
+3. Stellen Sie sicher, dass Sie ein Java Runtime Environment auf Ihrem Computer installiert haben
+4. Kopieren Sie den Pfad der gewünschten Versionsdatei (.jar) in die Zwischenablage
+5. Öffnen Sie die Konsole Ihres Rechners
+6. Geben Sie dort java -jar gefolgt von dem kopierten Pfad ein
+Beispiel: java -jar C:\Users\Hans Zimmer\Downloads\trinat\moorhuhn.jar
+
+Bestätigen Sie ihre Eingabe mit Enter
 
 ## Bedienungsanleitung
 
