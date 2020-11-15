@@ -87,8 +87,14 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 | 14 | Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden | 1 Button um Spiel zu verlassen <br\> Spiel wird verlassen | 5 | 1 |
 | - | --- | -------- | - | - |
 
-
 ## Releaseplan
+
+| **Release 1** |   **Release 2** | **Release 3**  |
+|:User Story X:|:-:|:-:|
+|:-:|:User Story Y:|:-:|
+|:-:|:-:|:User Story Z:|
+|:-:|:User Story A:|:-:|
+|:User Story b:|:-:|:-:|
 
 ## Dokumentation Sprint 1
 
