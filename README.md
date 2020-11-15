@@ -75,7 +75,8 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 4. Kopieren Sie den Pfad der gewünschten Versionsdatei (.jar) in die Zwischenablage
 5. Öffnen Sie die Konsole Ihres Rechners
 6. Geben Sie dort java -jar gefolgt von dem kopierten Pfad ein
-Beispiel: java -jar C:\Users\Hans Zimmer\Downloads\trinat\moorhuhn.jar
+
+Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
 Bestätigen Sie ihre Eingabe mit Enter
 
