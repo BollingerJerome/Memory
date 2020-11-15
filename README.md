@@ -69,6 +69,7 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 ## Build-Anleitung
 
+[//]: <> (This is also a comment.)
 1. Laden Sie die .jar-Datei von unserem GitHub Repository herunter
 2. Entpacken Sie diese in den gewünschten Ordner
 3. Stellen Sie sicher, dass Sie ein Java Runtime Environment auf Ihrem Computer installiert haben
@@ -102,7 +103,6 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 | 12 | Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet | Ansicht der zugedeckten Karten <br\> Memoryverhalten | 21 | 1 |
 | 13 | Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen | Anzeige der Spielzeit, der gefundenen Paare… | 21 | 3 |
 | 14 | Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden | 1 Button um Spiel zu verlassen <br\> Spiel wird verlassen | 5 | 1 |
-| - | --- | -------- | - | - |
 
 ## Releaseplan
 
