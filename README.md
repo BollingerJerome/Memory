@@ -89,7 +89,7 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 | **User Story Nr.** |   **User Story** | **Akzeptanzkriterien**  | **Storypoints**  |  **Priorität** |
 |:-:|---|--------|:-:|:-:|
 | 1 | Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen | 1 Button um Spielmodus auszuwählen <br/><br/> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 2 |
-| 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br/><br/<> Spiel startet mit entsprechender Grösse | 5 | 2 |
+| 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br/><br/> Spiel startet mit entsprechender Grösse | 5 | 2 |
 | 3 | Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen | Zeit wird fortlaufend im Spiel angezeigt <br/><br/> Zeit ist korrekt | 13 | 4 |
 | 4 | Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen | 1 Button für Multiplayermodus <br/><br/> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 3 |
 | 5 | Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen | 3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler) <br/><br/> Startet Spiel mit der gewählten Anzahl an Spielern | 5 | 3 |
