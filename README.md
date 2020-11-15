@@ -78,9 +78,11 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
-Bestätigen Sie ihre Eingabe mit Enter
+7. Bestätigen Sie ihre Eingabe mit Enter
 
 ## Bedienungsanleitung
+
+
 
 ## User Stories
 
