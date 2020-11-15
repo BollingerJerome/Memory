@@ -1,7 +1,7 @@
 # MEMORY GAME
-Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
+Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 
-#### TEAM
+### TEAM
 `Burtschy Alexis` Programmierer / GUI-Design\
 `Bollinger Jérôme` Programmierer / Software Architekt\
 `Kissling Mischa` Programmierer / SCRUM Master\
