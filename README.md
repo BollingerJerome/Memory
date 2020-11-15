@@ -25,6 +25,10 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
     + [Dokumentation wichtiger Code Snippets](#Dokumentation-wichtiger-Code-Snippets)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories)
 11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
+    + [Taskliste für die Umsetzung der Userstories](#Taskliste-für-die-Umsetzung-der-User-Stories)
+    + [Anreicherung der User Stories für die Umsetzung](#Anreicherung-der-User-Stories-für-die-Umsetzung)
+    + [Dokumentation wichtiger Code Snippets](#Dokumentation-wichtiger-Code-Snippets)
+    + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories)
 
 ## Einleitung
 
@@ -37,7 +41,7 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 ## Randbedingungen
 
-`Programmiersprache` JAVA\
+`Programmiersprache`    JAVA\
 `Test Coverage` Mit Unit Tests mindestens 50%\
 `Blackbox Testing` Manuell mit Testfällen und Protokoll\
 `Source Code Management` GitHub\
@@ -105,3 +109,9 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
 ## Dokumentation Sprint 2
+
+#### Taskliste für die Umsetzung der User Stories
+#### Anreicherung der User Stories für die Umsetzung
+#### Dokumentation wichtiger Code Snippets
+#### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+
