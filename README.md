@@ -2,7 +2,7 @@
 Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
 #### TEAM
-Burtschy Alexis     Programmierer / GUI-Design\
+Burtschy Alexis \t Programmierer / GUI-Design\
 Bollinger Jérôme    Programmierer / Software Architekt\
 Kissling Mischa     Programmierer / SCRUM Master\
 Pröbsting Jonas     Programmierer / GUI-Design\
