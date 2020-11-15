@@ -88,20 +88,20 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
 | **User Story Nr.** |   **User Story** | **Akzeptanzkriterien**  | **Storypoints**  |  **Priorität** |
 |:-:|---|--------|:-:|:-:|
-| 1 | Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen | 1 Button um Spielmodus auszuwählen <br\><br\> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 2 |
-| 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br\><br<> Spiel startet mit entsprechender Grösse | 5 | 2 |
+| 1 | Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen | 1 Button um Spielmodus auszuwählen <br/><br/> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 2 |
+| 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br/><br/<> Spiel startet mit entsprechender Grösse | 5 | 2 |
 | 3 | Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen | Zeit wird fortlaufend im Spiel angezeigt <br/><br/> Zeit ist korrekt | 13 | 4 |
 | 4 | Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen | 1 Button für Multiplayermodus <br/><br/> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 3 |
 | 5 | Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen | 3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler) <br/><br/> Startet Spiel mit der gewählten Anzahl an Spielern | 5 | 3 |
 | 6 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (6x6, 8x8, 10x10) <br/><br/> Spiel startet mit entsprechender Grösse | 5 | 3 |
 | 7 | Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, wer am Zug ist | Entsprechende Anzahl an TextFields gemäss der Spieleranzahl <br/><br/> Anzeige des Spielernamens während des Spieles | 8 | 2 |
 | 8 | Als Spieler möchte ich die Rangliste sehen um im Multiplayermodus meine Platzierung zu sehen | Anzeige der besten 10 Resultate am Spielende | 21 | 4 |
-| 9 |Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern | 1 Button welcher auf jedem Interface zu sehen ist <br/><br\> Hauptmenü wird angezeigt | 3 | 2 |
-| 10 | Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben | Min 50 Bilder für Spielgrösse 10x10  <br\> Jede Karte ist wenn sie aufgedeckt wird ein Bild <br\><br/> Spielbrett verhält sich wie Memory | 8 | 2 |
-| 11 | Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, wenn ich vom Spiel weg muss | 1 Button um Spiel zu pausieren <br/><br\> Pausebildschirm erscheint wenn Spiel pausiert | 8 | 4 |
-| 12 | Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet | Ansicht der zugedeckten Karten <br/><br\> Memoryverhalten | 21 | 1 |
+| 9 |Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern | 1 Button welcher auf jedem Interface zu sehen ist <br/><br/> Hauptmenü wird angezeigt | 3 | 2 |
+| 10 | Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben | Min 50 Bilder für Spielgrösse 10x10  <br/><br/> Jede Karte ist wenn sie aufgedeckt wird ein Bild <br/><br/> Spielbrett verhält sich wie Memory | 8 | 2 |
+| 11 | Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, wenn ich vom Spiel weg muss | 1 Button um Spiel zu pausieren <br/><br/> Pausebildschirm erscheint wenn Spiel pausiert | 8 | 4 |
+| 12 | Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet | Ansicht der zugedeckten Karten <br/><br/> Memoryverhalten | 21 | 1 |
 | 13 | Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen | Anzeige der Spielzeit, der gefundenen Paare, etc. | 21 | 3 |
-| 14 | Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden | 1 Button um Spiel zu verlassen <br\><br/> Spiel wird verlassen | 5 | 1 |
+| 14 | Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden | 1 Button um Spiel zu verlassen <br/><br/> Spiel wird verlassen | 5 | 1 |
 
 ## Releaseplan
 
