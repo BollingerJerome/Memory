@@ -70,7 +70,8 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 ## User Stories
 
 | **Userstory Nr.** |   **Userstories / Akzeptanzkriterien**  | **Storypoints**  |  **Priorität** |
-
+|:-:|-----|:-:|:-:|
+| 1  | Als Benutzer möchte ich eine Spalte auswählen um einen Spielstein zu platzieren.<br/>AK: Wahl zwischen 7 Spalten durch Buttons | 8 | 1 |
 
 ## Releaseplan
 
