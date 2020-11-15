@@ -71,12 +71,29 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 | **User Story Nr.** |   **User Story** | **Akzeptanzkriterien**  | **Storypoints**  |  **Priorität** |
 |:-:|---|--------|:-:|:-:|
-| 1 | Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen | 1 Button um Spielmodus auszuwählen<br/>Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 2 |
-| 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8)<br/>Spiel startet mit entsprechender Grösse | 5 | 2 |
-| 3 | Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen | Zeit wird fortlaufend im Spiel angezeigt<br/>Zeit ist korrekt | 13 | 4 |
-| 4 | Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen | 1 Button für Multiplayermodus<br/>Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 3 |
-| 5 | Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen | 3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler)<br/>Startet Spiel mit der gewählten Anzahl an Spielern | 5 | 3 |
-| 6 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (6x6, 8x8, 10x10)<br/>Spiel startet mit entsprechender Grösse | 5 | 3 |
+| 1 | Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen | 1 Button um Spielmodus auszuwählen <br/> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 2 |
+
+| 2 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br/> Spiel startet mit entsprechender Grösse | 5 | 2 |
+
+| 3 | Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen | Zeit wird fortlaufend im Spiel angezeigt <br/> Zeit ist korrekt | 13 | 4 |
+
+| 4 | Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen | 1 Button für Multiplayermodus <br/> Weiterleitung zum Fenster der Spielfeldgrösse | 2 | 3 |
+
+| 5 | Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen | 3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler) <br/> Startet Spiel mit der gewählten Anzahl an Spielern | 5 | 3 |
+
+| 6 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (6x6, 8x8, 10x10) <br/> Spiel startet mit entsprechender Grösse | 5 | 3 |
+
+| 7 | Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, wer am Zug ist | Entsprechende Anzahl an TextFields gemäss der Spieleranzahl <br/> Anzeige des Spielernamens während des Spieles | 8 | 2 |
+
+| 8 | Als Spieler möchte ich die Rangliste sehen um im Multiplayermodus meine Platzierung zu sehen | Anzeige der besten 10 Resultate am Spielende | 21 | 4 |
+
+| 9 |Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern | 1 Button welcher auf jedem Interface zu sehen ist <br\> Hauptmenü wird angezeigt | 3 | 2 |
+
+| 10 | Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben | Min 50 Bilder für Spielgrösse 10x10  <br\> Jede Karte ist wenn sie aufgedeckt wird ein Bild <br\> Spielbrett verhält sich wie Memory | 8 | 2 |
+
+| 11 | --- | -------- | - | - |
+
+| - | --- | -------- | - | - |
 
 
 ## Releaseplan
