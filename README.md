@@ -52,7 +52,6 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 `Aufwandschätzung` Story Points für User Stories und Stundenschätzungpro Sprint und Task\
 `Langfristige Planung` Releaseplan\
 `Kurzfristige Planung` Pro Sprint\
-`Langfristige Planung` Releaseplan\
 `Design Artefakte` UML - Unified Modelling Language
 
 ## Definition of Ready DoR
