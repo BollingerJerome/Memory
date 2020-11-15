@@ -68,8 +68,8 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 - Dokumentation wurde durchgeführt
 
 ## Build-Anleitung
+## Noch nicht klar !!!
 
-[//]: <> (This is also a comment.
 1. Laden Sie die .jar-Datei von unserem GitHub Repository herunter
 2. Entpacken Sie diese in den gewünschten Ordner
 3. Stellen Sie sicher, dass Sie ein Java Runtime Environment auf Ihrem Computer installiert haben
@@ -79,7 +79,7 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
-7. Bestätigen Sie ihre Eingabe mit Enter)
+7. Bestätigen Sie ihre Eingabe mit Enter
 
 ## Bedienungsanleitung
 
