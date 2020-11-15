@@ -91,11 +91,11 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 | **Release 1** |   **Release 2** | **Release 3**  |
 |:-:|:-:|:-:|
-|:User Story X:|:-:|:-:|
-|:-:|:User Story Y:|:-:|
-|:-:|:-:|:User Story Z:|
-|:-:|:User Story A:|:-:|
-|:User Story b:|:-:|:-:|
+|User Story X|-|-|
+|-|User Story Y|-|
+|-|-|:User Story Z|
+|-|User Story A|-|
+|User Story B|-|-|
 
 ## Dokumentation Sprint 1
 
