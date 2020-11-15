@@ -2,13 +2,11 @@
 Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
 #### TEAM
-Burtschy Alexis\
-Bollinger Jérôme\
-Kissling Mischa\
-Pröbsting Jonas\
-Wyser Jennifer
-
-
+Burtschy Alexis Programmierer / GUI-Design\
+Bollinger Jérôme Programmierer / Software Architekt\
+Kissling Mischa Programmierer / SCRUM Master\
+Pröbsting Jonas Programmierer / GUI-Design\
+Wyser Jennifer Programmiererin / Product Owner
 
 
 # Chapter one example
@@ -37,6 +35,8 @@ heading 1
 11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
 
 ## Einleitung
+
+Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den gelernten Stoff durch die Implemetierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Apllikation auf die individuellen Vorkenntnisse der Stidierenden abgestimmt.
 
 ## Ziele
 
