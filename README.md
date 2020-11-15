@@ -2,11 +2,11 @@
 Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
 #### TEAM
-Burtschy Alexis
-Bollinger Jérôme
-Kissling Mischa
-Pröbsting Jonas
-Wyser Jennifer
+Burtschy Alexis\
+Bollinger Jérôme\
+Kissling Mischa\
+Pröbsting Jonas\
+Wyser Jennifer\
 
 # Chapter one example
 heading 1
@@ -26,6 +26,12 @@ heading 1
 7. [Bedienungsanleitung](#Bedienungsanleitung)
 8. [User Stories](#User-Stories)
 9. [Releaseplan](#Releaseplan)
+10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
+    + [Taskliste für die Umsetzung der Userstories](#Taskliste-für-die-Umsetzung-der-User-Stories)
+    + [Anreicherung der User Stories für die Umsetzung](#Anreicherung-der-User-Stories-für-die-Umsetzung)
+    + [UML Package, Klassen und Sequenz-Diagramm](#UML-Package,-Klassen-und-Sequenz-Diagramm)
+    + [Dokumentation wichtiger Code Snippets](#Dokumentation-wichtiger-Code-Snippets)
+11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
 
 ## Einleitung
 
@@ -44,3 +50,9 @@ heading 1
 ## User Stories
 
 ## Releaseplan
+
+## Dokumentation Sprint 1
+
+### Taskliste für die Umsetzung der User Stories
+
+## Dokumentation Sprint 2
