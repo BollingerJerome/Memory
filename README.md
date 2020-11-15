@@ -90,6 +90,7 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 ## Releaseplan
 
 | **Release 1** |   **Release 2** | **Release 3**  |
+|:-:|:-:|:-:|
 |:User Story X:|:-:|:-:|
 |:-:|:User Story Y:|:-:|
 |:-:|:-:|:User Story Z:|
