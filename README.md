@@ -37,10 +37,10 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 ## Randbedingungen
 
-`Programmiersprache` JAVA\\
+`Programmiersprache` JAVA\
 `Test Coverage` Mit Unit Tests mindestens 50%\
 `Blackbox Testing` Manuell mit Testfällen und Protokoll\
-`Source Code Management` GitHub\\
+`Source Code Management` GitHub\
 `Git-Workflow` Vincent Driessen\
 `Build Automation` Maven\
 `Vorgehensmodell` SCRUM\
