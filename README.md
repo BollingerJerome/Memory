@@ -19,13 +19,10 @@ heading 1
 7. [Bedienungsanleitung](##Bedienungsanleitung)
 8. [User Stories](##User Stories)
 9. [Releaseplan](##Releaseplan)
-10. 
 
 ## Einleitung
 
 ## Ziele
-
-## Epic
 
 ## Randbedingungen
 
@@ -40,7 +37,3 @@ heading 1
 ## User Stories
 
 ## Releaseplan
-
-## Dokumentation Sprint 1
-
-## Dokumentation Sprint 2
