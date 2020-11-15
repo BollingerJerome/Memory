@@ -2,11 +2,11 @@
 Gruppenarbeit Mechatronik Trinational, Promotion Eiffel
 
 #### TEAM
-Burtschy Alexis Programmierer / GUI-Design\
-Bollinger Jérôme Programmierer / Software Architekt\
-Kissling Mischa Programmierer / SCRUM Master\
-Pröbsting Jonas Programmierer / GUI-Design\
-Wyser Jennifer Programmiererin / Product Owner
+Burtschy Alexis     Programmierer / GUI-Design\
+Bollinger Jérôme    Programmierer / Software Architekt\
+Kissling Mischa     Programmierer / SCRUM Master\
+Pröbsting Jonas     Programmierer / GUI-Design\
+Wyser Jennifer      Programmiererin / Product Owner
 
 
 # Chapter one example
@@ -19,7 +19,7 @@ heading 1
 ## Inhaltsverzeichnis
 
 1. [Einleitung](#Einleitung)
-2. [Ziele](#Ziele)
+2. [Ziel](#Ziel)
 3. [Randbedingungen](#Randbedingungen)
 4. [Definition of Ready DoR](#Definition-of-Ready-DoR)
 5. [Definition of Done DoD](#Definition-of-Done-DoD)
@@ -36,9 +36,12 @@ heading 1
 
 ## Einleitung
 
-Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den gelernten Stoff durch die Implemetierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Apllikation auf die individuellen Vorkenntnisse der Stidierenden abgestimmt.
+Dieses Git-Repository ist im Rahmen der Gruppenarbeit in den Kursen Software Engineering und Informatik II entstanden.
+Die Aufgabenstellung besteht darin, eine Java respektive JavaFX Programm zu erstellen, welches auf dem Desktop eines Computers laufen kann. Wir haben uns dazu entschieden, Memory, ein in der Praxis sehr einfaches Spiel zu digitalisieren.
 
-## Ziele
+## Ziel
+
+Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den gelernten Stoff durch die Implemetierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Apllikation auf die individuellen Vorkenntnisse der Stidierenden abgestimmt.
 
 ## Randbedingungen
 
