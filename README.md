@@ -125,24 +125,29 @@ Velocity: 40 StoryPoints pro Iteration
 
 ## Dokumentation Sprint 1
 
-#### Taskliste für die Umsetzung der User Stories
+### Taskliste für die Umsetzung der User Stories
 
-##### User Story 1
+#### User Story 1
+Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
 
-#### Anreicherung der User Stories für die Umsetzung
-#### Dokumentation wichtiger Code Snippets
-#### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 1.1 | GUI-Design | 0.5 |
+
+### Anreicherung der User Stories für die Umsetzung
+### Dokumentation wichtiger Code Snippets
+### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
 ## Dokumentation Sprint 2
 
-#### Taskliste für die Umsetzung der User Stories
-#### Anreicherung der User Stories für die Umsetzung
-#### Dokumentation wichtiger Code Snippets
-#### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### Taskliste für die Umsetzung der User Stories
+### Anreicherung der User Stories für die Umsetzung
+### Dokumentation wichtiger Code Snippets
+### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
 ## Dokumentation Sprint 3
 
-#### Taskliste für die Umsetzung der User Stories
-#### Anreicherung der User Stories für die Umsetzung
-#### Dokumentation wichtiger Code Snippets
-#### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
+### Taskliste für die Umsetzung der User Stories
+### Anreicherung der User Stories für die Umsetzung
+### Dokumentation wichtiger Code Snippets
+### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
