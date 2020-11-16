@@ -22,16 +22,22 @@ import javafx.scene.shape.Rectangle;
 
 public class Main extends Application {
 
-
-
+	BorderPane root = new BorderPane();
+	Group bord;
+	
+	public void createGameBoard(Board board) {
+		Group bord = new Group();
+		for (int i = 0; i< board.getHorizontalTiles(); i++) {
+			for (int j = 0; j<board.getVerticalTiles(); j++) {
+				bord.getChildren().add(board.getRectangleField()[i][j]);
+			}
+		}
+		root.setCenter(bord);
+	}
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-
-
-			BorderPane root = new BorderPane();
-			Canvas canvas = new Canvas(2000, 2000);
-			Group bord = new Group();
 
 			Scene scene1, boardSize;
 			VBox layout2= new VBox(20);
@@ -55,36 +61,27 @@ public class Main extends Application {
 			acht.setAlignment(Pos.CENTER);
 			Button zehn= new Button("10x10");
 			zehn.setAlignment(Pos.CENTER);
-			int buttonValue = 2;
-			vier.setOnAction(e -> {primaryStage.setScene(new Scene(root));
-								buttonValue = 4;});
-			sechs.setOnAction(e -> {primaryStage.setScene(new Scene(root));
-								buttonValue = 6;});
-			acht.setOnAction(e -> {primaryStage.setScene(new Scene(root));
-								buttonValue = 8;});
-			zehn.setOnAction(e -> {primaryStage.setScene(new Scene(root));
-								buttonValue = 10;});
 			layout2.getChildren().addAll(label2, vier, sechs, acht, zehn);
-
-			primaryStage.setScene(scene1);
-			primaryStage.show();
 			
-
-			//2 und 2 durch breite und hoehe ersetzen
-			Board board = new Board( buttonValue, buttonValue, canvas.getWidth()/4, canvas.getHeight()/4);
-
-			for (int i = 0; i< board.getHorizontalTiles(); i++) {
-				for (int j = 0; j<board.getVerticalTiles(); j++) {
-					bord.getChildren().add(board.getRectangleField()[i][j]);
-				}
-			}
-
-
-
-
-			root.setCenter(bord);
+			
+			vier.setOnAction(e -> { createGameBoard(new Board(4, 4, 400, 400));
+									primaryStage.setScene(new Scene(root));});
+			
+			sechs.setOnAction(e -> {createGameBoard(new Board(6, 6, 400, 400));
+									primaryStage.setScene(new Scene(root));});
+			
+			acht.setOnAction(e -> {createGameBoard(new Board(8, 8, 400, 400));
+									primaryStage.setScene(new Scene(root));});
+			
+			zehn.setOnAction(e -> {	createGameBoard(new Board(10, 10, 400, 400));
+									primaryStage.setScene(new Scene(root));});
+			
+			
+			primaryStage.setScene(scene1);
 			primaryStage.setTitle("Welcome to Memory!");
 			primaryStage.show();
+			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
