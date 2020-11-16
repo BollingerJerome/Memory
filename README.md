@@ -132,7 +132,7 @@ Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 2.1 | GUI-Design | 0.75 |
+| 2.1 | GUI-Design, 1 Button für Spielmodus | 0.75 |
 | 2.2 | Kontrollstruktur | 1.5 |
 
 #### User Story 2
@@ -140,7 +140,7 @@ Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 1.1 | GUI-Design | 0.5 |
+| 1.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.5 |
 | 1.2 | Kontrollstruktur | 1 |
 
 #### User Story 4
@@ -148,7 +148,7 @@ Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzul
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 4.1 | GUI-Design | 0.75 |
+| 4.1 | GUI-Design, 1 Button für Spielmodus | 0.75 |
 | 4.2 | Kontrollstruktur | 2 |
 
 #### User Story 5
@@ -156,7 +156,7 @@ Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzul
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 5.1 | GUI-Design | 0.5 |
+| 5.1 | GUI-Design, 3 Buttons für Spieleranzahl | 0.5 |
 | 5.2 | Kontrollstruktur | 3 |
 
 #### User Story 12
@@ -174,7 +174,7 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 14.1 | GUI-Design | 0.5 |
+| 14.1 | GUI-Design, 1 Button für Spiel verlassen | 0.5 |
 | 14.2 | Kontrollstruktur | 0.5 |
 
 ### Anreicherung der User Stories für die Umsetzung Sprint 1
@@ -190,7 +190,7 @@ Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 6.1 | GUI-Design | 0.75 |
+| 6.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.75 |
 | 6.2 | Kontrollstruktur | 1.5 |
 
 #### User Story 7
@@ -198,7 +198,7 @@ Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, w
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 7.1 | GUI-Design | 2 |
+| 7.1 | GUI-Design, TextFields für Namenseingabe | 2 |
 | 7.2 | Kontrollstruktur | 3 |
 
 #### User Story 9
@@ -206,7 +206,7 @@ Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spielei
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 9.1 | GUI-Design | 0.75 |
+| 9.1 | GUI-Design, 1 Button für Hauptmenü | 0.75 |
 | 9.2 | Kontrollstruktur | 1 |
 
 #### User Story 10
@@ -214,9 +214,9 @@ Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 10.1 | Bilder aussuchen | 1.5 |
+| 10.1 | Bilder aussuchen, min. 50 Stk. | 1.5 |
 | 10.2 | Karten aus Bildern fertigen | 1 |
-| 10.3 | Events den Karten hinzufügen | 4 |
+| 10.3 | Events den Karten hinzufügen, Memoryverhalten | 4 |
 
 #### User Story 13
 Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
