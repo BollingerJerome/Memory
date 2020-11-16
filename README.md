@@ -132,7 +132,50 @@ Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
+| 2.1 | GUI-Design | 0.75 |
+| 2.2 | Kontrollstruktur | 1.5 |
+
+#### User Story 2
+Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
 | 1.1 | GUI-Design | 0.5 |
+| 1.2 | Kontrollstruktur | 1 |
+
+#### User Story 4
+Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 4.1 | GUI-Design | 0.75 |
+| 4.2 | Kontrollstruktur | 2 |
+
+#### User Story 5
+Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 5.1 | GUI-Design | 0.5 |
+| 5.2 | Kontrollstruktur | 3 |
+
+#### User Story 12
+Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 12.1 | Kartenrücken programmieren | 4 |
+| 12.2 | Logik einbinden | 6 |
+| 12.3 | Gleiche Paare bleiben offen liegen | 2 |
+| 12.4 | Karten werden bei Klick wieder zugedeckt | 3 |
+
+#### User Story 14
+Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 14.1 | GUI-Design | 0.5 |
+| 14.2 | Kontrollstruktur | 0.5 |
 
 ### Anreicherung der User Stories für die Umsetzung
 ### Dokumentation wichtiger Code Snippets
