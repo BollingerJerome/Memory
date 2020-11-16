@@ -184,6 +184,47 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 ## Dokumentation Sprint 2
 
 ### Taskliste für die Umsetzung der User Stories Sprint 2
+
+#### User Story 6
+Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 6.1 | GUI-Design | 0.75 |
+| 6.2 | Kontrollstruktur | 1.5 |
+
+#### User Story 7
+Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, wer am Zug ist
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 7.1 | GUI-Design | 2 |
+| 7.2 | Kontrollstruktur | 3 |
+
+#### User Story 9
+Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 9.1 | GUI-Design | 0.75 |
+| 9.2 | Kontrollstruktur | 1 |
+
+#### User Story 10-13
+Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 10.1 | Bilder aussuchen | 1.5 |
+| 10.2 | Karten aus Bildern fertigen | 1 |
+| 10.3 | Events den Karten hinzufügen | 4 |
+
+#### User Story 13
+Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 13.1 | Momentane Statistik im GUI einbinden | 2 |
+
 ### Anreicherung der User Stories für die Umsetzung Sprint 2
 ### Dokumentation wichtiger Code Snippets Sprint 2
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
