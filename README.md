@@ -29,6 +29,11 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
     + [Anreicherung der User Stories für die Umsetzung](#Anreicherung-der-User-Stories-für-die-Umsetzung)
     + [Dokumentation wichtiger Code Snippets](#Dokumentation-wichtiger-Code-Snippets)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories)
+12. [Dokumentation Sprint 3](#Dokumentation-Sprint-3)
+    + [Taskliste für die Umsetzung der Userstories](#Taskliste-für-die-Umsetzung-der-User-Stories)
+    + [Anreicherung der User Stories für die Umsetzung](#Anreicherung-der-User-Stories-für-die-Umsetzung)
+    + [Dokumentation wichtiger Code Snippets](#Dokumentation-wichtiger-Code-Snippets)
+    + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories)
 
 ## Einleitung
 
@@ -121,6 +126,9 @@ Velocity: 40 StoryPoints pro Iteration
 ## Dokumentation Sprint 1
 
 #### Taskliste für die Umsetzung der User Stories
+
+##### User Story 1
+
 #### Anreicherung der User Stories für die Umsetzung
 #### Dokumentation wichtiger Code Snippets
 #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
@@ -132,3 +140,9 @@ Velocity: 40 StoryPoints pro Iteration
 #### Dokumentation wichtiger Code Snippets
 #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
 
+## Dokumentation Sprint 3
+
+#### Taskliste für die Umsetzung der User Stories
+#### Anreicherung der User Stories für die Umsetzung
+#### Dokumentation wichtiger Code Snippets
+#### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
