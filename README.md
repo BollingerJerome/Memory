@@ -232,6 +232,32 @@ Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
 ## Dokumentation Sprint 3
 
 ### Taskliste für die Umsetzung der User Stories Sprint 3
+
+#### User Story 3
+Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 3.1 | Zeit im GUI anzeigen | 0.5 |
+| 3.2 | Zeit messen/berechnen | 1 |
+
+#### User Story 8
+Als Spieler möchte ich die Rangliste sehen um im Multiplayermodus meine Platzierung zu sehen
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 8.1 | Spielstatistik speichern | 4 |
+| 8.2 | Spielstatistiken der vergangenen Spiele lesen | 1.5 |
+| 8.3 | Spielstatistiken der vergangenen Spiele ausgeben | 1.5 |
+
+#### User Story 11
+Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, wenn ich vom Spiel weg muss
+
+| **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
+| :-: | - | :-: |
+| 11.1 | GUI-Design | 0.5 |
+| 11.2 | Kontrollstruktur (Zeit anhalten/fortsetzen) | 1.5 |
+
 ### Anreicherung der User Stories für die Umsetzung Sprint 3
 ### Dokumentation wichtiger Code Snippets Sprint 3
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3
