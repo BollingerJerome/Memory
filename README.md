@@ -209,7 +209,7 @@ Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spielei
 | 9.1 | GUI-Design | 0.75 |
 | 9.2 | Kontrollstruktur | 1 |
 
-#### User Story 10-13
+#### User Story 10
 Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
