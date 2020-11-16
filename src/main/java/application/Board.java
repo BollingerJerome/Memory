@@ -2,12 +2,16 @@ package application;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Board {
-
+	
+	
+	/*	//basic test constructor
 	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		this.frontColors = colors;
@@ -29,7 +33,10 @@ public class Board {
 			}
 		}
 	}
+	*/
 
+	
+	
 	//random color constructor
 	public Board(double horizontalTiles, double verticalTiles, double width, double heigth) {
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
@@ -65,6 +72,7 @@ public class Board {
 	private int[] lastFlippedX;				//array of the two last position on x
 	private int[] lastFlippedY; 			//array of the two last position on y
 	private int flip;						//stages of a turn
+	
 	
 	// turns the card if front table is true and turns them back if front is false
 	public void turnCards () {
@@ -117,6 +125,7 @@ public class Board {
 		 * 
 		 */
 		
+		
 		int tiles = (int) horizontalTiles * (int) verticalTiles;
 		Color[][] randomColors = new Color[(int) horizontalTiles][(int) verticalTiles];
 		double[][] tile = new double[2][tiles];
@@ -153,54 +162,70 @@ public class Board {
 		return randomColors;	
 	}
 	
+	public void turnCardsBack(Object source, EventHandler<MouseEvent> eventHandler) {
+		if (source instanceof Rectangle) {
+			
+			//checks the position of the pressed rectangle
+			Rectangle rectangle = (Rectangle) source;
+			for (int i = 0; i< horizontalTiles; i++) {
+				for (int j = 0; j<verticalTiles; j++) {
+
+					if(rectangleField[i][j].equals(rectangle)) {
+						System.out.println("rectangleMouse event");
+						
+						//there are four stages of a turn:
+						//0: all cards are turned upsidedown -> first card is opened
+						//1: first card is opened -> second card ist opend
+						//2: first and second card is open -> check if they are the same 
+									//if yes cards stay open and turn to 0 
+									//if not goto 3
+						//3: cards will be flipped back
+						
+						switch (flip) {
+						case 0: //open the first card
+							if(!front[i][j]) {
+								front[i][j] = true;
+								rectangleField[i][j].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+								flip++;
+								lastFlippedX[0] = i;
+								lastFlippedY[0] = j;
+								turnCards();
+							}
+							break;
+						case 1:
+							if(!front[i][j]) {
+								front[i][j] = true;
+								flip++;
+								lastFlippedX[1] = i;
+								lastFlippedY[1] = j;
+								rectangleField[lastFlippedX[0]][lastFlippedY[0]].addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+								equalColors(lastFlippedX[0], lastFlippedY[0], lastFlippedX[1], lastFlippedY[1], eventHandler);
+								turnCards();
+								won();
+							}
+							break;
+
+						case 2:
+							front[lastFlippedX[0]][lastFlippedY[0]] = false;
+							front[lastFlippedX[1]][lastFlippedY[1]] = false;
+							flip = 0;
+							turnCards();
+							break;
+						}
+						return;
+					}
+				}	
+			}	
+		}
+	}
+	
 	
 	//Eventhandler
 	private EventHandler<MouseEvent> getEventHandler (){
 		return new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				if (event.getSource() instanceof Rectangle) {
-
-					//checks the position of the pressed rectangle
-					Rectangle rectangle = (Rectangle) event.getSource();
-					for (int i = 0; i< horizontalTiles; i++) {
-						for (int j = 0; j<verticalTiles; j++) {
-
-							if(rectangleField[i][j].equals(rectangle)) {
-								
-								//there are three stages of a turn: 1: first card is opened
-								//2: first and second card is open 
-								//3: check if they are the same if yes ok, if not they get turned back around
-								switch (flip) {
-								case 0:
-									front[i][j] = true;
-									flip++;
-									lastFlippedX[0] = i;
-									lastFlippedY[0] = j;
-									turnCards();
-									break;
-								case 1:
-									front[i][j] = true;
-									flip++;
-									lastFlippedX[1] = i;
-									lastFlippedY[1] = j;
-									equalColors(lastFlippedX[0], lastFlippedY[0], lastFlippedX[1], lastFlippedY[1], this);
-									turnCards();
-									won();
-									break;
-
-								case 2:
-									front[lastFlippedX[0]][lastFlippedY[0]] = false;
-									front[lastFlippedX[1]][lastFlippedY[1]] = false;
-									flip = 0;
-									turnCards();
-									break;
-								}
-
-							}
-						}	
-					}
-				}
+				turnCardsBack(event.getSource(), this);
 			}
 		};
 	};
@@ -212,8 +237,8 @@ public class Board {
 
 				System.out.println("Pair found!");
 				flip = 0;
-				rectangleField[cx][cy].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
-				rectangleField[lx][ly].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+				//rectangleField[cx][cy].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+				//rectangleField[lx][ly].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
 				return true;
 			}
 			else {
