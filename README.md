@@ -56,10 +56,10 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 
 ## Definition of Ready DoR
 
-- Backlog Items sind für jeden Beteiligten klar verständlich
-- Jedes Backlog Item ist geschätzt.
-- Jedes Backlog Item hat Akzeptanzkriterien
+- Jedes Backlog Item ist für jeden Beteiligten klar verständlich
+- Jedes Backlog Item ist geschätzt
 - Jedes Backlog Item hat eine Priorisierung
+- Jedes Backlog Item hat Akzeptanzkriterien
 
 ## Definition of Done DoD
 
