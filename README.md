@@ -132,16 +132,16 @@ Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 2.1 | GUI-Design, 1 Button für Spielmodus | 0.75 |
-| 2.2 | Kontrollstruktur | 1.5 |
+| 1.1 | GUI-Design, 1 Button für Spielmodus | 0.75 |
+| 1.2 | Kontrollstruktur | 1.5 |
 
 #### User Story 2
 Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
-| 1.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.5 |
-| 1.2 | Kontrollstruktur | 1 |
+| 2.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.5 |
+| 2.2 | Kontrollstruktur | 1 |
 
 #### User Story 4
 Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen
