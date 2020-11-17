@@ -72,7 +72,7 @@ public class Board {
 	private int[] lastFlippedX;				//array of the two last position on x
 	private int[] lastFlippedY; 			//array of the two last position on y
 	private int flip;						//stages of a turn
-	
+	private int turn;
 	
 	// turns the card if front table is true and turns them back if front is false
 	public void turnCards () {
@@ -190,6 +190,7 @@ public class Board {
 								lastFlippedX[0] = i;
 								lastFlippedY[0] = j;
 								turnCards();
+								turn++;
 							}
 							break;
 						case 1:
@@ -202,6 +203,7 @@ public class Board {
 								equalColors(lastFlippedX[0], lastFlippedY[0], lastFlippedX[1], lastFlippedY[1], eventHandler);
 								turnCards();
 								won();
+								turn++;
 							}
 							break;
 
@@ -210,6 +212,7 @@ public class Board {
 							front[lastFlippedX[1]][lastFlippedY[1]] = false;
 							flip = 0;
 							turnCards();
+							turn++;
 							break;
 						}
 						return;
@@ -337,6 +340,14 @@ public class Board {
 
 	public void setFlip(int flip) {
 		this.flip = flip;
+	}
+
+	public int getTurn() {
+		return turn;
+	}
+
+	public void setTurn(int turn) {
+		this.turn = turn;
 	}
 
 
