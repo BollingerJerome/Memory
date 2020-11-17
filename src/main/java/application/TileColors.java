@@ -15,7 +15,6 @@ public class TileColors {
 			Color.AQUA,
 			Color.AQUAMARINE,
 			Color.AZURE,
-			
 			Color.BEIGE,
 			Color.BISQUE,
 			Color.BLANCHEDALMOND,
@@ -23,7 +22,6 @@ public class TileColors {
 			Color.BLUEVIOLET,
 			Color.BROWN,
 			Color.BURLYWOOD,
-			
 			Color.CADETBLUE,
 			Color.CHARTREUSE,
 			Color.CHOCOLATE,
@@ -31,8 +29,7 @@ public class TileColors {
 			Color.CORNFLOWERBLUE,
 			Color.CORNSILK,
 			Color.CRIMSON,
-			Color.CYAN,
-			
+			Color.CYAN,	
 			Color.DARKBLUE, 
 			Color.DARKCYAN,
 			Color.DARKGOLDENROD,
@@ -50,11 +47,9 @@ public class TileColors {
 			Color.DEEPPINK,
 			Color.DEEPSKYBLUE,
 			Color.DODGERBLUE,
-			
 			Color.FIREBRICK,
 			Color.FORESTGREEN,
 			Color.FUCHSIA,
-			
 			Color.GAINSBORO,
 			Color.GOLD,
 			Color.GREEN,
@@ -63,9 +58,7 @@ public class TileColors {
 			Color.HOTPINK,
 			Color.INDIANRED,
 			Color.INDIGO,
-			
 			Color.KHAKI,
-			
 			Color.LAVENDER,
 			Color.LAVENDERBLUSH,
 			Color.LAWNGREEN,
