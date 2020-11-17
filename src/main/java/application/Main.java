@@ -26,7 +26,7 @@ public class Main extends Application {
 	BorderPane root = new BorderPane();
 	Group bord;
 	
-	public void createGameBoard(Board board) {
+	public void createGameBoard(MultiplayerBoard board) {
 		Group bord = new Group();
 		for (int i = 0; i< board.getHorizontalTiles(); i++) {
 			for (int j = 0; j<board.getVerticalTiles(); j++) {
@@ -135,17 +135,21 @@ public class Main extends Application {
 			layout4.getChildren().addAll(label4, vier, sechs, acht, zehn, backButton3);
 			
 			
+
+			
+                             
 			//Scene 5 : Board
 			vier.setOnAction(e -> { createGameBoard(new Board(2, 2, 400, 400));
+      vier.setOnAction(e -> { createGameBoard(new MultiplayerBoard(4, 4, 400, 400,2));
 									primaryStage.setScene(new Scene(root));});
 			
-			sechs.setOnAction(e -> {createGameBoard(new Board(6, 6, 400, 400));
+			sechs.setOnAction(e -> {createGameBoard(new MultiplayerBoard(6, 6, 400, 400, 2));
 									primaryStage.setScene(new Scene(root));});
 			
-			acht.setOnAction(e -> {createGameBoard(new Board(8, 8, 400, 400));
+			acht.setOnAction(e -> {createGameBoard(new MultiplayerBoard(8, 8, 400, 400,4));
 									primaryStage.setScene(new Scene(root));});
 			
-			zehn.setOnAction(e -> {	createGameBoard(new Board(10, 10, 400, 400));
+			zehn.setOnAction(e -> {	createGameBoard(new MultiplayerBoard(10, 10, 400, 400,4));
 									primaryStage.setScene(new Scene(root));});
 			
 			

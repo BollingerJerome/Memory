@@ -11,32 +11,6 @@ import javafx.scene.shape.Rectangle;
 public class Board {
 	
 	
-	/*	//basic test constructor
-	public Board(Color[][] colors, double horizontalTiles, double verticalTiles, double width, double heigth) {
-		EventHandler<MouseEvent> eventHandler = getEventHandler();
-		this.frontColors = colors;
-		this.horizontalTiles = horizontalTiles;
-		this.verticalTiles = verticalTiles;
-		this.width = width;
-		this.heigth = heigth;
-		this.rectangleField = new Rectangle[(int) horizontalTiles][(int) verticalTiles];
-		this.lastFlippedX = new int[2];
-		this.lastFlippedY = new int[2];
-		this.flip = 0;
-		double rectWidth = width/horizontalTiles;
-		double rectHeigth = heigth/verticalTiles;
-		for (int i = 0; i< horizontalTiles; i++) {
-			for (int j = 0; j<verticalTiles; j++) {
-				rectangleField[i][j] = new Rectangle(i*rectWidth, j*rectHeigth, rectWidth, rectHeigth);
-				rectangleField[i][j].setFill(colors[i][j]); //why isn't there a constructor for five variables?
-				rectangleField[i][j].addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
-			}
-		}
-	}
-	*/
-
-	
-	
 	//random color constructor
 	public Board(double horizontalTiles, double verticalTiles, double width, double heigth) {
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
@@ -62,6 +36,11 @@ public class Board {
 			}
 		}
 	}
+	
+	public Board(double horizontalTiles, double verticalTiles, double width, double heigth, int players) {
+		Board multiBoard = new Board(horizontalTiles, verticalTiles, width, heigth);
+		multiBoard.setPlayers(players);
+	}
 
 
 	private Color[][] frontColors;	//Color of cards front at position x,y
@@ -72,7 +51,10 @@ public class Board {
 	private int[] lastFlippedX;				//array of the two last position on x
 	private int[] lastFlippedY; 			//array of the two last position on y
 	private int flip;						//stages of a turn
-	
+	private int turn;
+	private String[] PlayerNames;
+	private int players;
+	private int[] playerPoints;
 	
 	// turns the card if front table is true and turns them back if front is false
 	public void turnCards () {
@@ -159,7 +141,8 @@ public class Board {
 			if(col%2 == 1) {
 				col--;
 			}
-			
+			col /= 2;
+			System.out.println(col);
 			Color which = TileColors.getColortiles()[col];
 			randomColors[hor][ver] = which; 
 		}
@@ -215,6 +198,7 @@ public class Board {
 							front[lastFlippedX[1]][lastFlippedY[1]] = false;
 							flip = 0;
 							turnCards();
+							turn++;
 							break;
 						}
 						return;
@@ -239,8 +223,9 @@ public class Board {
 	public boolean equalColors(int cx, int cy, int lx, int ly, EventHandler<MouseEvent> eventHandler) {
 		if(lastFlippedX[0] >= 0) {
 			if(frontColors[cx][cy] == frontColors[lx][ly] && !((cx == lx) && (cy == ly))) {
-
 				System.out.println("Pair found!");
+				playerPoints[turn%players]++;
+				turn++;
 				flip = 0;
 				//rectangleField[cx][cy].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
 				//rectangleField[lx][ly].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
@@ -342,6 +327,30 @@ public class Board {
 
 	public void setFlip(int flip) {
 		this.flip = flip;
+	}
+
+	public int getTurn() {
+		return turn;
+	}
+
+	public void setTurn(int turn) {
+		this.turn = turn;
+	}
+
+	public String[] getPlayerNames() {
+		return PlayerNames;
+	}
+
+	public void setPlayerNames(String[] playerNames) {
+		PlayerNames = playerNames;
+	}
+
+	public int getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(int players) {
+		this.players = players;
 	}
 
 
