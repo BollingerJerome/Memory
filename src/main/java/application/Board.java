@@ -155,6 +155,11 @@ public class Board {
 			int hor = (int) ((int) tile[1][i]%horizontalTiles);
 			int ver = (int) ((int) tile[1][i]/horizontalTiles);
 			int col = (int) tile[0][i];
+			
+			if(col%2 == 1) {
+				col--;
+			}
+			
 			Color which = TileColors.getColortiles()[col];
 			randomColors[hor][ver] = which; 
 		}
