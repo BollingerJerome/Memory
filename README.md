@@ -72,7 +72,6 @@ Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Stud
 - Dokumentation wurde durchgeführt
 
 ## Build-Anleitung
-**Muss noch angepasst werden**
 
 1. Laden Sie die .jar-Datei von unserem GitHub Repository herunter
 2. Entpacken Sie diese in den gewünschten Ordner

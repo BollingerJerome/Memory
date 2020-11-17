@@ -253,7 +253,7 @@ public class Board {
 			}
 		}
 		System.out.println("SOMEONE WON!!!");
-		System.exit(0);
+		//System.exit(0);
 		return true;
 	}
 
