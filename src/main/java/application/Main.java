@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -28,19 +29,44 @@ public class Main extends Application {
 
 	BorderPane root = new BorderPane();
 	Group bord;
-	Board board;
+	static Board board;
 	Scene playerNames;
-	int players = 1;
+	static int players = 1;
 	String playerString[];
-	Stage primaryStage;
+	private static Stage primaryStage;
 	VBox layout1 = new VBox(50);     
 	Scene menu= new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
 	VBox layout4 = new VBox(20);
 	Scene boardSize = new Scene(layout4,300,300,Color.CORNFLOWERBLUE);
+	static Scene end;
+	
 	Label[] points;
 	
+	public static void createEnd() {
+		GridPane gridPane = new GridPane();
+		Label[] namesOfPlayers = new Label[players];
+		Label[] playerPoints = new Label[players];
+		Label player = new Label("Player");
+		Label punkte = new Label("Points");
+		gridPane.add(player, 0, 0);
+		gridPane.add(punkte, 1, 0);
+		for (int i = 0; i<players; i++) {
+			playerPoints[i] = new Label("   "+Integer.toString(board.getPlayerPoints()[i]));
+			
+			if (players == 1) {
+				String[] me = {"You"};
+				board.setPlayerNames(me);
+			}
+			namesOfPlayers[i] = new Label(board.getPlayerNames()[i]);
+			gridPane.add(namesOfPlayers[i], 0, i+1);
+			gridPane.add(playerPoints[i], 1, i+1);
+		}
+		end = new Scene(gridPane, 300, 300, Color.CORNFLOWERBLUE);
+		primaryStage.setScene(end);
+	}
+	
 	public void createGameBoard(Board board) {
-		
+		this.board = board;
 		Group bord = new Group();
 		for (int i = 0; i< board.getHorizontalTiles(); i++) {
 			for (int j = 0; j<board.getVerticalTiles(); j++) {
@@ -217,5 +243,13 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 }

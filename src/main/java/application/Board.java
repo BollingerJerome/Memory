@@ -252,6 +252,8 @@ public class Board {
 			}
 		}
 		
+		Main.createEnd();
+		
 		System.out.println("SOMEONE WON!!!");
 		return true;
 	}
