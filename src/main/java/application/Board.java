@@ -3,16 +3,18 @@ package application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 public class Board {
 	
 	
 	//random color constructor
-	public Board(double horizontalTiles, double verticalTiles, double width, double heigth) {
+	public Board(double horizontalTiles, double verticalTiles, double width, double heigth, int players, String[] playersString) {
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		this.horizontalTiles = horizontalTiles;
 		this.verticalTiles = verticalTiles;
@@ -25,6 +27,9 @@ public class Board {
 		this.lastFlippedX = new int[2];
 		this.lastFlippedY = new int[2];
 		this.flip = 0;
+		this.players = players;
+		this.playerPoints = new int[players];
+		this.PlayerNames = playersString;
 		double rectWidth = width/horizontalTiles;
 		double rectHeigth = heigth/verticalTiles;
 		for (int i = 0; i< horizontalTiles; i++) {
@@ -37,10 +42,7 @@ public class Board {
 		}
 	}
 	
-	public Board(double horizontalTiles, double verticalTiles, double width, double heigth, int players) {
-		Board multiBoard = new Board(horizontalTiles, verticalTiles, width, heigth);
-		multiBoard.setPlayers(players);
-	}
+
 
 
 	private Color[][] frontColors;	//Color of cards front at position x,y
@@ -142,7 +144,6 @@ public class Board {
 				col--;
 			}
 			col /= 2;
-			System.out.println(col);
 			Color which = TileColors.getColortiles()[col];
 			randomColors[hor][ver] = which; 
 		}
@@ -223,12 +224,10 @@ public class Board {
 	public boolean equalColors(int cx, int cy, int lx, int ly, EventHandler<MouseEvent> eventHandler) {
 		if(lastFlippedX[0] >= 0) {
 			if(frontColors[cx][cy] == frontColors[lx][ly] && !((cx == lx) && (cy == ly))) {
-				System.out.println("Pair found!");
-				playerPoints[turn%players]++;
+				playerPoints[turn%players] = playerPoints[turn%players]+1;
 				turn++;
 				flip = 0;
-				//rectangleField[cx][cy].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
-				//rectangleField[lx][ly].removeEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+				
 				return true;
 			}
 			else {
@@ -252,8 +251,8 @@ public class Board {
 				}
 			}
 		}
+		
 		System.out.println("SOMEONE WON!!!");
-		//System.exit(0);
 		return true;
 	}
 
@@ -351,6 +350,14 @@ public class Board {
 
 	public void setPlayers(int players) {
 		this.players = players;
+	}
+
+	public int[] getPlayerPoints() {
+		return playerPoints;
+	}
+
+	public void setPlayerPoints(int[] playerPoints) {
+		this.playerPoints = playerPoints;
 	}
 
 
