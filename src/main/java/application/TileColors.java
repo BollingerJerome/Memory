@@ -10,41 +10,48 @@ public class TileColors {
 	};
 	
 	public static Color[] colortiles = {
+			Color.DARKGREEN,
+			Color.DARKBLUE, 
+			Color.CADETBLUE,
+			Color.DEEPPINK,
+			Color.DARKRED,
 			Color.ALICEBLUE,
 			Color.ANTIQUEWHITE,
 			Color.AQUA,
-			Color.AQUAMARINE,
+			
+			
 			Color.AZURE,
 			Color.BEIGE,
 			Color.BISQUE,
 			Color.BLANCHEDALMOND,
+			Color.CRIMSON,
 			Color.BLUE,
 			Color.BLUEVIOLET,
 			Color.BROWN,
 			Color.BURLYWOOD,
-			Color.CADETBLUE,
+			Color.AQUAMARINE,
 			Color.CHARTREUSE,
 			Color.CHOCOLATE,
 			Color.CORAL,
 			Color.CORNFLOWERBLUE,
 			Color.CORNSILK,
-			Color.CRIMSON,
+			
 			Color.CYAN,	
-			Color.DARKBLUE, 
+			
 			Color.DARKCYAN,
 			Color.DARKGOLDENROD,
-			Color.DARKGREEN,
+			
 			Color.DARKKHAKI,
 			Color.DARKMAGENTA,
 			Color.DARKOLIVEGREEN,
 			Color.DARKORANGE,
-			Color.DARKRED,
+			
 			Color.DARKSALMON,
 			Color.DARKSEAGREEN,
 			Color.DARKSLATEBLUE,
 			Color.DARKTURQUOISE,
 			Color.DARKVIOLET,
-			Color.DEEPPINK,
+			
 			Color.DEEPSKYBLUE,
 			Color.DODGERBLUE,
 			Color.FIREBRICK,
