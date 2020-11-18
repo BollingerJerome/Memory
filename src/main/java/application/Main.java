@@ -34,10 +34,29 @@ public class Main extends Application {
 	String playerString[];
 	Stage primaryStage;
 	VBox layout1 = new VBox(50);     
-	Scene menu= new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
+	Scene menu = new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
 	VBox layout4 = new VBox(20);
-	Scene boardSize = new Scene(layout4,300,300,Color.CORNFLOWERBLUE);
+	Scene end;
+	
 	Label[] points;
+	
+	/*public void createEnd(Board board) {
+		GridPane gridPane = new GridPane();
+		Label[] playerNames = new Label[board.getPlayers()];
+		Label[] playerPoints = new Label[board.getPlayers()];
+		Label player = new Label("Player");
+		Label punkte = new Label("Points");
+		gridPane.add(player, 0, 0);
+		gridPane.add(punkte, 1, 0);
+		for (int i = 0; i<board.getPlayers(); i++) {
+			playerPoints[i] = new Label(Integer.toString(board.getPlayerPoints()[i]));
+			playerNames[i] = new Label(board.getPlayerNames()[i]);
+			gridPane.add(playerNames[i], 0, i+1);
+			gridPane.add(playerPoints[i], 1, i+1);
+		}
+		end = new Scene(gridPane, 300, 300, Color.CORNFLOWERBLUE);
+		
+	}*/
 	
 	public void createGameBoard(Board board) {
 		
