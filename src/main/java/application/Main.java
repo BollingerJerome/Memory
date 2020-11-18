@@ -77,7 +77,12 @@ public class Main extends Application {
 		Button back = new Button("<<Back");
 		go.setOnAction(e -> {
 			for(int i = 0; i<players; i++) {
-				this.playerString[i] = input[i].getText();
+				if(input[i].getText().isEmpty()) {
+					this.playerString[i] = "Player "+(i+1);
+				}
+				else {
+					this.playerString[i] = input[i].getText();
+				}
 			}
 			//I have absolutely no clue how I made this work...
 			Stage primaryStage = (Stage) go.getScene().getWindow();
