@@ -160,8 +160,6 @@ public class Board {
 				for (int j = 0; j<verticalTiles; j++) {
 
 					if(rectangleField[i][j].equals(rectangle)) {
-						System.out.println("rectangleMouse event");
-						
 						//there are four stages of a turn:
 						//0: all cards are turned upsidedown -> first card is opened
 						//1: first card is opened -> second card ist opend

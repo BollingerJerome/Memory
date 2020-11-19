@@ -27,15 +27,15 @@ import javafx.scene.text.Text;
 
 public class Main extends Application {
 
-	BorderPane root = new BorderPane();
+	BorderPane root;
 	Group bord;
 	static Board board;
 	Scene playerNames;
 	static int players = 1;
 	String playerString[];
 	private static Stage primaryStage;
-	VBox layout1 = new VBox(50);     
-	Scene menu= new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
+	static VBox layout1 = new VBox(50);     
+	static Scene menu= new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
 	VBox layout4 = new VBox(20);
 	Scene boardSize = new Scene(layout4,300,300,Color.CORNFLOWERBLUE);
 	static Scene end;
@@ -44,6 +44,12 @@ public class Main extends Application {
 	
 	public static void createEnd() {
 		GridPane gridPane = new GridPane();
+		Button back = new Button("Back");
+		back.setOnAction(e -> {
+			Stage primaryStage = (Stage) back.getScene().getWindow();
+			primaryStage.setScene(menu);
+		});
+		gridPane.add(back, 1,6);
 		Label[] namesOfPlayers = new Label[players];
 		Label[] playerPoints = new Label[players];
 		Label player = new Label("Player");
@@ -65,8 +71,15 @@ public class Main extends Application {
 		primaryStage.setScene(end);
 	}
 	
+	
 	public void createGameBoard(Board board) {
+		root = new BorderPane();
 		this.board = board;
+		Button back = new Button("Back");
+		back.setOnAction(e -> {
+			Stage primaryStage = (Stage) back.getScene().getWindow();
+			primaryStage.setScene(menu);
+		});
 		Group bord = new Group();
 		for (int i = 0; i< board.getHorizontalTiles(); i++) {
 			for (int j = 0; j<board.getVerticalTiles(); j++) {
@@ -89,6 +102,7 @@ public class Main extends Application {
 			root.setLeft(names);
 		}
 		root.setCenter(bord);
+		root.setBottom(back);
 	}
 	
 	
