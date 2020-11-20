@@ -38,7 +38,8 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 ## Einleitung
 
 Dieses Git-Repository ist im Rahmen der Gruppenarbeit in den Kursen Software Engineering und Informatik II entstanden.
-Die Aufgabenstellung besteht darin, eine Java respektive JavaFX Programm zu erstellen, welches auf dem Desktop eines Computers laufen kann. Wir haben uns dazu entschieden, Memory, ein in der Praxis sehr einfaches Spiel zu digitalisieren.
+Die Aufgabenstellung besteht darin, ein Java- beziehungsweise ein JavaFX Programm zu erstellen. Man soll es über GitHub herunterladden können, um es auf dem Desktop eines Computers zu spielen.
+Wir haben uns dazu entschieden, Memory, ein in der Praxis sehr einfaches Spiel zu digitalisieren.
 
 ## Ziel
 
