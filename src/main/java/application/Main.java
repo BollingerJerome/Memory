@@ -5,6 +5,7 @@ package application;
 import javafx.application.Application;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Group;
@@ -16,7 +17,10 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -35,9 +39,9 @@ public class Main extends Application {
 	String playerString[];
 	private static Stage primaryStage;
 	static VBox layout1 = new VBox(50);     
-	static Scene menu= new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
+	static Scene menu= new Scene(layout1, 300, 300);
 	VBox layout4 = new VBox(20);
-	Scene boardSize = new Scene(layout4,300,300,Color.CORNFLOWERBLUE);
+	Scene boardSize = new Scene(layout4,300,300);
 	static Scene end;
 	
 	Label[] points;
@@ -67,7 +71,7 @@ public class Main extends Application {
 			gridPane.add(namesOfPlayers[i], 0, i+1);
 			gridPane.add(playerPoints[i], 1, i+1);
 		}
-		end = new Scene(gridPane, 300, 300, Color.CORNFLOWERBLUE);
+		end = new Scene(gridPane, 300, 300);
 		primaryStage.setScene(end);
 	}
 	
@@ -108,12 +112,16 @@ public class Main extends Application {
 	
 	public void createNameBoard(int players) {
 		this.playerString = new String[players];
-		GridPane layout1 = new GridPane();     
+		GridPane layout1 = new GridPane();  
+		layout1.setBackground(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 		this.players = players;
-		Label label3_1 = new Label("Enter the name of players");
+		Label label3_1 = new Label("Enter the name of players");//Hier ist noch ein Problem, der Satz wird nicht bis zum Ende angezeigt
 		Label[] playertext = new Label[4];
 		TextField[] input = new TextField[4];
 		Button go = new Button("Start");
+		go.setTranslateX(230);
+		go.setTranslateY(30);
+		go.setMaxWidth(70);
 		Button back = new Button("<<Back");
 		go.setOnAction(e -> {
 			for(int i = 0; i<players; i++) {
@@ -146,7 +154,7 @@ public class Main extends Application {
 		}
 		layout1.add(go, 0, 6);
 		layout1.add(back, 0, 7);
-		playerNames = new Scene(layout1, 300, 300, Color.CORNFLOWERBLUE);
+		playerNames = new Scene(layout1, 300, 300);
 	}
 	
 	
@@ -157,50 +165,66 @@ public class Main extends Application {
 			this.primaryStage = primaryStage;
 			Group group = new Group();
 			
-			
-			
 			VBox layout2 = new VBox(20);     
-			Scene numberPlayers = new Scene(layout2, 300, 300, Color.CORNFLOWERBLUE);
+			Scene numberPlayers = new Scene(layout2, 300, 300);
 			  
-
 			//Scene 1 : Welcome to Memory
 			Label label1 = new Label("Welcome to Memory!");
 			Button buttonSolo = new Button("Solo");
+			buttonSolo.setMaxWidth(90);
+			buttonSolo.setTranslateX(105);
 			buttonSolo.setOnAction(e -> primaryStage.setScene(boardSize));  
 			Button buttonMulti = new Button("Multiplayer");
+			buttonMulti.setTranslateX(105);
 			buttonMulti.setOnAction(e -> primaryStage.setScene(numberPlayers));
 			layout1.getChildren().addAll(label1, buttonSolo, buttonMulti);
-			
+			layout1.setBackground(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 			
 			//Scene 2 : if Multi --> Number of players
 			Label label2= new Label("Enter the number of players");
 			Button twoPlayers = new Button("2");
+			twoPlayers.setMaxWidth(50);
+			twoPlayers.setTranslateX(125);
 			twoPlayers.setOnAction(e -> {createNameBoard(2);
 				players = 2;
 				primaryStage.setScene(playerNames);});  
 			Button threePlayers = new Button("3");
+			threePlayers.setMaxWidth(50);
+			threePlayers.setTranslateX(125);
 			threePlayers.setOnAction(e -> {createNameBoard(3);
 				players = 3;
 				primaryStage.setScene(playerNames);});  
 			Button fourPlayers = new Button("4");
+			fourPlayers.setMaxWidth(50);
+			fourPlayers.setTranslateX(125);
 			fourPlayers.setOnAction(e -> {createNameBoard(4);
 				players = 4;
 				primaryStage.setScene(playerNames);});   
 			Button backButton1 = new Button("<< Back");
 			backButton1.setOnAction(e -> primaryStage.setScene(menu));  
 			layout2.getChildren().addAll(label2, twoPlayers, threePlayers, fourPlayers, backButton1);
+			layout2.setBackground(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 			
 
 			//Scene 4 : Boardsize
 			Label label4= new Label("Please select the size of the board:");
 			Button vier= new Button("4x4");
+			vier.setMaxWidth(75);
+			vier.setTranslateX(110);
 			Button sechs= new Button("6x6");
+			sechs.setMaxWidth(75);
+			sechs.setTranslateX(110);
 			Button acht= new Button("8x8");
+			acht.setMaxWidth(75);
+			acht.setTranslateX(110);
 			Button zehn= new Button("10x10");
+			zehn.setMaxWidth(75);
+			zehn.setTranslateX(110);
 			Button backButton3= new Button("<< Back");
+			
 			backButton3.setOnAction(e -> primaryStage.setScene(menu));  
 			layout4.getChildren().addAll(label4, vier, sechs, acht, zehn, backButton3);
-			
+			layout4.setBackground(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 			
 
 			
@@ -228,6 +252,7 @@ public class Main extends Application {
 			menuButtonSolo.setOnAction(e -> primaryStage.setScene(menu));  
 			VBox layout5= new VBox(20);
 			layout5.getChildren().addAll(label5, menuButtonSolo);
+			layout5.setBackground(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 			Scene scene4 = new Scene(layout5, 300, 300);
 			
 			
@@ -242,6 +267,7 @@ public class Main extends Application {
 			menuButtonMulti.setOnAction(e -> primaryStage.setScene(menu));  
 			VBox layout6= new VBox(20);
 			layout6.getChildren().addAll(label6, menuButtonMulti);
+			layout6.setBackground(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 			Scene scene5 = new Scene(layout6, 300, 300);
 			
 			
