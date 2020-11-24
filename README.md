@@ -21,17 +21,14 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 9. [Releaseplan](#Releaseplan)
 10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
-    + [Anreicherung der User Stories für die Umsetzung Sprint 1](#Anreicherung-der-User-Stories-für-die-Umsetzung-Sprint-1)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
 11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
     + [Taskliste für die Umsetzung der Userstories Sprint 2](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-2)
-    + [Anreicherung der User Stories für die Umsetzung Sprint 2](#Anreicherung-der-User-Stories-für-die-Umsetzung-Sprint-2)
     + [Dokumentation wichtiger Code Snippets Sprint 2](#Dokumentation-wichtiger-Code-Snippets-Sprint-2)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-2)
 12. [Dokumentation Sprint 3](#Dokumentation-Sprint-3)
     + [Taskliste für die Umsetzung der Userstories Sprint 3](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-3)
-    + [Anreicherung der User Stories für die Umsetzung Sprint 3](#Anreicherung-der-User-Stories-für-die-Umsetzung-Sprint-3)
     + [Dokumentation wichtiger Code Snippets Sprint 3](#Dokumentation-wichtiger-Code-Snippets-Sprint-3)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-3)
 
@@ -177,7 +174,6 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 | 14.1 | GUI-Design, 1 Button für Spiel verlassen | 0.5 |
 | 14.2 | Kontrollstruktur | 0.5 |
 
-### Anreicherung der User Stories für die Umsetzung Sprint 1
 ### Dokumentation wichtiger Code Snippets Sprint 1
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
 
@@ -225,7 +221,6 @@ Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
 | :-: | - | :-: |
 | 13.1 | Momentane Statistik im GUI einbinden | 2 |
 
-### Anreicherung der User Stories für die Umsetzung Sprint 2
 ### Dokumentation wichtiger Code Snippets Sprint 2
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
 
@@ -258,6 +253,5 @@ Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, 
 | 11.1 | GUI-Design | 0.5 |
 | 11.2 | Kontrollstruktur (Zeit anhalten/fortsetzen) | 1.5 |
 
-### Anreicherung der User Stories für die Umsetzung Sprint 3
 ### Dokumentation wichtiger Code Snippets Sprint 3
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3
