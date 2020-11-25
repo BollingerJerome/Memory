@@ -157,8 +157,6 @@ public class Main extends Application {
 			this.primaryStage = primaryStage;
 			Group group = new Group();
 			
-			
-			
 			VBox layout2 = new VBox(20);     
 			Scene numberPlayers = new Scene(layout2, 300, 300, Color.CORNFLOWERBLUE);
 			  
