@@ -1,12 +1,19 @@
 package application;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -22,7 +29,8 @@ public class Board {
 		this.heigth = heigth;
 		this.rectangleField = new Rectangle[(int) horizontalTiles][(int) verticalTiles];
 		this.front = new boolean[(int) horizontalTiles][(int) verticalTiles];
-		this.frontColors = randomize();
+		this.fotos = new int[(int) horizontalTiles][(int) verticalTiles];
+		this.images = randomizeImage();
 		this.backColors = backOfCards();
 		this.lastFlippedX = new int[2];
 		this.lastFlippedY = new int[2];
@@ -44,8 +52,7 @@ public class Board {
 	
 
 
-
-	private Color[][] frontColors;	//Color of cards front at position x,y
+	private Image[][] images;
 	private double horizontalTiles, verticalTiles, width, heigth; //how many tiles and info of canvas
 	private Rectangle rectangleField[][];	//array of all rectangle objects
 	private boolean[][] front;				// card is turned up or down maybe I could put this info in rectangle object
@@ -57,13 +64,14 @@ public class Board {
 	private String[] PlayerNames;
 	private int players;
 	private int[] playerPoints;
+	private int[][] fotos;
 	
 	// turns the card if front table is true and turns them back if front is false
 	public void turnCards () {
 		for (int i = 0; i< horizontalTiles; i++) {
 			for (int j = 0; j<verticalTiles; j++) {
 				if(front[i][j]) {
-					rectangleField[i][j].setFill(frontColors[i][j]);
+					rectangleField[i][j].setFill(new ImagePattern(images[i][j]));
 				}
 				else {
 					rectangleField[i][j].setFill(backColors[i][j]);
@@ -90,7 +98,9 @@ public class Board {
 	}
 
 	
-	public Color[][] randomize () {
+
+	
+	public Image[][] randomizeImage () {
 
 		/*creates the card fronts in a random fashion
 		 *each tile gets a random float. then they get sorted and assigned the indexes
@@ -111,7 +121,7 @@ public class Board {
 		
 		
 		int tiles = (int) horizontalTiles * (int) verticalTiles;
-		Color[][] randomColors = new Color[(int) horizontalTiles][(int) verticalTiles];
+		Image[][] randomColors = new Image[(int) horizontalTiles][(int) verticalTiles];
 		double[][] tile = new double[2][tiles];
 		//each tile gets two random floats
 		for (int i = 0; i < tiles; i++) {
@@ -136,16 +146,35 @@ public class Board {
 			tile[1][j] = j;
 		}
 		for (int i = 0; i < tiles; i++) {
-			int hor = (int) ((int) tile[1][i]%horizontalTiles);
-			int ver = (int) ((int) tile[1][i]/horizontalTiles);
+			int hor = (int) (i%horizontalTiles);
+			int ver = (int) (i/horizontalTiles);
 			int col = (int) tile[0][i];
 			
 			if(col%2 == 1) {
 				col--;
 			}
 			col /= 2;
-			Color which = TileColors.getColortiles()[col];
-			randomColors[hor][ver] = which; 
+			String path; 
+			String which;
+			if((tiles/2) <= PathStrings.getProfsFotos().length) {
+				path = "src\\main\\resources\\Fotos Memory\\Profs Fotos\\";
+				which = PathStrings.getProfsFotos()[col];
+			}
+			else {
+				path = "src\\main\\resources\\Fotos Memory\\Sehenswuerdigkeiten Fotos\\";
+				which = PathStrings.getSehenswuerdigkeitenFotos()[col];
+			}
+			path += which;
+			FileInputStream fileInputStream;
+	
+			try {
+				fotos[hor][ver] = col; 
+				fileInputStream = new FileInputStream(path);
+				randomColors[hor][ver] = new Image(fileInputStream);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			 
 		}
 
 		return randomColors;	
@@ -186,7 +215,7 @@ public class Board {
 								lastFlippedX[1] = i;
 								lastFlippedY[1] = j;
 								rectangleField[lastFlippedX[0]][lastFlippedY[0]].addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
-								equalColors(lastFlippedX[0], lastFlippedY[0], lastFlippedX[1], lastFlippedY[1], eventHandler);
+								equalImage(lastFlippedX[0], lastFlippedY[0], lastFlippedX[1], lastFlippedY[1]);
 								turnCards();
 								won();
 							}
@@ -219,13 +248,31 @@ public class Board {
 	};
 	
 	//checking if the colors are matching
-	public boolean equalColors(int cx, int cy, int lx, int ly, EventHandler<MouseEvent> eventHandler) {
+	public boolean equalColors(int cx, int cy, int lx, int ly) {
 		if(lastFlippedX[0] >= 0) {
-			if(frontColors[cx][cy] == frontColors[lx][ly] && !((cx == lx) && (cy == ly))) {
+			
+			if(fotos[cx][cy] == fotos[lx][ly] && !((cx == lx) && (cy == ly))) {
 				playerPoints[turn%players] = playerPoints[turn%players]+1;
 				turn++;
 				flip = 0;
 				
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean equalImage(int cx, int cy, int lx, int ly) {
+		if(lastFlippedX[0] >= 0) {
+			if(fotos[cx][cy] == fotos[lx][ly] && !((cx == lx) && (cy == ly))) {
+				playerPoints[turn%players] = playerPoints[turn%players]+1;
+				turn++;
+				flip = 0;
 				return true;
 			}
 			else {
@@ -249,20 +296,12 @@ public class Board {
 				}
 			}
 		}
-		
 		Main.createEnd();
-		
-		System.out.println("SOMEONE WON!!!");
 		return true;
 	}
 
 
-	public Color[][] getColors() {
-		return frontColors;
-	}
-	public void setColors(Color[][] colors) {
-		this.frontColors = colors;
-	}
+
 	public double getHorizontalTiles() {
 		return horizontalTiles;
 	}
@@ -292,14 +331,6 @@ public class Board {
 	}
 	public void setRectangleField(Rectangle[][] rectangleField) {
 		this.rectangleField = rectangleField;
-	}
-
-	public Color[][] getFrontColors() {
-		return frontColors;
-	}
-
-	public void setFrontColors(Color[][] frontColors) {
-		this.frontColors = frontColors;
 	}
 
 	public boolean[][] getFront() {
