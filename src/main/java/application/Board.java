@@ -271,7 +271,6 @@ public class Board {
 		if(lastFlippedX[0] >= 0) {
 			if(fotos[cx][cy] == fotos[lx][ly] && !((cx == lx) && (cy == ly))) {
 				playerPoints[turn%players] = playerPoints[turn%players]+1;
-				turn++;
 				flip = 0;
 				return true;
 			}
@@ -280,6 +279,7 @@ public class Board {
 			}
 		}
 		else {
+			turn++;
 			return false;
 		}
 	}
