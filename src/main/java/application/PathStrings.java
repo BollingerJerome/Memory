@@ -2,8 +2,25 @@ package application;
 
 public class PathStrings {
 	
-	public static String[] profsFotos= {"alard.png", "bachmann.png", "chassignet.png", "de_grade.png", "graber.png", 
-			"grubert.png", "heim.png", "hess.png"
+	public static String[] profsFotos= {
+			"alard.png", 
+			"bachmann.png", 
+			"chassignet.png", 
+			"de_grade.png", 
+			"graber.png", 
+			"grubert.png", 
+			"heim.png", 
+			"hess.png",
+			"laile.png",
+			"mueller.png",
+			"oertig.png",
+			"reeb.png",
+			"roth.png",
+			"saidane.png",
+			"stoffel.png",
+			"sturm.png",
+			"ulrich.png",
+			"wennmacher.png"
 	};
 	
 	public static String[] SehenswuerdigkeitenFotos = {

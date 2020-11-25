@@ -154,13 +154,19 @@ public class Board {
 				col--;
 			}
 			col /= 2;
-			String path = "src\\main\\resources\\Fotos Memory\\Sehenswuerdigkeiten Fotos\\";
-			String which = PathStrings.getSehenswuerdigkeitenFotos()[col];
+			String path; 
+			String which;
+			if((tiles/2) <= PathStrings.getProfsFotos().length) {
+				path = "src\\main\\resources\\Fotos Memory\\Profs Fotos\\";
+				which = PathStrings.getProfsFotos()[col];
+			}
+			else {
+				path = "src\\main\\resources\\Fotos Memory\\Sehenswuerdigkeiten Fotos\\";
+				which = PathStrings.getSehenswuerdigkeitenFotos()[col];
+			}
 			path += which;
 			FileInputStream fileInputStream;
-			System.out.println(path);
-			//path = "src\\main\\resources\\Fotos Memory\\Sehenswuerdigkeiten Fotos\\angkor_wat.png";
-			System.out.println(path);
+	
 			try {
 				fotos[hor][ver] = col; 
 				fileInputStream = new FileInputStream(path);
@@ -263,17 +269,13 @@ public class Board {
 	
 	public boolean equalImage(int cx, int cy, int lx, int ly) {
 		if(lastFlippedX[0] >= 0) {
-			System.out.println(images[cx][cy]);
-			System.out.println(images[cx][cy].getPixelReader());
 			if(fotos[cx][cy] == fotos[lx][ly] && !((cx == lx) && (cy == ly))) {
 				playerPoints[turn%players] = playerPoints[turn%players]+1;
 				turn++;
 				flip = 0;
-				System.out.println("they are the same pictures");
 				return true;
 			}
 			else {
-				System.out.println("they are not the same pictures");
 				return false;
 			}
 		}
