@@ -176,16 +176,13 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 
 ### Dokumentation wichtiger Code Snippets Sprint 1
 
-#### Im Sprint 1 wurde als erstes die Welcome Scene erstellt. Im Nachfolgenen Bild kann man den Code zu diesem Interface sehen.
-
+#### Im Sprint 1 wurde als erstes die Welcome Scene erstellt. Im Nachfolgenen Bild kann man den Code zu diesem Interface sehen
 ![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Welcome%20Scene.PNG)
 
 #### Ein weiterer wichtiger Punkt im Sprint 1 war der EventHandler
 ![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/eventHandler%20snippet.PNG)
 
-
 #### Ebenfalls wichtig in Sprint 1 waren die ganzen Attribute
-
 ![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/boardClass%20attributes.PNG)
 
 
@@ -237,9 +234,15 @@ Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
 
 ### Dokumentation wichtiger Code Snippets Sprint 2
 
+#### Im Sprint 2 stand das Interface des Multiplayer-Modus im Release Plan. Dieses wurde wie folgt umgesetzt
 ![Image for Multiplayer](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Multiplayer_snippet.PNG)
+
+#### Wichtig in diesem Sprint auch der folgende Code des Sortieralgorithmus
 ![Image for Sorting algorithm for randomize method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/sorting%20algorithm%20for%20randomize%20method.PNG)
+
+#### Wichtig beim Memory sind auch die Bilder auf der verdeckten Seite der Karten
 ![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/turning%20cards%20method.PNG)
+
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
 
