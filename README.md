@@ -176,7 +176,7 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 
 ### Dokumentation wichtiger Code Snippets Sprint 1
 
-![Hier ist ein Beispielbild](https://example.com/bild.jpg)
+![Hier ist ein Beispielbild](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Multiplayer_snippet.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
 
