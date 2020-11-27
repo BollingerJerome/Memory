@@ -176,8 +176,13 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 
 ### Dokumentation wichtiger Code Snippets Sprint 1
 
+Im Sprint 1 wurde als erstes die Welcome Scene erstellt. Im Nachfolgenen Bild kann man den Code zu diesem Interface sehen.
 ![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Welcome%20Scene.PNG)
+
+Ein weiterer wichtiger Punkt im Sprint 1 war der EventHandler
 ![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/eventHandler%20snippet.PNG)
+
+Ebenfalls wichtig in Sprint 1 waren die ganzen Attribute
 ![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/boardClass%20attributes.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
