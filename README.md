@@ -176,8 +176,9 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 
 ### Dokumentation wichtiger Code Snippets Sprint 1
 
-![TEST](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Multiplayer_snippet.PNG)
-![Hier ist ein Beispielbild](https://example.com/bild.jpg)
+![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Welcome%20Scene.PNG)
+![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/eventHandler%20snippet.PNG)
+![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/boardClass%20attributes.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
 
@@ -226,6 +227,11 @@ Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
 | 13.1 | Momentane Statistik im GUI einbinden | 2 |
 
 ### Dokumentation wichtiger Code Snippets Sprint 2
+
+![Image for Multiplayer](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Multiplayer_snippet.PNG)
+![Image for Sorting algorithm for randomize method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/sorting%20algorithm%20for%20randomize%20method.PNG)
+![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/turning%20cards%20method.PNG)
+
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
 
 ## Dokumentation Sprint 3
