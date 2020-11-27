@@ -1,25 +1,25 @@
-package application;
+package application.presentation;
 
 import javafx.scene.paint.Color;
 
 public class TileColors {
-	
+
 	public static Color[] Back = {
 			Color.BLACK,
 			Color.DARKGRAY
 	};
-	
+
 	public static Color[] colortiles = {
 			Color.DARKGREEN,
-			Color.DARKBLUE, 
+			Color.DARKBLUE,
 			Color.CADETBLUE,
 			Color.DEEPPINK,
 			Color.DARKRED,
 			Color.ALICEBLUE,
 			Color.ANTIQUEWHITE,
 			Color.AQUA,
-			
-			
+
+
 			Color.AZURE,
 			Color.BEIGE,
 			Color.BISQUE,
@@ -35,23 +35,23 @@ public class TileColors {
 			Color.CORAL,
 			Color.CORNFLOWERBLUE,
 			Color.CORNSILK,
-			
-			Color.CYAN,	
-			
+
+			Color.CYAN,
+
 			Color.DARKCYAN,
 			Color.DARKGOLDENROD,
-			
+
 			Color.DARKKHAKI,
 			Color.DARKMAGENTA,
 			Color.DARKOLIVEGREEN,
 			Color.DARKORANGE,
-			
+
 			Color.DARKSALMON,
 			Color.DARKSEAGREEN,
 			Color.DARKSLATEBLUE,
 			Color.DARKTURQUOISE,
 			Color.DARKVIOLET,
-			
+
 			Color.DEEPSKYBLUE,
 			Color.DODGERBLUE,
 			Color.FIREBRICK,
@@ -91,5 +91,5 @@ public class TileColors {
 	public static void setBack(Color[] back) {
 		Back = back;
 	}
-	
+
 }
