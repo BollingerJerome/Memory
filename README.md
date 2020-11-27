@@ -175,6 +175,9 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 | 14.2 | Kontrollstruktur | 0.5 |
 
 ### Dokumentation wichtiger Code Snippets Sprint 1
+
+![Hier ist ein Beispielbild](https://example.com/bild.jpg)
+
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
 
 ## Dokumentation Sprint 2
