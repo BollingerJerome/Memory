@@ -1,8 +1,6 @@
 package application;
 
-//Test JEROME
-//hat es geklappt?
-import application.presentation.Board;
+import application.domain.Board;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Group;

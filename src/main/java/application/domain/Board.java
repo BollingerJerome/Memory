@@ -1,4 +1,4 @@
-package application.presentation;
+package application.domain;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import application.Main;
-import application.domain.PathStrings;
+import application.presentation.TileColors;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -162,14 +162,14 @@ public class Board {
 			col /= 2;
 			String path;
 			String which;
-			//if((tiles/2) <= PathStrings.getProfsFotos().length) {
-		//		path = "src\\main\\resources\\Fotos Memory\\Profs Fotos\\";
-		//		which = PathStrings.getProfsFotos()[col];
-		//	}
-		//	else {
+			if((tiles/2) <= PathStrings.getProfsFotos().length) {
+				path = "src\\main\\resources\\Fotos Memory\\Profs Fotos\\";
+				which = PathStrings.getProfsFotos()[col];
+			}
+			else {
 				path = "src/main/resources/Fotos Memory/Sehenswuerdigkeiten Fotos/";
 				which = PathStrings.getSehenswuerdigkeitenFotos()[col];
-		//	}
+			}
 			path += which;
 			FileInputStream fileInputStream;
 
