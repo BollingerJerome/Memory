@@ -4,6 +4,7 @@ package application;
 //hat es geklappt?
 import javafx.application.Application;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -40,7 +41,7 @@ public class Main extends Application {
 	Scene boardSize = new Scene(layout4,300,300,Color.CORNFLOWERBLUE);
 	static Scene end;
 	
-	Label[] points;
+	Label[] pointLabels;
 	
 	public static void createEnd() {
 		GridPane gridPane = new GridPane();
@@ -74,32 +75,37 @@ public class Main extends Application {
 	
 	public void createGameBoard(Board board) {
 		root = new BorderPane();
-		this.board = board;
-		Button back = new Button("Back");
+		this.board = board; // Main.board gets a board
+		
+		Button back = new Button("Back"); //back button
 		back.setOnAction(e -> {
 			Stage primaryStage = (Stage) back.getScene().getWindow();
 			primaryStage.setScene(menu);
 		});
-		Group bord = new Group();
+		
+		Group bord = new Group(); //group containing all cards
 		for (int i = 0; i< board.getHorizontalTiles(); i++) {
 			for (int j = 0; j<board.getVerticalTiles(); j++) {
 				bord.getChildren().add(board.getRectangleField()[i][j]);
 			}
 		}
-		if(players >1) {
-			GridPane names = new GridPane();
+		
+		if(players>1) { //creates pointlabels on the left side
+			
+			GridPane gridPaneLeft = new GridPane();
 			Label[] playernames = new Label[players];
-			points = new Label[players];
+			pointLabels = new Label[players];
+			
+			board.addPropertyChangeListener(e -> System.out.println("Points changed")); 
 			
 			for (int i = 0; i<board.getPlayers(); i++) {
 				playernames[i] = new Label(playerString[i] + ": ");
-				this.points[i] = new Label();
-				this.points[i].textProperty().bind(new SimpleIntegerProperty(board.getPlayerPoints()[i]).asString());
-				names.add(playernames[i], 0, i);
-				names.add(this.points[i], 1, i);
+				this.pointLabels[i] = new Label();
+				gridPaneLeft.add(playernames[i], 0, i);
+				gridPaneLeft.add(this.pointLabels[i], 1, i);
 			}
 			
-			root.setLeft(names);
+			root.setLeft(gridPaneLeft);
 		}
 		root.setCenter(bord);
 		root.setBottom(back);
@@ -124,7 +130,6 @@ public class Main extends Application {
 					this.playerString[i] = input[i].getText();
 				}
 			}
-			//I have absolutely no clue how I made this work...
 			Stage primaryStage = (Stage) go.getScene().getWindow();
 			primaryStage.setScene(boardSize);
 			});

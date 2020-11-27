@@ -1,9 +1,13 @@
 package application;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -65,6 +69,15 @@ public class Board {
 	private int players;
 	private int[] playerPoints;
 	private int[][] fotos;
+	private final PropertyChangeSupport changes = new PropertyChangeSupport( this );
+	
+	public void addPropertyChangeListener( PropertyChangeListener listener ) {
+        changes.addPropertyChangeListener( listener );
+    }
+
+    public void removePropertyChangeListener( PropertyChangeListener listener ) {
+        changes.removePropertyChangeListener( listener );
+    }
 	
 	// turns the card if front table is true and turns them back if front is false
 	public void turnCards () {
@@ -156,14 +169,14 @@ public class Board {
 			col /= 2;
 			String path; 
 			String which;
-			if((tiles/2) <= PathStrings.getProfsFotos().length) {
-				path = "src\\main\\resources\\Fotos Memory\\Profs Fotos\\";
-				which = PathStrings.getProfsFotos()[col];
-			}
-			else {
+			//if((tiles/2) <= PathStrings.getProfsFotos().length) {
+		//		path = "src\\main\\resources\\Fotos Memory\\Profs Fotos\\";
+		//		which = PathStrings.getProfsFotos()[col];
+		//	}
+		//	else {
 				path = "src\\main\\resources\\Fotos Memory\\Sehenswuerdigkeiten Fotos\\";
 				which = PathStrings.getSehenswuerdigkeitenFotos()[col];
-			}
+		//	}
 			path += which;
 			FileInputStream fileInputStream;
 	
@@ -248,14 +261,18 @@ public class Board {
 	};
 	
 	//checking if the colors are matching
+	
 	public boolean equalColors(int cx, int cy, int lx, int ly) {
 		if(lastFlippedX[0] >= 0) {
 			
 			if(fotos[cx][cy] == fotos[lx][ly] && !((cx == lx) && (cy == ly))) {
-				playerPoints[turn%players] = playerPoints[turn%players]+1;
+				int[] point = playerPoints;
+				point[turn%players] = playerPoints[turn%players]+1;
+				setPlayerPoints(point);
+			
+				
 				turn++;
 				flip = 0;
-				
 				return true;
 			}
 			else {
@@ -270,7 +287,11 @@ public class Board {
 	public boolean equalImage(int cx, int cy, int lx, int ly) {
 		if(lastFlippedX[0] >= 0) {
 			if(fotos[cx][cy] == fotos[lx][ly] && !((cx == lx) && (cy == ly))) {
-				playerPoints[turn%players] = playerPoints[turn%players]+1;
+				
+				int[] etwas = playerPoints;
+				etwas[turn%players] = playerPoints[turn%players]+1;
+				setPlayerPoints(etwas); //add point to player
+				
 				flip = 0;
 				return true;
 			}
@@ -332,63 +353,50 @@ public class Board {
 	public void setRectangleField(Rectangle[][] rectangleField) {
 		this.rectangleField = rectangleField;
 	}
-
 	public boolean[][] getFront() {
 		return front;
 	}
-
 	public void setFront(boolean[][] front) {
 		this.front = front;
 	}
-
 	public Color[][] getBackColors() {
 		return backColors;
 	}
-
 	public void setBackColors(Color[][] backColors) {
 		this.backColors = backColors;
 	}
-
-
-
 	public int getFlip() {
 		return flip;
 	}
-
 	public void setFlip(int flip) {
 		this.flip = flip;
 	}
-
 	public int getTurn() {
 		return turn;
 	}
-
 	public void setTurn(int turn) {
 		this.turn = turn;
 	}
-
 	public String[] getPlayerNames() {
 		return PlayerNames;
 	}
-
 	public void setPlayerNames(String[] playerNames) {
-		PlayerNames = playerNames;
+		PlayerNames = playerNames;	
 	}
-
 	public int getPlayers() {
 		return players;
 	}
-
 	public void setPlayers(int players) {
 		this.players = players;
 	}
-
 	public int[] getPlayerPoints() {
 		return playerPoints;
 	}
-
 	public void setPlayerPoints(int[] playerPoints) {
+		int[] oldpoints = this.playerPoints;
 		this.playerPoints = playerPoints;
+		System.out.println("setPlayerPoints method executed");
+		changes.firePropertyChange( "playerPoints", oldpoints, playerPoints );
 	}
 
 
