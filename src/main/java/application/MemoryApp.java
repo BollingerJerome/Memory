@@ -64,7 +64,7 @@ public class MemoryApp extends Application{
 		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
 			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
 				System.out.println("cards get property");
-				boardModel.getField()[i][j].addPropertyChangeListener(e -> boardView.turnCards());
+				boardModel.getField()[i][j].addPropertyChangeListener(e -> System.out.println("nothing"));
 			}
 		}
 	}

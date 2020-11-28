@@ -38,13 +38,13 @@ public class PlayModel {
 	}
 
 	public void turn(Card card) {
-		playFlow(card);
 		if(round%3 == 0) {
 			turn = 0;
 		}
 		else {
 			turn++;
 		}
+		playFlow(card);
 		round++;
 	}
 
@@ -60,9 +60,6 @@ public class PlayModel {
 		else {
 			return false;
 		}
-		
-		
-		
 	}
 
 

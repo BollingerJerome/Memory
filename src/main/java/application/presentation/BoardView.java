@@ -22,7 +22,6 @@ public class BoardView {
 		this.boardModel = boardModel;
 	}
 
-
 	private BoardModel boardModel;
 	private Rectangle[][] rectangles;
 	private Controller controller;
@@ -34,6 +33,7 @@ public class BoardView {
 			@Override
 			public void handle(MouseEvent event) {
 				controller.turn(isWhichCardObject(event.getSource()));
+				turnCards();
 			}
 		};
 	};
@@ -50,8 +50,7 @@ public class BoardView {
 		return null;
 	}
 	
-	public Group turnCards() {
-		Group board = new Group();
+	public void turnCards() {
 		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
 			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
 				if(boardModel.getField()[i][j].isOpen()) {
@@ -60,10 +59,8 @@ public class BoardView {
 				else {
 					rectangles[i][j].setFill(cardsBack[i][j]);
 				}
-				board.getChildren().add(rectangles[i][j]);
 			}
 		}
-		return board;
 	}
 	
 	
@@ -100,14 +97,13 @@ public class BoardView {
 		}
 		
 		FileInputStream fileInputStream;
-		Group group = new Group();
 		for(int i = 0; i<tiles; i++) {
 			
 			which = ofWhich[posIndex[1][i]];
 			String finalPath = path+which;
 			int x = posIndex[0][i]%hor;
 			int y = posIndex[0][i]/hor;
-			cardsBack[x][y] = backColors[i%2];
+			cardsBack[i%hor][i/hor] = backColors[((i%hor)+(i/hor))%2];
 			
 			try {
 				fileInputStream = new FileInputStream(finalPath);
@@ -116,6 +112,12 @@ public class BoardView {
 				e.printStackTrace();
 			}	
 		}
-		return turnCards();
+		turnCards();
+		for(int i = 0; i<hor; i++) {
+			for(int j = 0; j<ver; j++) {
+				board.getChildren().add(rectangles[i][j]);
+			}
+		}
+		return board;
 	}
 }
