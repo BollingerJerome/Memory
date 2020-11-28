@@ -3,7 +3,11 @@ package application;
 import application.domain.Board;
 import application.domain.BoardModel;
 import application.domain.Boardprops;
+import application.domain.DomainController;
+import application.domain.PlayModel;
+import application.presentation.BoardSizeView;
 import application.presentation.BoardView;
+import application.presentation.Controller;
 import application.presentation.Home;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -21,19 +25,30 @@ public class MemoryApp extends Application{
 	private BoardView boardView;
 	private Boardprops props;
 	private Home home;
+	private BoardSizeView boardSizeView;
+	private Controller controller;
+	private DomainController domainController;
+	private PlayModel playModel;
+	Stage primaryStage;
+	
+	
 	
 	@Override
 	public void start(Stage primaryStage) {
+		
+		
 		props = new Boardprops(600,600);
-		boardModel = new BoardModel(8, 8, props);
-		boardView = new BoardView(boardModel);
-		Group group = boardView.setupCards();
-		home = new Home(300,300, Color.WHITE);
+		boardModel = new BoardModel(6, 6, props);
+		playModel = new PlayModel(boardModel);
+		domainController = new DomainController(boardModel, playModel);
+		controller = new Controller(domainController);
+		boardSizeView = new BoardSizeView(300,300, Color.WHITE, controller, boardView, boardModel);
+		home = new Home(300,300, Color.WHITE, boardSizeView);
+		boardModel.addPropertyChangeListener(e -> addCardListener());
+				
 		
 		try {
 			
-			Scene scene = new Scene(group);
-
 			primaryStage.setScene(home.getScene());
 			primaryStage.setTitle("Welcome to Memory!");
 			primaryStage.show();
@@ -44,6 +59,16 @@ public class MemoryApp extends Application{
 		}
 	}
 
+	
+	public void addCardListener() {
+		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
+			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
+				System.out.println("cards get property");
+				boardModel.getField()[i][j].addPropertyChangeListener(e -> boardView.turnCards());
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

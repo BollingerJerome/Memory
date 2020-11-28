@@ -6,28 +6,74 @@ import java.io.FileNotFoundException;
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.PathStrings;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class BoardView {
 
 
-	public BoardView(BoardModel boardModel) {
-
+	public BoardView(BoardModel boardModel, Controller controller) {
+		this.controller = controller;
 		this.boardModel = boardModel;
 	}
 
 
 	private BoardModel boardModel;
 	private Rectangle[][] rectangles;
+	private Controller controller;
+	private ImagePattern[][] cardsFront;
+	private Color[][] cardsBack;
+	
+	private EventHandler<MouseEvent> getEventHandler (){
+		return new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				controller.turn(isWhichCardObject(event.getSource()));
+			}
+		};
+	};
+	
+	public Card isWhichCardObject(Object object) {
+		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
+			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
+				if(object.equals(rectangles[i][j])) {
+					return boardModel.getField()[i][j];
+				}
+				
+			}
+		}
+		return null;
+	}
+	
+	public Group turnCards() {
+		Group board = new Group();
+		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
+			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
+				if(boardModel.getField()[i][j].isOpen()) {
+					rectangles[i][j].setFill(cardsFront[i][j]);
+				}
+				else {
+					rectangles[i][j].setFill(cardsBack[i][j]);
+				}
+				board.getChildren().add(rectangles[i][j]);
+			}
+		}
+		return board;
+	}
 	
 	
 	public Group setupCards() {
+		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		Group board = new Group();
 		int hor = boardModel.getHorizontalTiles();
 		int ver = boardModel.getVerticalTiles();
+		cardsFront = new ImagePattern[hor][ver];
+		cardsBack = new Color[hor][ver];
 		rectangles = new Rectangle[hor][ver];
 		double width = boardModel.getField()[0][0].getWidht();
 		double height = boardModel.getField()[0][0].getHeight();
@@ -35,6 +81,7 @@ public class BoardView {
 			for(int j = 0; j<ver; j++) {
 				Card card = boardModel.getField()[i][j];
 				rectangles[i][j] = new Rectangle(i*width, j*height, width, height);
+				rectangles[i][j].addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}
 		}
 		int tiles = hor*ver;
@@ -42,6 +89,7 @@ public class BoardView {
 		
 		String path, which;
 		String[] ofWhich;
+		Color[] backColors = TileColors.getBack();
 		if((tiles/2) <= PathStrings.getProfsFotos().length) {
 			path = "src/main/resources/Fotos Memory/Profs Fotos/";
 			ofWhich = PathStrings.getProfsFotos();
@@ -52,26 +100,22 @@ public class BoardView {
 		}
 		
 		FileInputStream fileInputStream;
+		Group group = new Group();
 		for(int i = 0; i<tiles; i++) {
 			
 			which = ofWhich[posIndex[1][i]];
 			String finalPath = path+which;
 			int x = posIndex[0][i]%hor;
 			int y = posIndex[0][i]/hor;
+			cardsBack[x][y] = backColors[i%2];
 			
 			try {
-				System.out.println(x);
-				System.out.println(y);
 				fileInputStream = new FileInputStream(finalPath);
-				rectangles[x][y].setFill(new ImagePattern(new Image(fileInputStream)));
+				cardsFront[x][y] = (new ImagePattern(new Image(fileInputStream)));
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			board.getChildren().add(rectangles[x][y]);
+			}	
 		}
-		
-		return board;
+		return turnCards();
 	}
-	
 }
