@@ -20,6 +20,9 @@ public class BoardSizeView extends WindowProps{
 	private Controller controller;
 	private BoardView boardView;
 	private BoardModel boardModel;
+	
+	
+	
 	public Scene getScene() {
 		VBox vbox = new VBox();
 		Label label4= new Label("Please select the size of the board:");

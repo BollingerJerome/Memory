@@ -104,7 +104,7 @@ public class BoardView {
 			int x = posIndex[0][i]%hor;
 			int y = posIndex[0][i]/hor;
 			cardsBack[i%hor][i/hor] = backColors[((i%hor)+(i/hor))%2];
-			
+			boardModel.getField()[x][y].setPairId(posIndex[1][i]);
 			try {
 				fileInputStream = new FileInputStream(finalPath);
 				cardsFront[x][y] = (new ImagePattern(new Image(fileInputStream)));

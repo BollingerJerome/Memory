@@ -16,45 +16,8 @@ public class PlayModel {
 	private int lastX;
 	private int lastY;
 
-	public void playFlow(Card card) {
-		switch(turn) {
-		case 0:
-			if(setPosition(card)) {
-				board.getField()[currentX][currentY].setOpen(true);
-			}
-			break;
-		case 1:
-			if(setPosition(card)) {
-				board.getField()[currentX][currentY].setOpen(true);
-				System.out.println("second open");
-			}
-			break;
-		case 2:
-			if(true) {
-				board.getField()[currentX][currentY].setOpen(false);
-				board.getField()[lastX][lastY].setOpen(false);
-			}
-		}
-	}
-
-	public void turn(Card card) {
-		if(round%3 == 0) {
-			turn = 0;
-		}
-		else {
-			turn++;
-		}
-		playFlow(card);
-		round++;
-	}
-
-	public boolean setPosition(Card card) {			
-		System.out.println("is this card:" + card.getX() + card.getY());
-		if(!card.isOpen()) {
-			lastX = currentX;
-			lastY = currentY;
-			currentX = card.getX();
-			currentY = card.getY();
+	public boolean isTheSame(Card cardOne, Card cardTwo) {
+		if(cardOne.getPairId() == cardTwo.getPairId()) {
 			return true;
 		}
 		else {
@@ -62,7 +25,53 @@ public class PlayModel {
 		}
 	}
 
+	public boolean playFlow(Card card) {
+		switch(turn) {
+		case 0:
+			if(!card.isOpen()) {
+				if(!card.isFound()) {
+					setPosition(card);
+					board.getField()[currentX][currentY].setOpen(true);
+					turn++;
+					return true;
+				}				
+			}
+			return false;
+		case 1:
+			if(!card.isOpen() && !card.isFound() ) {
+				setPosition(card);
+				board.getField()[currentX][currentY].setOpen(true);
+				if(isTheSame(board.getField()[currentX][currentY], board.getField()[lastX][lastY])) {
+					board.getField()[currentX][currentY].setFound(true);
+					board.getField()[lastX][lastY].setFound(true);
+					turn = 0;
+				}
+				else {
+					turn++;
+				}
+				return true;
+			}
+			return false;
+		case 2:
+			board.getField()[currentX][currentY].setOpen(false);
+			board.getField()[lastX][lastY].setOpen(false);
+			turn = 0;
+			return true;
+		}
+		return false;
+	}
 
+	public void turn(Card card) {
+		playFlow(card);
+		round++;
+	}
+
+	public void setPosition(Card card) {			
+		lastX = currentX;
+		lastY = currentY;
+		currentX = card.getX();
+		currentY = card.getY();
+	}
 
 
 	public int getTurn() {

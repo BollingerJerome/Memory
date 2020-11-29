@@ -4,11 +4,14 @@ import application.domain.Board;
 import application.domain.BoardModel;
 import application.domain.Boardprops;
 import application.domain.DomainController;
+import application.domain.MultiplayerBoardModel;
 import application.domain.PlayModel;
 import application.presentation.BoardSizeView;
 import application.presentation.BoardView;
 import application.presentation.Controller;
 import application.presentation.Home;
+import application.presentation.InputPlayerNamesView;
+import application.presentation.MultiplayerPlayersView;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -29,8 +32,9 @@ public class MemoryApp extends Application{
 	private Controller controller;
 	private DomainController domainController;
 	private PlayModel playModel;
-	Stage primaryStage;
-	
+	private MultiplayerBoardModel multiplayerBoardModel;
+	private  MultiplayerPlayersView multiplayerPlayersView;
+	private InputPlayerNamesView inputPlayerNamesView;
 	
 	
 	@Override
@@ -38,12 +42,15 @@ public class MemoryApp extends Application{
 		
 		
 		props = new Boardprops(600,600);
+		multiplayerBoardModel = new MultiplayerBoardModel(6,6,props,1);
+		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.WHITE, multiplayerBoardModel);
 		boardModel = new BoardModel(6, 6, props);
+		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.WHITE, multiplayerBoardModel, inputPlayerNamesView);
 		playModel = new PlayModel(boardModel);
 		domainController = new DomainController(boardModel, playModel);
 		controller = new Controller(domainController);
 		boardSizeView = new BoardSizeView(300,300, Color.WHITE, controller, boardView, boardModel);
-		home = new Home(300,300, Color.WHITE, boardSizeView);
+		home = new Home(300,300, Color.WHITE, boardSizeView, multiplayerPlayersView);
 		boardModel.addPropertyChangeListener(e -> addCardListener());
 				
 		

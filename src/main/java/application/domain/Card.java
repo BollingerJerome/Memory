@@ -5,8 +5,6 @@ import java.beans.PropertyChangeSupport;
 
 public class Card {
 	
-	
-	
 	public Card(double widht, double height, boolean open, boolean found, int x, int y) {
 		this.widht = widht;
 		this.height = height;
@@ -16,6 +14,7 @@ public class Card {
 		this.y = y;
 	}
 	
+	private int pairId;
 	private int x,y;
 	private double widht, height;
 	private boolean open;
@@ -68,6 +67,14 @@ public class Card {
 	}
 	public void setY(int y) {
 		this.y = y;
+	}
+
+	public int getPairId() {
+		return pairId;
+	}
+
+	public void setPairId(int pairId) {
+		this.pairId = pairId;
 	}
 	
 
