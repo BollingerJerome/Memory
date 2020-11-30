@@ -2,7 +2,6 @@ package application.presentation;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.PathStrings;
@@ -100,7 +99,6 @@ public class BoardView {
 		//create all Rectangle objects
 		for(int i = 0; i<hor; i++) {
 			for(int j = 0; j<ver; j++) {
-				Card card = boardModel.getField()[i][j];
 				rectangles[i][j] = new Rectangle(i*width, j*height, width, height);
 				rectangles[i][j].addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}

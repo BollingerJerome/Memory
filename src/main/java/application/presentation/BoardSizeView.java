@@ -1,12 +1,11 @@
 package application.presentation;
 
-import application.domain.BoardModel;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+
 
 public class BoardSizeView extends WindowProps{
 
@@ -17,10 +16,6 @@ public class BoardSizeView extends WindowProps{
 	
 	
 	private Controller controller;
-	private Button vier;
-	private Button sechs;
-	private Button acht;
-	private Button zehn;
 	
 	public Scene getScene() {
 		VBox vbox = new VBox();

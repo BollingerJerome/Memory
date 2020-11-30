@@ -5,13 +5,12 @@ import java.beans.PropertyChangeListener;
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.DomainController;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Controller {
 
-	public Controller(DomainController domainController, BoardSizeView boardSizeView,
+	public Controller(Stage primaryStage, DomainController domainController, BoardSizeView boardSizeView,
 			MultiplayerPlayersView multiplayerPlayersView, BoardView boardView, InputPlayerNamesView inputPlayerNamesView,
 			StatsView statsView, Home home) {
 		this.domainController = domainController;
@@ -21,6 +20,7 @@ public class Controller {
 		this.inputPlayerNamesView = inputPlayerNamesView;
 		this.statsView = statsView;
 		this.home = home;
+		this.primaryStage = primaryStage;
 	}
 	
 	private Home home;
@@ -36,12 +36,9 @@ public class Controller {
 	
 	//Home Buttons
 	public void showBoardSizeView(Button button) {
-		this.primaryStage = (Stage) button.getScene().getWindow();
-		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(boardSizeView.getScene());
 	}
 	public void setMultiplayerPlayersView(Button button) {
-		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(multiplayerPlayersView.getMultiplayersViewScene());
 	}
 	
@@ -51,7 +48,6 @@ public class Controller {
 	
 	//BoardSizeButtons
 	public void showBoard(Button button) {
-		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(boardView.setupCards());
 	}
 	public void setBoardSize(int size) {
@@ -72,7 +68,6 @@ public class Controller {
 	}
 	
 	public void showInputPlayerNamesView(Button button) {
-		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(inputPlayerNamesView.getInputPlayerNamesViewScene());
 	}
 	
