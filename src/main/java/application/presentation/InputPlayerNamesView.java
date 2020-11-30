@@ -49,7 +49,6 @@ public class InputPlayerNamesView extends WindowProps {
 
 		gridPane.add(label3_1, 0, 0);
 		for (int i = 0; i<players; i++) {
-			System.out.println(players);
 			gridPane.add(playertext[i], 0, i+1);
 			gridPane.add(input[i], 1, i+1);
 		}
