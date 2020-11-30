@@ -20,6 +20,7 @@ public class PlayModel {
 
 	public boolean isTheSame(Card cardOne, Card cardTwo) {
 		if(cardOne.getPairId() == cardTwo.getPairId()) {
+			playerModel[round%playerModel.length].setPoint(playerModel[round%playerModel.length].getPoint()+1);
 			return true;
 		}
 		else {
@@ -46,6 +47,7 @@ public class PlayModel {
 				if(isTheSame(board.getField()[currentX][currentY], board.getField()[lastX][lastY])) {
 					board.getField()[currentX][currentY].setFound(true);
 					board.getField()[lastX][lastY].setFound(true);
+					round++;
 					turn = 0;
 				}
 				else {
@@ -58,6 +60,7 @@ public class PlayModel {
 			board.getField()[currentX][currentY].setOpen(false);
 			board.getField()[lastX][lastY].setOpen(false);
 			turn = 0;
+			round++;
 			return true;
 		}
 		return false;
@@ -65,7 +68,7 @@ public class PlayModel {
 
 	public void turn(Card card) {
 		playFlow(card);
-		round++;
+		
 	}
 
 	public void setPosition(Card card) {			
@@ -92,11 +95,14 @@ public class PlayModel {
 	public PlayerModel[] getPlayerModel() {
 		return playerModel;
 	}
+	public int getPlayerPoint(int i) {
+		return playerModel[i].getPoint();
+	}
 
 	public void setPlayerModel(int a) {
 		this.playerModel = new PlayerModel[a];
 		for (int i = 0; i<a; i++) {
-			String defaultName = "Player" + (i+1);
+			String defaultName = "Player " + (i+1) +": ";
 			playerModel[i] = new PlayerModel(0, defaultName);
 		}
 	}

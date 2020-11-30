@@ -1,21 +1,35 @@
 package application.domain;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 public class PlayerModel {
 
 	public PlayerModel() {}
 	
 	public PlayerModel(int point, String name) {
-		Point = point;
+		point = point;
 		this.name = name;
 	}
-	private int Point;
+	private int point;
 	private String name;
+	private final PropertyChangeSupport changes = new PropertyChangeSupport( this );
+
+	public void addPropertyChangeListener( PropertyChangeListener listener ) {
+		changes.addPropertyChangeListener( listener );
+	}
+
+	public void removePropertyChangeListener( PropertyChangeListener listener ) {
+		changes.removePropertyChangeListener( listener );
+	}
 	
 	public int getPoint() {
-		return Point;
+		return point;
 	}
 	public void setPoint(int point) {
-		Point = point;
+		int oldpoint = this.point;
+		this.point = point;
+		changes.firePropertyChange("point", oldpoint, point);
 	}
 	public String getName() {
 		return name;

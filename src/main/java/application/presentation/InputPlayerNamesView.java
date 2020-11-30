@@ -32,7 +32,9 @@ public class InputPlayerNamesView extends WindowProps {
 
 		go.setOnAction(e -> {
 			for (int i = 0; i<players; i++) {
-				controller.setPlayerName(i, input[i].getText());
+				if(!input[i].getText().isEmpty()) {
+					controller.setPlayerName(i, input[i].getText());
+				}
 			}
 			controller.showBoardSizeView(go);
 		});

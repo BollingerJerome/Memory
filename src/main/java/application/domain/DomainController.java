@@ -20,7 +20,6 @@ public class DomainController {
 	}
 
 	public void setBoardSize (int a) {
-		System.out.println("setSize");
 		boardModel.setBoardSize(a);
 	}
 
@@ -38,6 +37,18 @@ public class DomainController {
 	
 	public int getNumberOfPlayers() {
 		return playModel.getPlayerModel().length;
+	}
+	
+	public int getPlayerPoint(int i) {
+		return playModel.getPlayerPoint(i);
+	}
+	
+	public String getPlayerName(int i) {
+		return playModel.getPlayerModel()[i].getName();
+	}
+	
+	public PlayerModel[] getPlayersModel() {
+		return playModel.getPlayerModel();
 	}
 
 }

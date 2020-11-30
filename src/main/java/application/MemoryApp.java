@@ -36,7 +36,7 @@ public class MemoryApp extends Application{
 	private PlayModel playModel;
 	private MultiplayerPlayersView multiplayerPlayersView;
 	private InputPlayerNamesView inputPlayerNamesView;
-	private PlayerModel playerModel;
+
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -44,7 +44,6 @@ public class MemoryApp extends Application{
 		
 		props = new Boardprops(600,600);
 		boardModel = new BoardModel(props);
-		playerModel = new PlayerModel();
 		playModel = new PlayModel(boardModel);
 		domainController = new DomainController(boardModel, playModel);
 	

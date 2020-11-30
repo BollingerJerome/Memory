@@ -62,7 +62,7 @@ public class PathStrings {
 			"pisa.png",
 			"pyramid.png",
 			"sacre_coeur.png",
-			"Senso_ji_temple.png",
+			"Senso_ji_tempel.png",
 			"sidney_theatre.png",
 			"spain_cathedral.png",
 			"statue_liberty.png",

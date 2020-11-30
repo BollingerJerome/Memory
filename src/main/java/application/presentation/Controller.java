@@ -42,7 +42,7 @@ public class Controller {
 	//BoardSizeButtons
 	public void showBoard(Button button) {
 		Stage primaryStage = (Stage) button.getScene().getWindow();
-		primaryStage.setScene(new Scene(boardView.setupCards()));
+		primaryStage.setScene(boardView.setupCards());
 	}
 	public void setBoardSize(int size) {
 		System.out.println("controller executed");
@@ -66,16 +66,25 @@ public class Controller {
 	//Playerplayers
 	public void setNumberOfPlayers(int a) {
 		domainController.setNumberOfPlayers(a);
+		for(int i = 0; i<a; i++) {
+			domainController.getPlayersModel()[i].addPropertyChangeListener(e -> boardView.updatePlayerPoints());
+		}
 	}
 	
 	public int getNumberOfPlayers() {
 		return domainController.getNumberOfPlayers();
 	}
 
+	//inputplayerNames
 	public void setPlayerName(int i, String name) {
 		domainController.setPlayerName(i, name);
 	}
-	
+	public String getPlayerName(int i) {
+		return domainController.getPlayerName(i);
+	}
+	public int getPlayerPoint(int i) {
+		return domainController.getPlayerPoint(i);
+	}
 	
 	//else
 	public BoardSizeView getBoardSizeView() {
