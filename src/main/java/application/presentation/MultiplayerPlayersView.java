@@ -1,6 +1,6 @@
 package application.presentation;
 
-import application.domain.MultiplayerBoardModel;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,13 +10,12 @@ import javafx.stage.Stage;
 
 public class MultiplayerPlayersView extends WindowProps{
 
-	public MultiplayerPlayersView(double width, double height, Color backgroundColor, MultiplayerBoardModel multi, InputPlayerNamesView input) {
+	public MultiplayerPlayersView(double width, double height, Color backgroundColor, Controller controller) {
 		super(width, height, backgroundColor);
-		this.multiModel = multi;
-		this.input = input;
+		this.controller = controller;
 	}
-	private MultiplayerBoardModel multiModel;
-	private InputPlayerNamesView input;
+	private Controller controller;
+	
 	
 	public Scene getMultiplayersViewScene() {
 		GridPane gridPane = new GridPane();
@@ -26,20 +25,17 @@ public class MultiplayerPlayersView extends WindowProps{
 		Button button4 = new Button("4 Players");
 		
 		button2.setOnAction(e ->{
-			multiModel.setPlayers(2);
-			Stage primaryStage = (Stage) button2.getScene().getWindow();
-			primaryStage.setScene(input.getInputPlayerNamesViewScene());
+			controller.setNumberOfPlayers(2);
+			controller.showInputPlayerNamesView(button2);
 		});
 		
 		button3.setOnAction(e ->{
-			multiModel.setPlayers(3);
-			Stage primaryStage = (Stage) button3.getScene().getWindow();
-			primaryStage.setScene(input.getInputPlayerNamesViewScene());
+			controller.setNumberOfPlayers(3);
+			controller.showInputPlayerNamesView(button3);
 		});
 		button4.setOnAction(e ->{
-			multiModel.setPlayers(4);
-			Stage primaryStage = (Stage) button4.getScene().getWindow();
-			primaryStage.setScene(input.getInputPlayerNamesViewScene());
+			controller.setNumberOfPlayers(4);
+			controller.showInputPlayerNamesView(button4);
 		});
 		gridPane.add(text, 0, 0);
 		gridPane.add(button2, 0, 1);

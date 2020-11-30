@@ -10,14 +10,16 @@ import javafx.stage.Stage;
 
 public class Home extends WindowProps {
 
-	public Home(double width, double height, Color backgroundColor, BoardSizeView boardSize, MultiplayerPlayersView multi) {
+	public Home(double width, double height, Color backgroundColor, Controller controller) {
 		super(width, height, backgroundColor);
-		this.boardSize = boardSize;
-		this.multi = multi;
+		this.controller = controller;
+		
 	}
 	
-	private BoardSizeView boardSize;
-	private MultiplayerPlayersView multi;
+	private Button buttonMulti;
+	private Button buttonSolo;
+	private Controller controller;
+	
 	
 	public Scene getScene() {
 		
@@ -25,14 +27,12 @@ public class Home extends WindowProps {
 		Label label1 = new Label("Welcome to Memory!");
 		Button buttonSolo = new Button("Solo");
 		buttonSolo.setOnAction(e ->{
-			Stage primaryStage = (Stage) buttonSolo.getScene().getWindow();
-			primaryStage.setScene(boardSize.getScene());
+			controller.setBoardSizeView(buttonSolo);
 		});
 		
 		Button buttonMulti = new Button("Multiplayer");
 		buttonMulti.setOnAction(e -> {
-			Stage primaryStage = (Stage) buttonMulti.getScene().getWindow();
-			primaryStage.setScene(multi.getMultiplayersViewScene());
+			controller.setMultiplayerPlayersView(buttonMulti);
 		});
 		grid.add(label1,0,0);
 		grid.add(buttonSolo,0,1);
@@ -41,6 +41,7 @@ public class Home extends WindowProps {
 		
 		return home;
 	}
+
 	
 	
 }

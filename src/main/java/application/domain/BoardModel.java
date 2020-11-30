@@ -5,19 +5,14 @@ import java.beans.PropertyChangeSupport;
 
 public class BoardModel {
 
-	public BoardModel(int horizontalTiles, int verticalTiles, Boardprops boardprops) {
+	public BoardModel(Boardprops boardprops) {
 		this.boardprops = boardprops;
-		this.horizontalTiles = horizontalTiles;
-		this.verticalTiles = verticalTiles;
-		this.positonsOfIndex = new int[2][horizontalTiles*verticalTiles];
-		positonsOfIndex = HelperClass.randomizeMemoryBoard(horizontalTiles, verticalTiles);
-		this.field = new Card[horizontalTiles][verticalTiles];
-		this.field = fillBoard(this, boardprops.getWidth()/horizontalTiles, boardprops.getHeight()/verticalTiles);
 	}
 
 	private Boardprops boardprops;
 	private Card[][] field;
-	private int horizontalTiles, verticalTiles;
+	private int horizontalTiles;
+	private int verticalTiles;
 	private int[][] positonsOfIndex;
 	private final PropertyChangeSupport changes = new PropertyChangeSupport( this );
 
@@ -49,14 +44,21 @@ public class BoardModel {
 		return horizontalTiles;
 	}
 
-	public void setHorizontalTiles(int horizontalTiles) {
-		int oldhor = this.horizontalTiles;
-		this.horizontalTiles = horizontalTiles;
+	public void setBoardSize(int a) {
+		BoardModel oldboardModel = this;
+		setHorizontalTiles(a);
+		setVerticalTiles(a);
 		this.positonsOfIndex = new int[2][horizontalTiles*verticalTiles];
 		positonsOfIndex = HelperClass.randomizeMemoryBoard(horizontalTiles, verticalTiles);
 		this.field = new Card[horizontalTiles][verticalTiles];
 		this.field = fillBoard(this, boardprops.getWidth()/horizontalTiles, boardprops.getHeight()/verticalTiles);
-		changes.firePropertyChange("horizintalTiles", oldhor, horizontalTiles);
+		
+		changes.firePropertyChange("boardModel", oldboardModel, this);
+	}
+	
+	public void setHorizontalTiles(int horizontalTiles) {
+		this.horizontalTiles = horizontalTiles;
+
 	}
 
 	public int getVerticalTiles() {
@@ -64,13 +66,8 @@ public class BoardModel {
 	}
 
 	public void setVerticalTiles(int verticalTiles) {
-		int oldver = this.verticalTiles;
 		this.verticalTiles = verticalTiles;
-		this.positonsOfIndex = new int[2][horizontalTiles*verticalTiles];
-		positonsOfIndex = HelperClass.randomizeMemoryBoard(horizontalTiles, verticalTiles);
-		this.field = new Card[horizontalTiles][verticalTiles];
-		this.field = fillBoard(this, boardprops.getWidth()/horizontalTiles, boardprops.getHeight()/verticalTiles);
-		changes.firePropertyChange("verticalTiles", oldver, verticalTiles);
+		
 	}
 
 	public Boardprops getBoardprops() {

@@ -3,8 +3,8 @@ package application.presentation;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-import application.domain.BoardModel;
 import application.domain.Card;
+import application.domain.MultiplayerBoardModel;
 import application.domain.PathStrings;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -14,14 +14,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-public class BoardView {
+public class MultiplayerBoardView {
 
-
-	public BoardView(Controller controller) {
+	public MultiplayerBoardView(MultiplayerBoardModel multiboardModel, Controller controller) {
 		this.controller = controller;
+		this.multiboardModel = multiboardModel;
 	}
 
-	//private BoardModel boardModel;
+	private MultiplayerBoardModel multiboardModel;
 	private Rectangle[][] rectangles;
 	private Controller controller;
 	private ImagePattern[][] cardsFront;
@@ -38,11 +38,10 @@ public class BoardView {
 	};
 	
 	public Card isWhichCardObject(Object object) {
-		BoardModel boardModel = controller.getBoardModel();
-		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
-			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
+		for(int i = 0; i<multiboardModel.getHorizontalTiles(); i++) {
+			for(int j = 0; j<multiboardModel.getVerticalTiles(); j++) {
 				if(object.equals(rectangles[i][j])) {
-					return boardModel.getField()[i][j];
+					return multiboardModel.getField()[i][j];
 				}
 				
 			}
@@ -51,10 +50,9 @@ public class BoardView {
 	}
 	
 	public void turnCards() {
-		BoardModel boardModel = controller.getBoardModel();
-		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
-			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
-				if(boardModel.getField()[i][j].isOpen()) {
+		for(int i = 0; i<multiboardModel.getHorizontalTiles(); i++) {
+			for(int j = 0; j<multiboardModel.getVerticalTiles(); j++) {
+				if(multiboardModel.getField()[i][j].isOpen()) {
 					rectangles[i][j].setFill(cardsFront[i][j]);
 				}
 				else {
@@ -66,25 +64,24 @@ public class BoardView {
 	
 	
 	public Group setupCards() {
-		BoardModel boardModel = controller.getBoardModel();
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		Group board = new Group();
-		int hor = boardModel.getHorizontalTiles();
-		int ver = boardModel.getVerticalTiles();
+		int hor = multiboardModel.getHorizontalTiles();
+		int ver = multiboardModel.getVerticalTiles();
 		cardsFront = new ImagePattern[hor][ver];
 		cardsBack = new Color[hor][ver];
 		rectangles = new Rectangle[hor][ver];
-		double width = boardModel.getField()[0][0].getWidht();
-		double height = boardModel.getField()[0][0].getHeight();
+		double width = multiboardModel.getField()[0][0].getWidht();
+		double height = multiboardModel.getField()[0][0].getHeight();
 		for(int i = 0; i<hor; i++) {
 			for(int j = 0; j<ver; j++) {
-				Card card = boardModel.getField()[i][j];
+				Card card = multiboardModel.getField()[i][j];
 				rectangles[i][j] = new Rectangle(i*width, j*height, width, height);
 				rectangles[i][j].addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}
 		}
 		int tiles = hor*ver;
-		int[][] posIndex = boardModel.getPositonsOfIndex();
+		int[][] posIndex = multiboardModel.getPositonsOfIndex();
 		
 		String path, which;
 		String[] ofWhich;
@@ -106,7 +103,7 @@ public class BoardView {
 			int x = posIndex[0][i]%hor;
 			int y = posIndex[0][i]/hor;
 			cardsBack[i%hor][i/hor] = backColors[((i%hor)+(i/hor))%2];
-			boardModel.getField()[x][y].setPairId(posIndex[1][i]);
+			multiboardModel.getField()[x][y].setPairId(posIndex[1][i]);
 			try {
 				fileInputStream = new FileInputStream(finalPath);
 				cardsFront[x][y] = (new ImagePattern(new Image(fileInputStream)));
@@ -123,3 +120,4 @@ public class BoardView {
 		return board;
 	}
 }
+

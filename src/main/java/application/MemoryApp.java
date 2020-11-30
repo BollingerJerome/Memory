@@ -4,13 +4,14 @@ import application.domain.Board;
 import application.domain.BoardModel;
 import application.domain.Boardprops;
 import application.domain.DomainController;
-import application.domain.MultiplayerBoardModel;
 import application.domain.PlayModel;
+import application.domain.PlayerModel;
 import application.presentation.BoardSizeView;
 import application.presentation.BoardView;
 import application.presentation.Controller;
 import application.presentation.Home;
 import application.presentation.InputPlayerNamesView;
+import application.presentation.MultiplayerBoardView;
 import application.presentation.MultiplayerPlayersView;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -29,30 +30,38 @@ public class MemoryApp extends Application{
 	private Boardprops props;
 	private Home home;
 	private BoardSizeView boardSizeView;
+	private BoardSizeView multiBoardSizeView;
 	private Controller controller;
 	private DomainController domainController;
 	private PlayModel playModel;
-	private MultiplayerBoardModel multiplayerBoardModel;
-	private  MultiplayerPlayersView multiplayerPlayersView;
+	private MultiplayerPlayersView multiplayerPlayersView;
 	private InputPlayerNamesView inputPlayerNamesView;
-	
+	private MultiplayerBoardView multiplayerBoardView;
+	private PlayerModel playerModel;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		
 		
 		props = new Boardprops(600,600);
-		multiplayerBoardModel = new MultiplayerBoardModel(6,6,props,1);
-		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.WHITE, multiplayerBoardModel);
-		boardModel = new BoardModel(6, 6, props);
-		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.WHITE, multiplayerBoardModel, inputPlayerNamesView);
+		boardModel = new BoardModel(props);
+		playerModel = new PlayerModel();
 		playModel = new PlayModel(boardModel);
-		domainController = new DomainController(boardModel, playModel);
-		controller = new Controller(domainController);
-		boardSizeView = new BoardSizeView(300,300, Color.WHITE, controller, boardView, boardModel);
-		home = new Home(300,300, Color.WHITE, boardSizeView, multiplayerPlayersView);
-		boardModel.addPropertyChangeListener(e -> addCardListener());
-				
+		domainController = new DomainController(boardModel, playModel, playerModel);
+	
+		
+		controller = new Controller(domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView);
+		boardSizeView = new BoardSizeView(300,300, Color.WHITE, controller);
+		boardView = new BoardView(controller);
+		home = new Home(300, 300, Color.WHITE, controller);
+		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.WHITE, controller);
+		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.WHITE, controller);
+		
+		controller.setBoardSizeView(boardSizeView);
+		controller.setBoardView(boardView);
+		controller.setMultiplayerPlayersView(multiplayerPlayersView);
+		controller.setInputPlayerNamesView(inputPlayerNamesView);
+		
 		
 		try {
 			

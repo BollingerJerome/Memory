@@ -15,6 +15,7 @@ public class PlayModel {
 	private int currentY;
 	private int lastX;
 	private int lastY;
+	private PlayerModel[] playerModel;
 
 	public boolean isTheSame(Card cardOne, Card cardTwo) {
 		if(cardOne.getPairId() == cardTwo.getPairId()) {
@@ -85,6 +86,14 @@ public class PlayModel {
 	}
 	public void setRound(int round) {
 		this.round = round;
+	}
+
+	public PlayerModel[] getPlayerModel() {
+		return playerModel;
+	}
+
+	public void setPlayerModel(PlayerModel[] playerModel) {
+		this.playerModel = playerModel;
 	}
 
 
