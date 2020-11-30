@@ -1,5 +1,7 @@
 package application.presentation;
 
+import java.beans.PropertyChangeListener;
+
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.DomainController;
@@ -10,27 +12,31 @@ import javafx.stage.Stage;
 public class Controller {
 
 	public Controller(DomainController domainController, BoardSizeView boardSizeView,
-			MultiplayerPlayersView multiplayerPlayersView, BoardView boardView, InputPlayerNamesView inputPlayerNamesView) {
+			MultiplayerPlayersView multiplayerPlayersView, BoardView boardView, InputPlayerNamesView inputPlayerNamesView,
+			StatsView statsView, Home home) {
 		this.domainController = domainController;
 		this.boardSizeView = boardSizeView;
 		this.multiplayerPlayersView = multiplayerPlayersView;
 		this.boardView = boardView;
 		this.inputPlayerNamesView = inputPlayerNamesView;
+		this.statsView = statsView;
+		this.home = home;
 	}
 	
-	
+	private Home home;
 	private BoardSizeView boardSizeView;
 	private DomainController domainController;
 	private BoardView bordView;
 	private MultiplayerPlayersView multiplayerPlayersView;
 	private BoardView boardView;
 	private InputPlayerNamesView inputPlayerNamesView;
-	
-	
+	private StatsView statsView;
+	private Stage primaryStage;
 	
 	
 	//Home Buttons
 	public void showBoardSizeView(Button button) {
+		this.primaryStage = (Stage) button.getScene().getWindow();
 		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(boardSizeView.getScene());
 	}
@@ -39,21 +45,28 @@ public class Controller {
 		primaryStage.setScene(multiplayerPlayersView.getMultiplayersViewScene());
 	}
 	
+	public void showHome() {
+		primaryStage.setScene(home.getScene());
+	}
+	
 	//BoardSizeButtons
 	public void showBoard(Button button) {
 		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(boardView.setupCards());
 	}
 	public void setBoardSize(int size) {
-		System.out.println("controller executed");
 		domainController.setBoardSize(size);
 	}
 	public void turn(Card card) {
 		domainController.turn(card);
 	}
+	public void resetBoard() {
+		
+	}
 	
 	
 	//BoardView
+	
 	public BoardModel getBoardModel() {
 		return domainController.getBoardModel();
 	}
@@ -85,6 +98,18 @@ public class Controller {
 	public int getPlayerPoint(int i) {
 		return domainController.getPlayerPoint(i);
 	}
+	
+	
+	//stats
+	
+	public void addPropertyChangeListener( PropertyChangeListener listener ) {
+		domainController.addPropertyChangeListener(listener);
+	}
+	
+	public void showStats() {
+		primaryStage.setScene(statsView.showStatsView());
+	}
+	
 	
 	//else
 	public BoardSizeView getBoardSizeView() {
@@ -122,6 +147,18 @@ public class Controller {
 	}
 	public void setInputPlayerNamesView(InputPlayerNamesView inputPlayerNamesView) {
 		this.inputPlayerNamesView = inputPlayerNamesView;
+	}
+	public StatsView getStatsView() {
+		return statsView;
+	}
+	public void setStatsView(StatsView statsView) {
+		this.statsView = statsView;
+	}
+	public Home getHome() {
+		return home;
+	}
+	public void setHome(Home home) {
+		this.home = home;
 	}
 	
 }

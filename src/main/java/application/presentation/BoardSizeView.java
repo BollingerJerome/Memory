@@ -27,7 +27,6 @@ public class BoardSizeView extends WindowProps{
 		Label label4= new Label("Please select the size of the board:");
 		Button vier= new Button("4x4");
 		vier.setOnAction(e -> {
-			System.out.println("executed");
 			controller.setBoardSize(4);
 			controller.showBoard(vier);
 		});
@@ -47,6 +46,7 @@ public class BoardSizeView extends WindowProps{
 			controller.showBoard(zehn);
 		});
 		Button backButton= new Button("<< Back");
+		backButton.setOnAction(e -> controller.showHome());
 		vbox.getChildren().add(label4);
 		vbox.getChildren().add(vier);
 		vbox.getChildren().add(sechs);

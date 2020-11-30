@@ -28,7 +28,8 @@ public class InputPlayerNamesView extends WindowProps {
 		Label[] playertext = new Label[players];
 		TextField[] input = new TextField[players];
 		Button go = new Button("Start");
-		Button back = new Button("<<Back");
+		Button backButton= new Button("<< Back");
+		backButton.setOnAction(e -> controller.showHome());
 
 		go.setOnAction(e -> {
 			for (int i = 0; i<players; i++) {
@@ -43,9 +44,7 @@ public class InputPlayerNamesView extends WindowProps {
 			playertext[i] = new Label(text);
 			input[i] = new TextField();
 		}
-		back.setOnAction(e -> {
 
-		});
 
 
 		gridPane.add(label3_1, 0, 0);
@@ -55,7 +54,7 @@ public class InputPlayerNamesView extends WindowProps {
 			gridPane.add(input[i], 1, i+1);
 		}
 		gridPane.add(go, 0, 6);
-		gridPane.add(back, 0, 7);
+		gridPane.add(backButton, 0, 7);
 
 
 		return new Scene(gridPane);	

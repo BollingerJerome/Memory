@@ -48,7 +48,6 @@ public class Card {
 		boolean oldOpen = this.open;
 		this.open = open;
 		changes.firePropertyChange( "open", oldOpen, open );
-		System.out.println("open: " +oldOpen +" "+ open);
 	}
 	public boolean isFound() {
 		return found;

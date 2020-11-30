@@ -27,6 +27,7 @@ public class Home extends WindowProps {
 		Label label1 = new Label("Welcome to Memory!");
 		Button buttonSolo = new Button("Solo");
 		buttonSolo.setOnAction(e ->{
+			controller.setNumberOfPlayers(1);
 			controller.showBoardSizeView(buttonSolo);
 		});
 		

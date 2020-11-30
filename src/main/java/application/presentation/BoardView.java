@@ -9,6 +9,7 @@ import application.domain.PathStrings;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -78,7 +79,7 @@ public class BoardView {
 	public Scene setupCards() {
 		
 		//initializing
-		
+		borderPane = new BorderPane();
 		BoardModel boardModel = controller.getBoardModel();
 		EventHandler<MouseEvent> eventHandler = getEventHandler();
 		Group board = new Group();
@@ -141,11 +142,16 @@ public class BoardView {
 				board.getChildren().add(rectangles[i][j]);
 			}
 		}
+		Button backButton= new Button("<< Back");
+		backButton.setOnAction(e -> controller.showHome());
 		
-		//if multiple players are selcted, a gridpane will be added to the scen which shows the points
+		controller.addPropertyChangeListener(e ->{
+			controller.showStats();
+		});
 		
 		updatePlayerPoints();
 		borderPane.setCenter(board);
+		borderPane.setBottom(backButton);
 		return new Scene(borderPane);
 	}
 	

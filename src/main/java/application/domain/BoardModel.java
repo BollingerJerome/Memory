@@ -7,6 +7,7 @@ public class BoardModel {
 
 	public BoardModel(Boardprops boardprops) {
 		this.boardprops = boardprops;
+		
 	}
 
 	private Boardprops boardprops;
@@ -14,6 +15,7 @@ public class BoardModel {
 	private int horizontalTiles;
 	private int verticalTiles;
 	private int[][] positonsOfIndex;
+	private WonModel wonModel;
 	private final PropertyChangeSupport changes = new PropertyChangeSupport( this );
 
 	public void addPropertyChangeListener( PropertyChangeListener listener ) {
@@ -37,6 +39,18 @@ public class BoardModel {
 		return field;
 	}
 	
+	public boolean iswon() {
+		int hor = getHorizontalTiles();
+		int ver = getVerticalTiles();
+		for(int i= 0; i<hor; i++) {
+			for(int j = 0; j<ver; j++) {
+				if(!field[i][j].isFound()) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
 
 

@@ -2,11 +2,13 @@ package application.domain;
 
 public class PlayModel {
 
-	public PlayModel(BoardModel board) {
+	public PlayModel(BoardModel board, WonModel wonModel) {
 		this.board = board;
 		this.turn = 0;
 		this.round = 0;
 		this.playerModel = new PlayerModel[1];
+		this.wonModel = wonModel;
+		this.playerTurn = 0;
 	}
 
 	private BoardModel board;
@@ -17,10 +19,12 @@ public class PlayModel {
 	private int lastX;
 	private int lastY;
 	private PlayerModel[] playerModel;
+	private WonModel wonModel;
+	private int playerTurn;
 
 	public boolean isTheSame(Card cardOne, Card cardTwo) {
 		if(cardOne.getPairId() == cardTwo.getPairId()) {
-			playerModel[round%playerModel.length].setPoint(playerModel[round%playerModel.length].getPoint()+1);
+			playerModel[playerTurn].setPoint(playerModel[playerTurn].getPoint()+1);
 			return true;
 		}
 		else {
@@ -45,8 +49,12 @@ public class PlayModel {
 				setPosition(card);
 				board.getField()[currentX][currentY].setOpen(true);
 				if(isTheSame(board.getField()[currentX][currentY], board.getField()[lastX][lastY])) {
+					
 					board.getField()[currentX][currentY].setFound(true);
 					board.getField()[lastX][lastY].setFound(true);
+					if(board.iswon()) {
+						wonModel.setWon(true);
+					}
 					round++;
 					turn = 0;
 				}
@@ -60,6 +68,7 @@ public class PlayModel {
 			board.getField()[currentX][currentY].setOpen(false);
 			board.getField()[lastX][lastY].setOpen(false);
 			turn = 0;
+			playerTurn = (playerTurn+1)%playerModel.length;
 			round++;
 			return true;
 		}

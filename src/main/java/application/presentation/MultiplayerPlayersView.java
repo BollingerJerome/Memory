@@ -23,6 +23,8 @@ public class MultiplayerPlayersView extends WindowProps{
 		Button button2 = new Button("2 Players");
 		Button button3 = new Button("3 Players");
 		Button button4 = new Button("4 Players");
+		Button backButton= new Button("<< Back");
+		backButton.setOnAction(e -> controller.showHome());
 		
 		button2.setOnAction(e ->{
 			controller.setNumberOfPlayers(2);
@@ -41,6 +43,7 @@ public class MultiplayerPlayersView extends WindowProps{
 		gridPane.add(button2, 0, 1);
 		gridPane.add(button3, 0, 2);
 		gridPane.add(button4, 0, 3);
+		gridPane.add(backButton, 0, 4);
 		Scene scene = new Scene(gridPane);
 		return scene;
 	}
