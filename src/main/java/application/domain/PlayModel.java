@@ -6,6 +6,7 @@ public class PlayModel {
 		this.board = board;
 		this.turn = 0;
 		this.round = 0;
+		this.playerModel = new PlayerModel[1];
 	}
 
 	private BoardModel board;
@@ -92,8 +93,12 @@ public class PlayModel {
 		return playerModel;
 	}
 
-	public void setPlayerModel(PlayerModel[] playerModel) {
-		this.playerModel = playerModel;
+	public void setPlayerModel(int a) {
+		this.playerModel = new PlayerModel[a];
+		for (int i = 0; i<a; i++) {
+			String defaultName = "Player" + (i+1);
+			playerModel[i] = new PlayerModel(0, defaultName);
+		}
 	}
 
 

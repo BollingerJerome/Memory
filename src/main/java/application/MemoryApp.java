@@ -11,7 +11,7 @@ import application.presentation.BoardView;
 import application.presentation.Controller;
 import application.presentation.Home;
 import application.presentation.InputPlayerNamesView;
-import application.presentation.MultiplayerBoardView;
+
 import application.presentation.MultiplayerPlayersView;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -36,7 +36,6 @@ public class MemoryApp extends Application{
 	private PlayModel playModel;
 	private MultiplayerPlayersView multiplayerPlayersView;
 	private InputPlayerNamesView inputPlayerNamesView;
-	private MultiplayerBoardView multiplayerBoardView;
 	private PlayerModel playerModel;
 	
 	@Override
@@ -47,7 +46,7 @@ public class MemoryApp extends Application{
 		boardModel = new BoardModel(props);
 		playerModel = new PlayerModel();
 		playModel = new PlayModel(boardModel);
-		domainController = new DomainController(boardModel, playModel, playerModel);
+		domainController = new DomainController(boardModel, playModel);
 	
 		
 		controller = new Controller(domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView);

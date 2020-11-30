@@ -18,41 +18,31 @@ public class InputPlayerNamesView extends WindowProps {
 	}
 
 	private Controller controller;
-	
+
+
 	public Scene getInputPlayerNamesViewScene() {
 		int players = controller.getNumberOfPlayers();
-		
+
 		GridPane gridPane = new GridPane();
 		Label label3_1 = new Label("Enter the name of players");
 		Label[] playertext = new Label[players];
 		TextField[] input = new TextField[players];
 		Button go = new Button("Start");
 		Button back = new Button("<<Back");
-		
+
 		go.setOnAction(e -> {
-		/*	for (int i = 0; i<players; i++) {
-				if(input[i].getText().isEmpty()) {
-					String defaultName = "Player "+ (i+1); 
-					System.out.println(defaultName);
-					multi.setPlayerName(i, defaultName);
-					
-				}
-				else {
-					multi.setPlayerName(i, input[i].getText());
-				}
-				Stage primaryStage = (Stage) go.getScene().getWindow();
-				primaryStage.setScene(boardSize.getMultiplayerScene());
+			for (int i = 0; i<players; i++) {
+				controller.setPlayerName(i, input[i].getText());
 			}
-			*/
-			
-			});
+			controller.showBoardSizeView(go);
+		});
 		for (int i = 0; i<players; i++) { //labeltext
-			String text = "Player "+ i + ": ";
+			String text = "Player "+ (i+1) + ": ";
 			playertext[i] = new Label(text);
 			input[i] = new TextField();
 		}
 		back.setOnAction(e -> {
-			
+
 		});
 
 
@@ -64,9 +54,9 @@ public class InputPlayerNamesView extends WindowProps {
 		}
 		gridPane.add(go, 0, 6);
 		gridPane.add(back, 0, 7);
-		
-		
+
+
 		return new Scene(gridPane);	
 	}
-	
+
 }

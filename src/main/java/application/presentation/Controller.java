@@ -30,7 +30,7 @@ public class Controller {
 	
 	
 	//Home Buttons
-	public void setBoardSizeView(Button button) {
+	public void showBoardSizeView(Button button) {
 		Stage primaryStage = (Stage) button.getScene().getWindow();
 		primaryStage.setScene(boardSizeView.getScene());
 	}
@@ -72,6 +72,9 @@ public class Controller {
 		return domainController.getNumberOfPlayers();
 	}
 
+	public void setPlayerName(int i, String name) {
+		domainController.setPlayerName(i, name);
+	}
 	
 	
 	//else

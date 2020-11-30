@@ -2,17 +2,19 @@ package application.domain;
 
 public class DomainController {
 
-	public DomainController(BoardModel boardModel, PlayModel playModel, PlayerModel playerModel) {
+	public DomainController(BoardModel boardModel, PlayModel playModel) {
 		this.boardModel = boardModel;
 		this.playModel = playModel;
-		this.playerModel = playerModel;
 	}
 
 	private BoardModel boardModel;
 	private PlayModel playModel;
-	private PlayerModel playerModel;
+	
 
-
+	public void setPlayerName(int i, String name) {
+		playModel.getPlayerModel()[i].setName(name);
+	}
+	
 	public void turn(Card card) {
 		playModel.turn(card);
 	}
@@ -31,8 +33,7 @@ public class DomainController {
 	}
 
 	public void setNumberOfPlayers(int a) {
-		PlayerModel[] playerModele = new PlayerModel[a];
-		playModel.setPlayerModel(playerModele);
+		playModel.setPlayerModel(a);
 	}
 	
 	public int getNumberOfPlayers() {
