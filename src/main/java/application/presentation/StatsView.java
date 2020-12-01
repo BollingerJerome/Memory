@@ -41,7 +41,7 @@ public class StatsView extends WindowProps {
 			gridPane.add(namesOfPlayers[i], 0, i+1);
 			gridPane.add(playerPoints[i], 1, i+1);
 		}
-		Scene stats = new Scene(gridPane);
+		Scene stats = getDefaultScene(gridPane);
 		return stats;
 	}
 }

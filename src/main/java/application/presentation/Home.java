@@ -38,9 +38,10 @@ public class Home extends WindowProps {
 		grid.add(label1,0,0);
 		grid.add(buttonSolo,0,1);
 		grid.add(buttonMulti,0,2);
-		Scene home = new Scene(grid);
 		
-		return home;
+		//Scene home = new Scene(grid);
+		
+		return getDefaultScene(grid);
 	}
 
 	
