@@ -43,12 +43,12 @@ public class MemoryApp extends Application{
 	
 		
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);
-		boardSizeView = new BoardSizeView(300,300, Color.WHITE, controller);
+		boardSizeView = new BoardSizeView(300,300, Color.CORNFLOWERBLUE, controller);
 		boardView = new BoardView(controller);
 		home = new Home(300, 300, Color.CORNFLOWERBLUE, controller);
-		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.WHITE, controller);
-		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.WHITE, controller);
-		statsView = new StatsView(300,300, Color.WHITE, controller);
+		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.CORNFLOWERBLUE, controller);
+		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.CORNFLOWERBLUE, controller);
+		statsView = new StatsView(300,300, Color.CORNFLOWERBLUE, controller);
 		
 		controller.setHome(home);
 		controller.setBoardSizeView(boardSizeView);

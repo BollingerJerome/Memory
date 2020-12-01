@@ -20,24 +20,32 @@ public class StatsView extends WindowProps {
 		int players = controller.getNumberOfPlayers();
 		GridPane gridPane = new GridPane();
 		Button back = new Button("Back");
+		back.setTranslateY(180);
 		back.setOnAction(e -> {
 			controller.showHome();
 		});
-		gridPane.add(back, 1,6);
+		gridPane.add(back, 0,6);
 		Label[] namesOfPlayers = new Label[players];
 		Label[] playerPoints = new Label[players];
-		Label player = new Label("Player");
-		Label punkte = new Label("Points");
+		Label player = new Label("Player:");
+		player.setTranslateX(10);
+		player.setTranslateY(10);
+		Label punkte = new Label("Points:");
+		punkte.setTranslateX(30);
+		punkte.setTranslateY(10);
 		gridPane.add(player, 0, 0);
 		gridPane.add(punkte, 1, 0);
 		
 		for (int i = 0; i<players; i++) {
 			playerPoints[i] = new Label("   "+Integer.toString(controller.getPlayerPoint(i)));
-
+			playerPoints[i].setTranslateX(30);
+			playerPoints[i].setTranslateY(20);
 			if (players == 1) {
 				controller.setPlayerName(0, "You");;
 			}
 			namesOfPlayers[i] = new Label(controller.getPlayerName(i));
+			namesOfPlayers[i].setTranslateX(10);
+			namesOfPlayers[i].setTranslateY(20);
 			gridPane.add(namesOfPlayers[i], 0, i+1);
 			gridPane.add(playerPoints[i], 1, i+1);
 		}
