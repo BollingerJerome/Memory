@@ -28,6 +28,7 @@ public class BoardSizeView extends WindowProps{
 		vier.setOnAction(e -> {
 			controller.setBoardSize(4);
 			controller.showBoard(vier);
+			controller.setWon(false);
 		});
 		Button sechs= new Button("6x6");
 		sechs.setMaxWidth(75);
@@ -36,6 +37,7 @@ public class BoardSizeView extends WindowProps{
 		sechs.setOnAction(e -> {
 			controller.setBoardSize(6);
 			controller.showBoard(sechs);
+			controller.setWon(false);
 		});
 		Button acht= new Button("8x8");
 		acht.setMaxWidth(75);
@@ -44,6 +46,7 @@ public class BoardSizeView extends WindowProps{
 		acht.setOnAction(e -> {
 			controller.setBoardSize(8);
 			controller.showBoard(acht);
+			controller.setWon(false);
 		});
 		Button zehn= new Button("10x10");
 		zehn.setMaxWidth(75);
@@ -52,6 +55,7 @@ public class BoardSizeView extends WindowProps{
 		zehn.setOnAction(e -> {
 			controller.setBoardSize(10);
 			controller.showBoard(zehn);
+			controller.setWon(false);
 		});
 		Button backButton= new Button("<< Back");
 		backButton.setTranslateY(100);

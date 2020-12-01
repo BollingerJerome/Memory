@@ -26,9 +26,10 @@ public class WonModel {
 
 	public void setWon(boolean won) {
 		boolean oldWon = this.won;
-		System.out.println("someone won");
 		this.won = won;
-		changes.firePropertyChange("Won", oldWon, won);
+		if(won) {
+			changes.firePropertyChange("Won", oldWon, won);
+		}
 	}
 
 }

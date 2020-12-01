@@ -18,8 +18,8 @@ public class DomainController {
 		wonModel.addPropertyChangeListener(listener);
 	}
 	
-	public void setWon() {
-		wonModel.setWon(true);
+	public void setWon(boolean won) {
+		wonModel.setWon(won);
 	}
 	
 	public boolean iswon() {
