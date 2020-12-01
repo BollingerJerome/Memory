@@ -96,6 +96,9 @@ public class Controller {
 	
 	
 	//stats
+	public void setWon(boolean won) {
+		domainController.setWon(won);
+	}
 	
 	public void addPropertyChangeListener( PropertyChangeListener listener ) {
 		domainController.addPropertyChangeListener(listener);
