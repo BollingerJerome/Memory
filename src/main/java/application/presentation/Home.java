@@ -25,22 +25,37 @@ public class Home extends WindowProps {
 		
 		GridPane grid = new GridPane();
 		Label label1 = new Label("Welcome to Memory!");
+		label1.setTranslateX(70);
+		label1.setTranslateY(20);	
+
 		Button buttonSolo = new Button("Solo");
+		buttonSolo.setMaxWidth(110);
+		buttonSolo.setTranslateX(90);	
+		buttonSolo.setTranslateY(50);
 		buttonSolo.setOnAction(e ->{
 			controller.setNumberOfPlayers(1);
 			controller.showBoardSizeView(buttonSolo);
 		});
 		
 		Button buttonMulti = new Button("Multiplayer");
+		buttonMulti.setMaxWidth(110);
+		buttonMulti.setTranslateX(90);	
+		buttonMulti.setTranslateY(100);
 		buttonMulti.setOnAction(e -> {
 			controller.setMultiplayerPlayersView(buttonMulti);
 		});
+		
+		Label label2 = new Label("      Jérôme Bollinger    /     Mischa Kissling\n      Jennifer Wyser       /      Alexis Burtschy\n                        Jonas Pröbsting");
+		label2.setTranslateY(150);		
+
 		grid.add(label1,0,0);
 		grid.add(buttonSolo,0,1);
 		grid.add(buttonMulti,0,2);
-		Scene home = new Scene(grid);
+		grid.add(label2,0,3);
+
+		//Scene home = new Scene(grid);
 		
-		return home;
+		return getDefaultScene(grid);
 	}
 
 	

@@ -24,10 +24,13 @@ public class InputPlayerNamesView extends WindowProps {
 		int players = controller.getNumberOfPlayers();
 
 		GridPane gridPane = new GridPane();
-		Label label3_1 = new Label("Enter the name of players");
+		Label label3_1 = new Label("Enter the names");
 		Label[] playertext = new Label[players];
 		TextField[] input = new TextField[players];
 		Button go = new Button("Start");
+		go.setTranslateX(230);
+		go.setTranslateY(30);
+		go.setMaxWidth(70);
 		Button backButton= new Button("<< Back");
 		backButton.setOnAction(e -> controller.showHome());
 
@@ -56,7 +59,7 @@ public class InputPlayerNamesView extends WindowProps {
 		gridPane.add(backButton, 0, 7);
 
 
-		return new Scene(gridPane);	
+		return getDefaultScene(gridPane);	
 	}
 
 }
