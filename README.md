@@ -124,15 +124,14 @@ Velocity: 40 StoryPoints pro Iteration
 
 ### Taskliste für die Umsetzung der User Stories Sprint 1
 
-#### User Story 1
-Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
+#### User Story 1, Akzeptanzkriterium
+1 Button um Spielmodus auszuwählen
+Weiterleitung zum Fenster der Spielfeldgrösse 
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 1.1 | GUI-Design, 1 Button für Spielmodus | 0.5 |
 | 1.2 | Kontrollstruktur | 1 |
-
-**Akzeptanzkriterium**
 
 
 #### User Story 2
