@@ -140,7 +140,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="31">    
-    <bendpoint x="782" y="-406"/>    
+    <bendpoint x="788" y="-422"/>    
     <end type="SOURCE" refId="1" navigable="false">      
       <attribute id="32" name="wonModel"/>      
       <multiplicity id="33" minimum="0" maximum="1"/>    
