@@ -21,7 +21,7 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 9. [Releaseplan](#Releaseplan)
 10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
-    + [UML Package, Klassen- und Sequenzdiagramm](#UML-Package,-Klassen--und-Sequenzdiagramm)
+    + [UML Packagediagramm und Klassendiagramm](#UML-Packagediagramm-und-Klassendiagramm)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
 11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
@@ -125,7 +125,7 @@ Velocity: 40 StoryPoints pro Iteration
 
 ### Taskliste für die Umsetzung der User Stories Sprint 1
 
-### UML Package, Klassen- und Sequenzdiagramm
+### UML Packagediagramm und Klassendiagramm
 
 #### User Story 1, Akzeptanzkriterium
 1 Button um Spielmodus auszuwählen <br/>
