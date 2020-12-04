@@ -199,32 +199,37 @@ Spiel wird verlassen
 
 ### Taskliste für die Umsetzung der User Stories Sprint 2
 
-#### User Story 6
-Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
+#### User Story 6, Akzeptanzkriterium
+min. 3 Buttons zur Spielfeldgrösse (6x6, 8x8, 10x10) <br/>
+Spiel startet mit entsprechender Grösse
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 6.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.75 |
 | 6.2 | Kontrollstruktur | 1.5 |
 
-#### User Story 7
-Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, wer am Zug ist
+#### User Story 7, Akzeptanzkriterium
+Entsprechende Anzahl an TextFields gemäss der Spieleranzahl <br/>
+Anzeige des Spielernamens während des Spieles
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 7.1 | GUI-Design, TextFields für Namenseingabe | 2 |
 | 7.2 | Kontrollstruktur | 3 |
 
-#### User Story 9
-Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern
+#### User Story 9, Akzeptanzkriterium
+1 Button welcher auf jedem Interface zu sehen ist <br/>
+Hauptmenü wird angezeigt
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 9.1 | GUI-Design, 1 Button für Hauptmenü | 0.75 |
 | 9.2 | Kontrollstruktur | 1 |
 
-#### User Story 10
-Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben
+#### User Story 10, Akzeptanzkriterium
+Min 50 Bilder für Spielgrösse 10x10  <br/>
+Jede Karte ist wenn sie aufgedeckt wird ein Bild <br/>
+Spielbrett verhält sich wie Memory
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -232,8 +237,8 @@ Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche
 | 10.2 | Karten aus Bildern fertigen | 1 |
 | 10.3 | Events den Karten hinzufügen, Memoryverhalten | 4 |
 
-#### User Story 13
-Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
+#### User Story 13, Akzeptanzkriterium
+Anzeige der Spielzeit, der gefundenen Paare, etc.
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
