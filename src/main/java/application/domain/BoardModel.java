@@ -15,7 +15,7 @@ public class BoardModel {
 	private int horizontalTiles;
 	private int verticalTiles;
 	private int[][] positonsOfIndex;
-	private WonModel wonModel;
+	
 	private final PropertyChangeSupport changes = new PropertyChangeSupport( this );
 
 	public void addPropertyChangeListener( PropertyChangeListener listener ) {

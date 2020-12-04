@@ -23,7 +23,7 @@ public class BoardView {
 
 	public BoardView(Controller controller) {
 		this.controller = controller;
-		borderPane = new BorderPane();
+		this.borderPane = new BorderPane();
 	}
 
 	//private BoardModel boardModel;
@@ -35,19 +35,19 @@ public class BoardView {
 	Label[] playernames;
 	private BorderPane borderPane;
 	
-	private EventHandler<MouseEvent> getEventHandler (){
-		return new EventHandler<MouseEvent>() {
+	private EventHandler<MouseEvent> getEventHandler (){ 	//adding Eventhandler
+		return new EventHandler<MouseEvent>() {				
 			@Override
 			public void handle(MouseEvent event) {
-				controller.turn(isWhichCardObject(event.getSource()));
-				turnCards();
+				controller.turn(isWhichCardObject(event.getSource()));	//turn(Card card) handles the logic
+				turnCards();											//updating the field 
 			}
 		};
 	};
 	
-	public Card isWhichCardObject(Object object) {
-		BoardModel boardModel = controller.getBoardModel();
-		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
+	public Card isWhichCardObject(Object object) {				//helper for the eventHandler. he returns the
+		BoardModel boardModel = controller.getBoardModel();		//card Object so the turn(Card card) method can
+		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {//work.
 			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
 				if(object.equals(rectangles[i][j])) {
 					return boardModel.getField()[i][j];
@@ -58,7 +58,7 @@ public class BoardView {
 		return null;
 	}
 	
-	//drawing cards picture or back
+	//drawing cards picture or back (it's the updating methode from above)
 	public void turnCards() {
 		BoardModel boardModel = controller.getBoardModel();
 		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {
@@ -77,37 +77,39 @@ public class BoardView {
 	//whole Board view logic with randomizing etc.
 	public Scene setupCards() {
 		
-		//initializing
-		borderPane = new BorderPane();
-		BoardModel boardModel = controller.getBoardModel();
-		EventHandler<MouseEvent> eventHandler = getEventHandler();
-		Group board = new Group();
-		int hor = boardModel.getHorizontalTiles();
-		int ver = boardModel.getVerticalTiles();
-		int tiles = hor*ver;
+		//initializing:
+			
+		Group board = new Group();	//javafx things
+		EventHandler<MouseEvent> eventHandler = getEventHandler(); //get Eventhandler from above
+		
+		BoardModel boardModel = controller.getBoardModel(); 				//getting boardModel object.
+		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
+		int numberOfVerticalTiles = boardModel.getVerticalTiles();			//variables to save cpu. 
+		int tiles = numberOfHorizontalTiles*numberOfVerticalTiles;
 		int[][] posIndex = boardModel.getPositonsOfIndex();
-		String path, which;
-		String[] ofWhich;
-		Color[] backColors = TileColors.getBack();
-		cardsFront = new ImagePattern[hor][ver];
-		cardsBack = new Color[hor][ver];
-		rectangles = new Rectangle[hor][ver];
 		double width = boardModel.getField()[0][0].getWidht();
 		double height = boardModel.getField()[0][0].getHeight();
+		
+		String path, which;			//Color and Picture variables
+		String[] ofWhich;	//paths leading to profs or Sehenswürdigkeiten
+		Color[] backColors = TileColors.getBack();
+		cardsFront = new ImagePattern[numberOfHorizontalTiles][numberOfVerticalTiles];
+		cardsBack = new Color[numberOfHorizontalTiles][numberOfVerticalTiles];
+		rectangles = new Rectangle[numberOfHorizontalTiles][numberOfVerticalTiles];
 		FileInputStream fileInputStream;
 		
 		//create all Rectangle objects
-		for(int i = 0; i<hor; i++) {
-			for(int j = 0; j<ver; j++) {
+		for(int i = 0; i<numberOfHorizontalTiles; i++) {
+			for(int j = 0; j<numberOfVerticalTiles; j++) {
 				rectangles[i][j] = new Rectangle(i*width, j*height, width, height);
 				rectangles[i][j].addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}
 		}
 		
-		//decide which image
+		//decide which image (Profs or "Sehenswürdigkeiten")
 		if((tiles/2) <= PathStrings.getProfsFotos().length) {
 			path = "src/main/resources/Fotos Memory/Profs Fotos/";
-			ofWhich = PathStrings.getProfsFotos();
+			ofWhich = PathStrings.getProfsFotos();		//PathStrings class contains all paths of the pictures as static array
 		}
 		else {
 			path = "src/main/resources/Fotos Memory/Sehenswuerdigkeiten Fotos/";
@@ -120,12 +122,12 @@ public class BoardView {
 			
 			which = ofWhich[posIndex[1][i]];
 			String finalPath = path+which;
-			int x = posIndex[0][i]%hor;
-			int y = posIndex[0][i]/hor;
-			cardsBack[i%hor][i/hor] = backColors[((i%hor)+(i/hor))%2];
-			boardModel.getField()[x][y].setPairId(posIndex[1][i]);
+			int x = posIndex[0][i]%numberOfHorizontalTiles; // "%" and "/" operations gives me coordinates in a field from an int. 7 in a 3x3 field would be x = 1 and y = 2.
+			int y = posIndex[0][i]/numberOfHorizontalTiles;
+			cardsBack[i%numberOfHorizontalTiles][i/numberOfHorizontalTiles] = backColors[((i%numberOfHorizontalTiles)+(i/numberOfHorizontalTiles))%2];
+			boardModel.getField()[x][y].setPairId(posIndex[1][i]); //same cards have same int value
 			
-			try {
+			try {	//getting pictures from path and assigning them
 				fileInputStream = new FileInputStream(finalPath);
 				cardsFront[x][y] = (new ImagePattern(new Image(fileInputStream)));
 			} catch (FileNotFoundException e) {
@@ -133,16 +135,19 @@ public class BoardView {
 			}	
 		}
 		
-		turnCards();
-		//adding cards to Group
-		for(int i = 0; i<hor; i++) {
-			for(int j = 0; j<ver; j++) {
+		turnCards(); //drawing of the cards resp. updating the field
+		
+		//adding Rectangles to the Group view
+		for(int i = 0; i<numberOfHorizontalTiles; i++) {
+			for(int j = 0; j<numberOfVerticalTiles; j++) {
 				board.getChildren().add(rectangles[i][j]);
 			}
 		}
+		//adding back button
 		Button backButton= new Button("<< Back");
 		backButton.setOnAction(e -> controller.showHome());
 		
+		//if won, show stats
 		controller.addPropertyChangeListener(e ->{
 			controller.showStats();
 		});
