@@ -21,6 +21,7 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 9. [Releaseplan](#Releaseplan)
 10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
+    + [UML Packagediagramm und Klassendiagramm](#UML-Packagediagramm-und-Klassendiagramm)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
 11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
@@ -124,40 +125,48 @@ Velocity: 40 StoryPoints pro Iteration
 
 ### Taskliste für die Umsetzung der User Stories Sprint 1
 
-#### User Story 1
-Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
+### UML Packagediagramm und Klassendiagramm
+
+#### User Story 1, Akzeptanzkriterium
+1 Button um Spielmodus auszuwählen <br/>
+Weiterleitung zum Fenster der Spielfeldgrösse 
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 1.1 | GUI-Design, 1 Button für Spielmodus | 0.5 |
 | 1.2 | Kontrollstruktur | 1 |
 
-#### User Story 2
-Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
+
+#### User Story 2, Akzeptanzkriterium
+min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br/>
+Spiel startet mit entsprechender Grösse
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 2.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.75 |
 | 2.2 | Kontrollstruktur | 1.5 |
 
-#### User Story 4
-Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen
+#### User Story 4, Akzeptanzkriterium
+1 Button für Multiplayermodus <br/>
+Weiterleitung zum Fenster der Spielfeldgrösse 
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 4.1 | GUI-Design, 1 Button für Spielmodus | 0.75 |
 | 4.2 | Kontrollstruktur | 2 |
 
-#### User Story 5
-Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen
+#### User Story 5, Akzeptanzkriterium
+3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler) <br/>
+Startet Spiel mit der gewählten Anzahl an Spielern
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 5.1 | GUI-Design, 3 Buttons für Spieleranzahl | 0.5 |
 | 5.2 | Kontrollstruktur | 3 |
 
-#### User Story 12
-Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet
+#### User Story 12, Akzeptanzkriterium
+Ansicht der zugedeckten Karten <br/>
+Memoryverhalten
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -166,8 +175,9 @@ Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte b
 | 12.3 | Gleiche Paare bleiben offen liegen | 2 |
 | 12.4 | Karten werden bei Klick wieder zugedeckt | 3 |
 
-#### User Story 14
-Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden
+#### User Story 14, Akzeptanzkriterium
+1 Button um Spiel zu verlassen <br/>
+Spiel wird verlassen
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -192,32 +202,37 @@ Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu b
 
 ### Taskliste für die Umsetzung der User Stories Sprint 2
 
-#### User Story 6
-Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
+#### User Story 6, Akzeptanzkriterium
+min. 3 Buttons zur Spielfeldgrösse (6x6, 8x8, 10x10) <br/>
+Spiel startet mit entsprechender Grösse
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 6.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.75 |
 | 6.2 | Kontrollstruktur | 1.5 |
 
-#### User Story 7
-Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, wer am Zug ist
+#### User Story 7, Akzeptanzkriterium
+Entsprechende Anzahl an TextFields gemäss der Spieleranzahl <br/>
+Anzeige des Spielernamens während des Spieles
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 7.1 | GUI-Design, TextFields für Namenseingabe | 2 |
 | 7.2 | Kontrollstruktur | 3 |
 
-#### User Story 9
-Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern
+#### User Story 9, Akzeptanzkriterium
+1 Button welcher auf jedem Interface zu sehen ist <br/>
+Hauptmenü wird angezeigt
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 9.1 | GUI-Design, 1 Button für Hauptmenü | 0.75 |
 | 9.2 | Kontrollstruktur | 1 |
 
-#### User Story 10
-Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben
+#### User Story 10, Akzeptanzkriterium
+Min 50 Bilder für Spielgrösse 10x10  <br/>
+Jede Karte ist wenn sie aufgedeckt wird ein Bild <br/>
+Spielbrett verhält sich wie Memory
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -225,8 +240,8 @@ Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche
 | 10.2 | Karten aus Bildern fertigen | 1 |
 | 10.3 | Events den Karten hinzufügen, Memoryverhalten | 4 |
 
-#### User Story 13
-Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen
+#### User Story 13, Akzeptanzkriterium
+Anzeige der Spielzeit, der gefundenen Paare, etc.
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
