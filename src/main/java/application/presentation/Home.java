@@ -24,7 +24,7 @@ public class Home extends WindowProps {
 	public Scene getScene() {
 		
 		GridPane grid = new GridPane();
-		Label label1 = new Label("Welcome to Memory!");
+		Label label1 = new Label("Memory");
 		label1.setTranslateX(70);
 		label1.setTranslateY(20);	
 

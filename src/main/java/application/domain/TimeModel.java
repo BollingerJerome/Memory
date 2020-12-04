@@ -16,6 +16,17 @@ public class TimeModel {
 		return totalTime;
 	}
 	
+	
+	public void start() {
+		setStartTime(System.currentTimeMillis());
+		System.out.println("Start time: " + System.currentTimeMillis());
+	}
+	public void stop() {
+		setStopTime(System.currentTimeMillis());
+		System.out.println("Stop time: " + System.currentTimeMillis());
+		calculateTotalTime();
+	}
+	
 	public long getStartTime() {
 		return startTime;
 	}

@@ -152,14 +152,17 @@ public class BoardView {
 		
 
 		//if won, show stats
-		controller.getWonModel().addPropertyChangeListener(e ->controller.showStats());
+		controller.getWonModel().addPropertyChangeListener(e ->{
+			controller.getTimeModel().stop();
+			controller.showStats();
+		});
 
 		
 		updatePlayerPoints();
 		borderPane.setTop(time);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
-		controller.getTimeModel().setStartTime(System.currentTimeMillis());
+		controller.getTimeModel().start(); //starting time
 		return new Scene(borderPane);
 	}
 	

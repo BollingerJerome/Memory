@@ -108,8 +108,6 @@ public class Controller {
 	
 	public void showStats() {
 		primaryStage.setScene(statsView.showStatsView());
-		domainController.getTimeModel().setStopTime(System.currentTimeMillis());
-		System.out.println("Time: " + domainController.getTimeModel().calculateTotalTime()/1000);
 	}
 	
 	//time related
