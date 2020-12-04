@@ -22,6 +22,9 @@ public class PlayerModel {
 	public void removePropertyChangeListener( PropertyChangeListener listener ) {
 		changes.removePropertyChangeListener( listener );
 	}
+	public void addPoint() {
+		setPoint(getPoint()+1);
+	}
 	
 	public int getPoint() {
 		return point;

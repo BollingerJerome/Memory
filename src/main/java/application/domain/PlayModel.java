@@ -2,16 +2,13 @@ package application.domain;
 
 public class PlayModel {
 
-	public PlayModel(BoardModel board, WonModel wonModel) {
-		this.board = board;
+	public PlayModel() {
 		this.turn = 0;
 		this.round = 0;
 		this.playerModel = new PlayerModel[1];
-		this.wonModel = wonModel;
 		this.playerTurn = 0;
 	}
 
-	private BoardModel board;
 	private int turn;
 	private int round;
 	private int currentX;
@@ -19,66 +16,10 @@ public class PlayModel {
 	private int lastX;
 	private int lastY;
 	private PlayerModel[] playerModel;
-	private WonModel wonModel;
 	private int playerTurn;
+	private DomainController domainController;
 
-	public boolean isTheSame(Card cardOne, Card cardTwo) {
-		if(cardOne.getPairId() == cardTwo.getPairId()) {
-			playerModel[playerTurn].setPoint(playerModel[playerTurn].getPoint()+1);
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	public boolean playFlow(Card card) {
-		switch(turn) {
-		case 0:
-			if(!card.isOpen()) {
-				if(!card.isFound()) {
-					setPosition(card);
-					board.getField()[currentX][currentY].setOpen(true);
-					turn++;
-					return true;
-				}				
-			}
-			return false;
-		case 1:
-			if(!card.isOpen() && !card.isFound() ) {
-				setPosition(card);
-				board.getField()[currentX][currentY].setOpen(true);
-				if(isTheSame(board.getField()[currentX][currentY], board.getField()[lastX][lastY])) {
-					
-					board.getField()[currentX][currentY].setFound(true);
-					board.getField()[lastX][lastY].setFound(true);
-					if(board.iswon()) {
-						wonModel.setWon(true);
-					}
-					round++;
-					turn = 0;
-				}
-				else {
-					turn++;
-				}
-				return true;
-			}
-			return false;
-		case 2:
-			board.getField()[currentX][currentY].setOpen(false);
-			board.getField()[lastX][lastY].setOpen(false);
-			turn = 0;
-			playerTurn = (playerTurn+1)%playerModel.length;
-			round++;
-			return true;
-		}
-		return false;
-	}
-
-	public void turn(Card card) {
-		playFlow(card);
-		
-	}
+	
 
 	public void setPosition(Card card) {			
 		lastX = currentX;
@@ -114,6 +55,69 @@ public class PlayModel {
 			String defaultName = "Player " + (i+1) +": ";
 			playerModel[i] = new PlayerModel(0, defaultName);
 		}
+	}
+
+	public DomainController getDomainController() {
+		return domainController;
+	}
+
+	public void setDomainController(DomainController domainController) {
+		this.domainController = domainController;
+	}
+
+
+	public int getCurrentX() {
+		return currentX;
+	}
+
+
+	public void setCurrentX(int currentX) {
+		this.currentX = currentX;
+	}
+
+
+	public int getCurrentY() {
+		return currentY;
+	}
+
+
+	public void setCurrentY(int currentY) {
+		this.currentY = currentY;
+	}
+
+
+	public int getLastX() {
+		return lastX;
+	}
+
+
+	public void setLastX(int lastX) {
+		this.lastX = lastX;
+	}
+
+
+	public int getLastY() {
+		return lastY;
+	}
+
+
+	public void setLastY(int lastY) {
+		this.lastY = lastY;
+	}
+
+
+	public int getPlayerTurn() {
+		return playerTurn;
+	}
+
+
+	public void setPlayerTurn(int playerTurn) {
+		this.playerTurn = playerTurn;
+	}
+
+
+	public void setPlayerModel(PlayerModel[] playerModel) {
+		this.playerModel = playerModel;
 	}
 
 

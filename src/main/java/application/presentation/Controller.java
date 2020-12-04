@@ -5,6 +5,7 @@ import java.beans.PropertyChangeListener;
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.DomainController;
+import application.domain.WonModel;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -100,8 +101,8 @@ public class Controller {
 		domainController.setWon(won);
 	}
 	
-	public void addPropertyChangeListener( PropertyChangeListener listener ) {
-		domainController.addPropertyChangeListener(listener);
+	public WonModel getWonModel () {
+		return domainController.getWonModel();
 	}
 	
 	public void showStats() {

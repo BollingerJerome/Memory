@@ -143,9 +143,7 @@ public class BoardView {
 		Button backButton= new Button("<< Back");
 		backButton.setOnAction(e -> controller.showHome());
 		
-		controller.addPropertyChangeListener(e ->{
-			controller.showStats();
-		});
+		controller.getWonModel().addPropertyChangeListener(e ->controller.showStats());
 		
 		updatePlayerPoints();
 		borderPane.setCenter(board);
