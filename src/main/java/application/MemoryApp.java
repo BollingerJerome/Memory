@@ -4,6 +4,7 @@ import application.domain.BoardModel;
 import application.domain.Boardprops;
 import application.domain.DomainController;
 import application.domain.PlayModel;
+import application.domain.TimeModel;
 import application.domain.WonModel;
 import application.presentation.BoardSizeView;
 import application.presentation.BoardView;
@@ -30,6 +31,7 @@ public class MemoryApp extends Application{
 	private InputPlayerNamesView inputPlayerNamesView;
 	private StatsView statsView;
 	private WonModel wonModel;
+	private TimeModel timeModel;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -39,7 +41,8 @@ public class MemoryApp extends Application{
 		props = new Boardprops(600,600);
 		boardModel = new BoardModel(props);
 		playModel = new PlayModel();
-		domainController = new DomainController(boardModel, playModel, wonModel);
+		timeModel = new TimeModel();
+		domainController = new DomainController(boardModel, playModel, wonModel, timeModel);
 		playModel.setDomainController(domainController);
 		
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);

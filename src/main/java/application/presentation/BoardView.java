@@ -33,6 +33,7 @@ public class BoardView {
 	private Color[][] cardsBack;
 	Label[] playerPoints;
 	Label[] playernames;
+	Label time;
 	private BorderPane borderPane;
 	
 	private EventHandler<MouseEvent> getEventHandler (){ 	//adding Eventhandler
@@ -81,7 +82,7 @@ public class BoardView {
 			
 		Group board = new Group();	//javafx things
 		EventHandler<MouseEvent> eventHandler = getEventHandler(); //get Eventhandler from above
-		
+		this.borderPane = new BorderPane();
 		BoardModel boardModel = controller.getBoardModel(); 				//getting boardModel object.
 		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
 		int numberOfVerticalTiles = boardModel.getVerticalTiles();			//variables to save cpu. 
@@ -97,6 +98,8 @@ public class BoardView {
 		cardsBack = new Color[numberOfHorizontalTiles][numberOfVerticalTiles];
 		rectangles = new Rectangle[numberOfHorizontalTiles][numberOfVerticalTiles];
 		FileInputStream fileInputStream;
+		
+		time = new Label("Time: ");
 		
 		//create all Rectangle objects
 		for(int i = 0; i<numberOfHorizontalTiles; i++) {
@@ -153,8 +156,10 @@ public class BoardView {
 
 		
 		updatePlayerPoints();
+		borderPane.setTop(time);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
+		controller.getTimeModel().setStartTime(System.currentTimeMillis());
 		return new Scene(borderPane);
 	}
 	

@@ -5,6 +5,7 @@ import java.beans.PropertyChangeListener;
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.DomainController;
+import application.domain.TimeModel;
 import application.domain.WonModel;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -107,6 +108,13 @@ public class Controller {
 	
 	public void showStats() {
 		primaryStage.setScene(statsView.showStatsView());
+		domainController.getTimeModel().setStopTime(System.currentTimeMillis());
+		System.out.println("Time: " + domainController.getTimeModel().calculateTotalTime()/1000);
+	}
+	
+	//time related
+	public TimeModel getTimeModel() {
+		return domainController.getTimeModel();
 	}
 	
 	

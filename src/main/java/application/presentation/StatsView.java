@@ -28,13 +28,20 @@ public class StatsView extends WindowProps {
 		Label[] namesOfPlayers = new Label[players];
 		Label[] playerPoints = new Label[players];
 		Label player = new Label("Player:");
+		long timer = (controller.getTimeModel().calculateTotalTime()/1000);
+		System.out.println(timer);
+		Label time = new Label("time: " + timer);
 		player.setTranslateX(10);
 		player.setTranslateY(10);
 		Label punkte = new Label("Points:");
 		punkte.setTranslateX(30);
 		punkte.setTranslateY(10);
+		//time.setTranslateX(30);
+		//time.setTranslateY(10);
+		
 		gridPane.add(player, 0, 0);
 		gridPane.add(punkte, 1, 0);
+		gridPane.add(time, 0, 8);
 		
 		for (int i = 0; i<players; i++) {
 			playerPoints[i] = new Label("   "+Integer.toString(controller.getPlayerPoint(i)));

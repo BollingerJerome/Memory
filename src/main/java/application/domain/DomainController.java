@@ -4,18 +4,19 @@ import java.beans.PropertyChangeListener;
 
 public class DomainController {
 
-	public DomainController(BoardModel boardModel, PlayModel playModel, WonModel wonModel) {
+	public DomainController(BoardModel boardModel, PlayModel playModel, WonModel wonModel, TimeModel timeModel) {
 		this.boardModel = boardModel;
 		this.playModel = playModel;
 		this.wonModel = wonModel;
+		this.timeModel = timeModel;
 	}
 
 	private BoardModel boardModel;
 	private PlayModel playModel;
 	private WonModel wonModel;
-	
-	
-	
+	private TimeModel timeModel;
+
+
 	public boolean isTheSame(Card cardOne, Card cardTwo) {
 		if(cardOne.getPairId() == cardTwo.getPairId()) {
 			return true;
@@ -68,19 +69,19 @@ public class DomainController {
 		return;
 	}
 
-	
+
 	public void setWon(boolean won) {
 		wonModel.setWon(won);
 	}
-	
+
 	public boolean iswon() {
 		return boardModel.iswon();
 	}
-	
+
 	public void setPlayerName(int i, String name) {
 		playModel.getPlayerModel()[i].setName(name);
 	}
-	
+
 	public void setBoardSize (int a) {
 		boardModel.setBoardSize(a);
 	}
@@ -96,19 +97,19 @@ public class DomainController {
 	public void setNumberOfPlayers(int a) {
 		playModel.setPlayerModel(a);
 	}
-	
+
 	public int getNumberOfPlayers() {
 		return playModel.getPlayerModel().length;
 	}
-	
+
 	public int getPlayerPoint(int i) {
 		return playModel.getPlayerPoint(i);
 	}
-	
+
 	public String getPlayerName(int i) {
 		return playModel.getPlayerModel()[i].getName();
 	}
-	
+
 	public PlayerModel[] getPlayersModel() {
 		return playModel.getPlayerModel();
 	}
@@ -127,6 +128,14 @@ public class DomainController {
 
 	public void setWonModel(WonModel wonModel) {
 		this.wonModel = wonModel;
+	}
+
+	public TimeModel getTimeModel() {
+		return timeModel;
+	}
+
+	public void setTimeModel(TimeModel timeModel) {
+		this.timeModel = timeModel;
 	}
 
 }
