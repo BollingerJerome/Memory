@@ -38,9 +38,9 @@ public class MemoryApp extends Application{
 		
 		props = new Boardprops(600,600);
 		boardModel = new BoardModel(props);
-		playModel = new PlayModel(boardModel, wonModel);
+		playModel = new PlayModel();
 		domainController = new DomainController(boardModel, playModel, wonModel);
-	
+		playModel.setDomainController(domainController);
 		
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);
 		boardSizeView = new BoardSizeView(300,300, Color.CORNFLOWERBLUE, controller);
