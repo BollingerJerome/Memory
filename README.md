@@ -125,7 +125,7 @@ Velocity: 40 StoryPoints pro Iteration
 ### Taskliste für die Umsetzung der User Stories Sprint 1
 
 #### User Story 1, Akzeptanzkriterium
-1 Button um Spielmodus auszuwählen
+1 Button um Spielmodus auszuwählen <br/>
 Weiterleitung zum Fenster der Spielfeldgrösse 
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
@@ -134,32 +134,36 @@ Weiterleitung zum Fenster der Spielfeldgrösse
 | 1.2 | Kontrollstruktur | 1 |
 
 
-#### User Story 2
-Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
+#### User Story 2, Akzeptanzkriterium
+min. 3 Buttons zur Spielfeldgrösse (4x4, 6x6, 8x8) <br/>
+Spiel startet mit entsprechender Grösse
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 2.1 | GUI-Design, min. 3 Buttons für Spielgrösse | 0.75 |
 | 2.2 | Kontrollstruktur | 1.5 |
 
-#### User Story 4
-Als Spieler möchte ich den Multiplayer-Modus auswählen um die Spielart festzulegen
+#### User Story 4, Akzeptanzkriterium
+1 Button für Multiplayermodus <br/>
+Weiterleitung zum Fenster der Spielfeldgrösse 
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 4.1 | GUI-Design, 1 Button für Spielmodus | 0.75 |
 | 4.2 | Kontrollstruktur | 2 |
 
-#### User Story 5
-Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen
+#### User Story 5, Akzeptanzkriterium
+3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler) <br/>
+Startet Spiel mit der gewählten Anzahl an Spielern
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 5.1 | GUI-Design, 3 Buttons für Spieleranzahl | 0.5 |
 | 5.2 | Kontrollstruktur | 3 |
 
-#### User Story 12
-Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet
+#### User Story 12, Akzeptanzkriterium
+Ansicht der zugedeckten Karten <br/>
+Memoryverhalten
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -168,8 +172,9 @@ Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte b
 | 12.3 | Gleiche Paare bleiben offen liegen | 2 |
 | 12.4 | Karten werden bei Klick wieder zugedeckt | 3 |
 
-#### User Story 14
-Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden
+#### User Story 14, Akzeptanzkriterium
+1 Button um Spiel zu verlassen <br/>
+Spiel wird verlassen
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
