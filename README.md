@@ -132,6 +132,9 @@ Als Spieler möchte ich das Solospiel auswählen um die Spielgrösse festzulegen
 | 1.1 | GUI-Design, 1 Button für Spielmodus | 0.5 |
 | 1.2 | Kontrollstruktur | 1 |
 
+**Akzeptanzkriterium**
+
+
 #### User Story 2
 Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten
 
