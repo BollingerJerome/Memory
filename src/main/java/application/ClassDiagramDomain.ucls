@@ -84,50 +84,50 @@
   </class>  
   <association id="10">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="11" name="wonModel">        
-        <position height="0" width="0" x="160" y="-7"/>      
+      <attribute id="11" name="playModel">        
+        <position height="0" width="0" x="1" y="-4"/>      
       </attribute>      
       <multiplicity id="12" minimum="0" maximum="1">        
-        <position height="0" width="0" x="160" y="-7"/>      
+        <position height="0" width="0" x="1" y="-4"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="13">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="14" name="boardModel">        
-        <position height="0" width="0" x="-126" y="1"/>      
-      </attribute>      
-      <multiplicity id="15" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-126" y="1"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="16">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="17" name="field">        
+      <attribute id="14" name="field">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="18" minimum="0" maximum="2147483647">        
+      <multiplicity id="15" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="19">    
+  <association id="16">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="20" name="playerModel">        
+      <attribute id="17" name="playerModel">        
         <position height="0" width="0" x="5" y="26"/>      
       </attribute>      
-      <multiplicity id="21" minimum="0" maximum="2147483647">        
+      <multiplicity id="18" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="5" y="26"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="20" name="boardModel">        
+        <position height="0" width="0" x="-126" y="1"/>      
+      </attribute>      
+      <multiplicity id="21" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-126" y="1"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="22">    
@@ -144,14 +144,14 @@
   </association>  
   <association id="25">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="26" name="playModel">        
-        <position height="0" width="0" x="1" y="-4"/>      
+      <attribute id="26" name="wonModel">        
+        <position height="0" width="0" x="160" y="-7"/>      
       </attribute>      
       <multiplicity id="27" minimum="0" maximum="1">        
-        <position height="0" width="0" x="1" y="-4"/>      
+        <position height="0" width="0" x="160" y="-7"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

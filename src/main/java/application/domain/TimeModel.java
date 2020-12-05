@@ -5,18 +5,22 @@ import java.beans.PropertyChangeSupport;
 
 public class TimeModel {
 	
+		//constructor sets the current time on zero
 	public TimeModel() {
 		this.currentTime = 0;
 	}
-
+	
+	//only variable I need for the timer. 
+	//it is not the timer but every second while playing, a one gets added to this varible
+	//the real timer is in the boardview class
 	private int currentTime;
 	
+	//resets the time
 	public void reset() {
 		this.currentTime = 0;
 	}
 	
-
-	
+	//outputting time in a String format (xh xmin xs)
 	public String getTimeString() {
 		if(currentTime> 3600) {
 			String string = "Time: " + currentTime/3600 + "h "+ (currentTime%3600)/60 + "min " + (currentTime%60) +"s";
@@ -35,7 +39,7 @@ public class TimeModel {
 		
 	}
 
-
+	//getter and setter
 	public int getCurrentTime() {
 		return currentTime;
 	}

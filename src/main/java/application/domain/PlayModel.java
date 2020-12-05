@@ -2,6 +2,7 @@ package application.domain;
 
 public class PlayModel {
 
+	//constructor for new playModel.
 	public PlayModel() {
 		this.turn = 0;
 		this.round = 0;
@@ -9,26 +10,37 @@ public class PlayModel {
 		this.playerTurn = 0;
 	}
 
-	private int turn;
-	private int round;
-	private int currentX;
-	private int currentY;
-	private int lastX;
-	private int lastY;
-	private PlayerModel[] playerModel;
-	private int playerTurn;
-	private DomainController domainController;
+	private int turn;		//current step of a round (all cards down, one card open, both cards open)
+	private int round;		//which round it is
+	private int currentX;	//x position of the clicked card in the Card[x][y] array
+	private int currentY; 	//y position of the clicked card in the Card[x][y] array
+	private int lastX;		//x position of the last clicked card in the Card[x][y] array
+	private int lastY;		//y position of the last clicked card in the Card[x][y] array
+	private PlayerModel[] playerModel;	//Array of PlayerModelClass objects
+	private int playerTurn;				//which player is currently playing each round
+	private DomainController domainController;	//domainController object
 
 	
-
+	//updating the x an y coordinates of the cards
 	public void setPosition(Card card) {			
-		lastX = currentX;
+		lastX = currentX;				
 		lastY = currentY;
 		currentX = card.getX();
 		currentY = card.getY();
 	}
-
-
+	
+	//initializing the playerModel[] array
+	public void setPlayerModel(int players) {
+		this.playerModel = new PlayerModel[players];	//I want an array of PlayerModels with length of players
+		for (int i = 0; i<players; i++) {
+			String defaultName = "Player " + (i+1) +": ";	//setting a default name for each player (those names can be overwritten in the MultiplayerPlayersview)
+			playerModel[i] = new PlayerModel(defaultName);	//each player has a name
+		}
+	}
+	
+	
+	
+	//getters and setters
 	public int getTurn() {
 		return turn;
 	}
@@ -47,14 +59,6 @@ public class PlayModel {
 	}
 	public int getPlayerPoint(int i) {
 		return playerModel[i].getPoint();
-	}
-
-	public void setPlayerModel(int a) {
-		this.playerModel = new PlayerModel[a];
-		for (int i = 0; i<a; i++) {
-			String defaultName = "Player " + (i+1) +": ";
-			playerModel[i] = new PlayerModel(0, defaultName);
-		}
 	}
 
 	public DomainController getDomainController() {
