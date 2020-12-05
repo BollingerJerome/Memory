@@ -30,6 +30,7 @@ public class StatsView extends WindowProps {
 		Label[] playerPoints = new Label[players];
 		Label player = new Label("Player:");
 		Label time = new Label(controller.getTimeModel().getTimeString());
+		Label turnsInTotal = new Label("total turns: " + controller.getDomainController().getPlayModel().getRound());
 		player.setTranslateX(10);
 		player.setTranslateY(10);
 		Label punkte = new Label("Points:");
@@ -40,7 +41,7 @@ public class StatsView extends WindowProps {
 		gridPane.add(player, 0, 0);
 		gridPane.add(punkte, 1, 0);
 		gridPane.add(time, 0, 8);
-		
+		gridPane.add(turnsInTotal, 4, 1);
 		for (int i = 0; i<players; i++) {
 			playerPoints[i] = new Label("   "+Integer.toString(controller.getPlayerPoint(i)));
 			playerPoints[i].setTranslateX(30);
@@ -53,6 +54,7 @@ public class StatsView extends WindowProps {
 			namesOfPlayers[i].setTranslateY(20);
 			gridPane.add(namesOfPlayers[i], 0, i+1);
 			gridPane.add(playerPoints[i], 1, i+1);
+			
 		}
 		Scene stats = getDefaultScene(gridPane);
 		return stats;

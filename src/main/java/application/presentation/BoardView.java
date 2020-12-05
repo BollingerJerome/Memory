@@ -206,9 +206,9 @@ public class BoardView {
 		return new Scene(borderPane);
 	}
 	
-	public void lockGame(BoardModel boardModel, EventHandler eventHandler) {
-		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
-		int numberOfVerticalTiles = boardModel.getVerticalTiles();
+	public void lockGame(BoardModel boardModel, EventHandler eventHandler) { 	//It takes eventHandeler away of
+		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();			//the board, to lock it in
+		int numberOfVerticalTiles = boardModel.getVerticalTiles();				//this state
 		for(int i = 0; i<numberOfHorizontalTiles; i++) {
 			for(int j = 0; j<numberOfVerticalTiles; j++) {
 				rectangles[i][j].removeEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
@@ -217,7 +217,7 @@ public class BoardView {
 	}
 	
 	public void continueGame(BoardModel boardModel, EventHandler eventHandler) {
-		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
+		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();			//add eventhandlers again
 		int numberOfVerticalTiles = boardModel.getVerticalTiles();
 		for(int i = 0; i<numberOfHorizontalTiles; i++) {
 			for(int j = 0; j<numberOfVerticalTiles; j++) {
