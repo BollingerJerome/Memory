@@ -29,7 +29,7 @@ public class StatsView extends WindowProps {
 		Label[] namesOfPlayers = new Label[players];
 		Label[] playerPoints = new Label[players];
 		Label player = new Label("Player:");
-		Label time = new Label("time: " + (controller.getTimeModel().calculateTotalTime()/1000) + "seconds");
+		Label time = new Label(controller.getTimeModel().getTimeString());
 		player.setTranslateX(10);
 		player.setTranslateY(10);
 		Label punkte = new Label("Points:");

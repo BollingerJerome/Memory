@@ -1,49 +1,48 @@
 package application.domain;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 public class TimeModel {
 	
 	public TimeModel() {
-		this.startTime = 0;
-		this.stopTime = 0;
-		this.totalTime = 0;
+		this.currentTime = 0;
 	}
-	private long startTime;
-	private long stopTime;
-	private long totalTime;
+
+	private int currentTime;
 	
-	public long calculateTotalTime() {
-		totalTime = stopTime-startTime;
-		return totalTime;
+	public void reset() {
+		this.currentTime = 0;
 	}
 	
+
 	
-	public void start() {
-		setStartTime(System.currentTimeMillis());
-		System.out.println("Start time: " + System.currentTimeMillis());
+	public String getTimeString() {
+		if(currentTime> 3600) {
+			String string = "Time: " + currentTime/3600 + "h "+ (currentTime%3600)/60 + "min " + (currentTime%60) +"s";
+			return string;
+		}
+		else {
+			if(currentTime>60) {
+				String string = "Time: " + (currentTime/60) + "min " + (currentTime%60) +"s";
+				return string;
+			}
+			else {
+				String string = "Time: " + currentTime +"s";
+				return string;
+			}
+		}
+		
 	}
-	public void stop() {
-		setStopTime(System.currentTimeMillis());
-		System.out.println("Stop time: " + System.currentTimeMillis());
-		calculateTotalTime();
+
+
+	public int getCurrentTime() {
+		return currentTime;
 	}
-	
-	public long getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(long startTime) {
-		this.startTime = startTime;
-	}
-	public long getStopTime() {
-		return stopTime;
-	}
-	public void setStopTime(long stopTime) {
-		this.stopTime = stopTime;
-	}
-	public long getTotalTime() {
-		return totalTime;
-	}
-	public void setTotalTime(long totalTime) {
-		this.totalTime = totalTime;
+
+
+	public void setCurrentTime(int currentTime) {
+		this.currentTime = currentTime;
 	}
 
 }

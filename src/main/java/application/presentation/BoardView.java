@@ -2,9 +2,15 @@ package application.presentation;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.PathStrings;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -17,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 public class BoardView {
 
@@ -35,6 +42,7 @@ public class BoardView {
 	Label[] playernames;
 	Label time;
 	private BorderPane borderPane;
+	Timeline timeline;
 	
 	private EventHandler<MouseEvent> getEventHandler (){ 	//adding Eventhandler
 		return new EventHandler<MouseEvent>() {				
@@ -79,7 +87,7 @@ public class BoardView {
 	public Scene setupCards() {
 		
 		//initializing:
-			
+		controller.getTimeModel().reset();
 		Group board = new Group();	//javafx things
 		EventHandler<MouseEvent> eventHandler = getEventHandler(); //get Eventhandler from above
 		this.borderPane = new BorderPane();
@@ -148,22 +156,74 @@ public class BoardView {
 		}
 		//adding back button
 		Button backButton= new Button("<< Back");
-		backButton.setOnAction(e -> controller.showHome());
+		backButton.setOnAction(e -> {
+			controller.showHome();
+			timeline.stop();
+		});
 		
 
 		//if won, show stats
 		controller.getWonModel().addPropertyChangeListener(e ->{
-			controller.getTimeModel().stop();
+			timeline.stop();
 			controller.showStats();
 		});
 
 		
 		updatePlayerPoints();
-		borderPane.setTop(time);
+		
+		//TODO Pause button should not move when time changes
+		Button pause = new Button("pause");
+		pause.setOnAction(e -> {
+			if(pause.getText().contentEquals("pause")) {
+				timeline.stop();
+				pause.setText("continue");
+				lockGame(boardModel, eventHandler);
+			}
+			else {
+				timeline.play();
+				pause.setText("pause");
+				continueGame(boardModel, eventHandler);
+			}
+			
+		});
+		
+		
+		
+		this.timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+			controller.getTimeModel().setCurrentTime(controller.getTimeModel().getCurrentTime() +1);
+	        time.setText(controller.getTimeModel().getTimeString());
+	    }));
+	    timeline.setCycleCount(Animation.INDEFINITE);
+	    timeline.play();
+	    
+	    
+		GridPane top = new GridPane();
+		top.add(time, 0, 0);
+		top.add(pause, 1, 0);
+		borderPane.setTop(top);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
-		controller.getTimeModel().start(); //starting time
 		return new Scene(borderPane);
+	}
+	
+	public void lockGame(BoardModel boardModel, EventHandler eventHandler) {
+		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
+		int numberOfVerticalTiles = boardModel.getVerticalTiles();
+		for(int i = 0; i<numberOfHorizontalTiles; i++) {
+			for(int j = 0; j<numberOfVerticalTiles; j++) {
+				rectangles[i][j].removeEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
+			}
+		}
+	}
+	
+	public void continueGame(BoardModel boardModel, EventHandler eventHandler) {
+		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
+		int numberOfVerticalTiles = boardModel.getVerticalTiles();
+		for(int i = 0; i<numberOfHorizontalTiles; i++) {
+			for(int j = 0; j<numberOfVerticalTiles; j++) {
+				rectangles[i][j].addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
+			}
+		}
 	}
 	
 	public void updatePlayerPoints() {
@@ -183,6 +243,7 @@ public class BoardView {
 			borderPane.setLeft(gridPane);
 		}
 	}
+
 	
 	
 }
