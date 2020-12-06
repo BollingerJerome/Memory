@@ -27,6 +27,7 @@ import javafx.util.Duration;
 
 public class BoardView {
 
+	
 
 	public BoardView(Controller controller) {
 		this.controller = controller;
@@ -34,15 +35,15 @@ public class BoardView {
 	}
 
 	//private BoardModel boardModel;
-	private Rectangle[][] rectangles;
+	private Rectangle[][] rectangles;		//javafx rectangles acting as cards with eventhandler etc.
 	private Controller controller;
-	private ImagePattern[][] cardsFront;
-	private Color[][] cardsBack;
-	Label[] playerPoints;
-	Label[] playernames;
-	Label time;
-	private BorderPane borderPane;
-	Timeline timeline;
+	private ImagePattern[][] cardsFront;	//array of the images 
+	private Color[][] cardsBack;			//array of the colors 
+	Label[] playerPoints;					//labels on the left with the points
+	Label[] playernames;					//labels on the left with the playername
+	Label time;								//label showing the time
+	private BorderPane borderPane;			//layout
+	Timeline timeline;						//timer object from javautils
 	
 	private EventHandler<MouseEvent> getEventHandler (){ 	//adding Eventhandler
 		return new EventHandler<MouseEvent>() {				
@@ -58,8 +59,8 @@ public class BoardView {
 		BoardModel boardModel = controller.getBoardModel();		//card Object so the turn(Card card) method can
 		for(int i = 0; i<boardModel.getHorizontalTiles(); i++) {//work.
 			for(int j = 0; j<boardModel.getVerticalTiles(); j++) {
-				if(object.equals(rectangles[i][j])) {
-					return boardModel.getField()[i][j];
+				if(object.equals(rectangles[i][j])) {			//javafx rectangles are not the cardmodel object but they are linked with coordinates
+					return boardModel.getField()[i][j];   		//when the clicked rectangles has coordinate (3|4) search the card object with the same coordinates
 				}
 				
 			}
@@ -174,35 +175,35 @@ public class BoardView {
 		//TODO Pause button should not move when time changes
 		Button pause = new Button("pause");
 		pause.setOnAction(e -> {
-			if(pause.getText().contentEquals("pause")) {
-				timeline.stop();
-				pause.setText("continue");
-				lockGame(boardModel, eventHandler);
+			if(pause.getText().contentEquals("pause")) { //not pretty but the button makes two different things dependant on the button name
+				timeline.stop();						//stopping the timer
+				pause.setText("continue");				//setting the button text to continue
+				lockGame(boardModel, eventHandler);		//calling function to remove eventhandler
+			}	
+			else {										//when button text is not pause -> when its continue
+				timeline.play();						//continue counting
+				pause.setText("pause");					//setting button text to pause
+				continueGame(boardModel, eventHandler);	//adding eventhandlers again
 			}
-			else {
-				timeline.play();
-				pause.setText("pause");
-				continueGame(boardModel, eventHandler);
-			}
-			
 		});
 		
-		
-		
+		//initializing the timer
 		this.timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+			//timemodel gets added one every second
 			controller.getTimeModel().setCurrentTime(controller.getTimeModel().getCurrentTime() +1);
-	        time.setText(controller.getTimeModel().getTimeString());
+	        time.setText(controller.getTimeModel().getTimeString()); //updating the label 
 	    }));
 	    timeline.setCycleCount(Animation.INDEFINITE);
-	    timeline.play();
+	    timeline.play(); //start timer
 	    
 	    
-		GridPane top = new GridPane();
+		GridPane top = new GridPane(); //layout on top of the Borderpane (I have two labels next to each other)
 		top.add(time, 0, 0);
 		top.add(pause, 1, 0);
 		borderPane.setTop(top);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
+		//showing the gamefield
 		return new Scene(borderPane);
 	}
 	

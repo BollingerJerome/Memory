@@ -87,10 +87,10 @@ public class DomainController {
 	 * 	|			|no					|							|						next player
 	 * 	|			|					|							|yes					turn to zero
 	 * 	|			v					v							v						round added
-	 * 	|		nothing happens		nothing happens				cards are left open
-	 * 	|														cards are found
-	 * 	------------------------------------------------------	no player changed
-	 * 															turn to zero
+	 * 	|		nothing happens		nothing happens				cards are left open				|
+	 * 	|														cards are found					|
+	 * 	--------------------<----------------------------------	no player changed				|
+	 * 	| - - - -<- - - - - - - - - - - - - - - - -<- - - - - -	turn to zero - - - - - -<- - - - 
 	 * 															round added
 	 * 																|
 	 * 																|won 

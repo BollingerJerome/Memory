@@ -37,10 +37,10 @@ public class Controller {
 	
 	
 	//Home Buttons
-	public void showBoardSizeView(Button button) {
+	public void showBoardSizeView() {
 		primaryStage.setScene(boardSizeView.getScene());
 	}
-	public void setMultiplayerPlayersView(Button button) {
+	public void setMultiplayerPlayersView() {
 		primaryStage.setScene(multiplayerPlayersView.getMultiplayersViewScene());
 	}
 	
@@ -49,7 +49,7 @@ public class Controller {
 	}
 	
 	//BoardSizeButtons
-	public void showBoard(Button button) {
+	public void showBoard() {
 		primaryStage.setScene(boardView.setupCards());
 	}
 	public void setBoardSize(int size) {
@@ -69,7 +69,7 @@ public class Controller {
 		return domainController.getBoardModel();
 	}
 	
-	public void showInputPlayerNamesView(Button button) {
+	public void showInputPlayerNamesView() {
 		primaryStage.setScene(inputPlayerNamesView.getInputPlayerNamesViewScene());
 	}
 	

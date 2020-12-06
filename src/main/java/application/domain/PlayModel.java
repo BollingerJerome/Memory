@@ -6,7 +6,7 @@ public class PlayModel {
 	public PlayModel() {
 		this.turn = 0;
 		this.round = 0;
-		this.playerModel = new PlayerModel[1];
+		this.playerModel = new PlayerModel[1]; //having the default array be one element long
 		this.playerTurn = 0;
 	}
 

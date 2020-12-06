@@ -11,7 +11,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
 public abstract class WindowProps {
+	//abstract class which contains a method to return a default Scene for all windows except the boardview
 	
+		//constructor
 	public WindowProps(double width, double height, Color backgroundColor) {
 		super();
 		this.width = width;
@@ -19,15 +21,17 @@ public abstract class WindowProps {
 		this.backgroundColor = backgroundColor;
 	}
 	
-	private double width, height;
-	private Color backgroundColor;
 	
+	private double width, height;	//window height and width
+	private Color backgroundColor;	//the Scenes background color
 	
+		//this method returns a Scene which contains the Pane of the View and adds colors and size to it
 	public Scene getDefaultScene(GridPane root) {
 		root.setBackground(new Background(new BackgroundFill(backgroundColor, CornerRadii.EMPTY, Insets.EMPTY)));
 		return new Scene(root, 300, 300, backgroundColor );
 	}
 	
+		//does the same but it is necessary to have different methods for differen parameter types
 	public Scene getDefaultScene(BorderPane root) {
 		root.setBackground(new Background(new BackgroundFill(backgroundColor, CornerRadii.EMPTY, Insets.EMPTY)));
 		return new Scene(root, 300, 300, backgroundColor );	
