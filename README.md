@@ -127,6 +127,8 @@ Velocity: 40 StoryPoints pro Iteration
 
 Hier folgt noch das Package Diagramm und die 2 Klassendiagramme
 
+![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
+
 ## Dokumentation Sprint 1
 
 ### Taskliste für die Umsetzung der User Stories Sprint 1
