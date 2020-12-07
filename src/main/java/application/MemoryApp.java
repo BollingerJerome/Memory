@@ -12,6 +12,7 @@ import application.presentation.Home;
 import application.presentation.InputPlayerNamesView;
 import application.presentation.MultiplayerPlayersView;
 import application.presentation.StatsView;
+import application.services.FileController;
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -30,16 +31,18 @@ public class MemoryApp extends Application{
 	private InputPlayerNamesView inputPlayerNamesView;
 	private StatsView statsView;
 	private WonModel wonModel;
+	private FileController fileController;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		
-		wonModel = new WonModel();
+		fileController = new FileController();
 		
+		wonModel = new WonModel();
 		props = new Boardprops(600,600);
 		boardModel = new BoardModel(props);
 		playModel = new PlayModel(boardModel, wonModel);
-		domainController = new DomainController(boardModel, playModel, wonModel);
+		domainController = new DomainController(boardModel, playModel, wonModel, fileController);
 	
 		
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);

@@ -2,17 +2,22 @@ package application.domain;
 
 import java.beans.PropertyChangeListener;
 
+import application.services.FileController;
+
 public class DomainController {
 
-	public DomainController(BoardModel boardModel, PlayModel playModel, WonModel wonModel) {
+	public DomainController(BoardModel boardModel, PlayModel playModel, 
+			WonModel wonModel, FileController fileController) {
 		this.boardModel = boardModel;
 		this.playModel = playModel;
 		this.wonModel = wonModel;
+		this.fileController = fileController;
 	}
 
 	private BoardModel boardModel;
 	private PlayModel playModel;
 	private WonModel wonModel;
+	private FileController fileController;
 	
 	public void addPropertyChangeListener( PropertyChangeListener listener ) {
 		wonModel.addPropertyChangeListener(listener);
@@ -64,6 +69,14 @@ public class DomainController {
 	
 	public PlayerModel[] getPlayersModel() {
 		return playModel.getPlayerModel();
+	}
+
+	public FileController getFileController() {
+		return fileController;
+	}
+
+	public void setFileController(FileController fileController) {
+		this.fileController = fileController;
 	}
 
 }
