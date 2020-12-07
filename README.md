@@ -19,16 +19,16 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 7. [Bedienungsanleitung](#Bedienungsanleitung)
 8. [User Stories](#User-Stories)
 9. [Releaseplan](#Releaseplan)
-10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
+10. [UML Packagediagramm und Klassendiagramm](#UML-Packagediagramm-und-Klassendiagramm)
+11. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
-    + [UML Packagediagramm und Klassendiagramm](#UML-Packagediagramm-und-Klassendiagramm)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
-11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
+12. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
     + [Taskliste für die Umsetzung der Userstories Sprint 2](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-2)
     + [Dokumentation wichtiger Code Snippets Sprint 2](#Dokumentation-wichtiger-Code-Snippets-Sprint-2)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-2)
-12. [Dokumentation Sprint 3](#Dokumentation-Sprint-3)
+13. [Dokumentation Sprint 3](#Dokumentation-Sprint-3)
     + [Taskliste für die Umsetzung der Userstories Sprint 3](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-3)
     + [Dokumentation wichtiger Code Snippets Sprint 3](#Dokumentation-wichtiger-Code-Snippets-Sprint-3)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-3)
@@ -103,7 +103,7 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 | 10 | Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben | Min 50 Bilder für Spielgrösse 10x10  <br/><br/> Jede Karte ist wenn sie aufgedeckt wird ein Bild <br/><br/> Spielbrett verhält sich wie Memory | 8 | 2 |
 | 11 | Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, wenn ich vom Spiel weg muss | 1 Button um Spiel zu pausieren <br/><br/> Pausebildschirm erscheint wenn Spiel pausiert | 8 | 4 |
 | 12 | Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet | Ansicht der zugedeckten Karten <br/><br/> Memoryverhalten | 21 | 1 |
-| 13 | Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen | Anzeige der Spielzeit, der gefundenen Paare, etc. | 21 | 3 |
+| 13 | Als Spieler möchte ich ein Fenster um die Spielstatistiken zu sehen | Anzeige der Spielzeit, der gefundenen Paare und Anzahl Züge | 21 | 3 |
 | 14 | Als Spieler möchte ich das Spiel jederzeit verlasssen können um das Spiel zu beenden | 1 Button um Spiel zu verlassen <br/><br/> Spiel wird verlassen | 5 | 1 |
 
 ## Releaseplan
@@ -121,11 +121,11 @@ Velocity: 40 StoryPoints pro Iteration
 | | | |
 | **39 Story Points** | **45 Story Points** | **42 Story Points** |
 
+## UML Packagediagramm und Klassendiagramm
+
 ## Dokumentation Sprint 1
 
 ### Taskliste für die Umsetzung der User Stories Sprint 1
-
-### UML Packagediagramm und Klassendiagramm
 
 #### User Story 1, Akzeptanzkriterium
 1 Button um Spielmodus auszuwählen <br/>
@@ -241,7 +241,7 @@ Spielbrett verhält sich wie Memory
 | 10.3 | Events den Karten hinzufügen, Memoryverhalten | 4 |
 
 #### User Story 13, Akzeptanzkriterium
-Anzeige der Spielzeit, der gefundenen Paare, etc.
+Anzeige der Spielzeit, der gefundenen Paare und Anzahl Züge
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
