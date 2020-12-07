@@ -11,7 +11,7 @@ public class FileController {
 	public boolean create() {
 		
 		try {
-		      File myObj = new File("4x4stats.txt");
+		      File myObj = new File("src/main/java/application/services/4x4stats.txt");
 		      if (myObj.createNewFile()) {
 		        System.out.println("File created: " + myObj.getName());
 		        return true;
@@ -28,7 +28,7 @@ public class FileController {
 	
 	public void write(String entry, String file) {
 		try {
-		      FileWriter myWriter = new FileWriter(file);
+		      FileWriter myWriter = new FileWriter(file, true);
 		      myWriter.write(entry);
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");

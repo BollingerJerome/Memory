@@ -5,6 +5,7 @@ import application.domain.DomainController;
 import application.domain.PlayModel;
 import application.domain.TimeModel;
 import application.domain.WonModel;
+import application.domain.StatisticModel;
 import application.presentation.BoardSizeView;
 import application.presentation.BoardView;
 import application.presentation.Controller;
@@ -33,6 +34,7 @@ public class MemoryApp extends Application{
 	private WonModel wonModel;
 	private FileController fileController;
 	private TimeModel timeModel;
+	private StatisticModel statisticModel;
 
 	
 	@Override	//starts when program is started
@@ -42,11 +44,12 @@ public class MemoryApp extends Application{
 		fileController = new FileController();
 
 		//initializing all models and the domainController
+		statisticModel = new StatisticModel();
 		wonModel = new WonModel();
 		boardModel = new BoardModel(600,600);
 		playModel = new PlayModel();
 		timeModel = new TimeModel();
-		domainController = new DomainController(boardModel, playModel, wonModel, timeModel, fileController);
+		domainController = new DomainController(boardModel, playModel, wonModel, timeModel, statisticModel, fileController);
 		playModel.setDomainController(domainController);
 
 		

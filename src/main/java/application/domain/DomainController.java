@@ -11,13 +11,15 @@ public class DomainController {
 		//domaincontrollerclass should contain all intern logic, which is independent of the graphics.
 		//constructor containing models
 	public DomainController(BoardModel boardModel, PlayModel playModel, 
-			WonModel wonModel, TimeModel timeModel, FileController fileController) {
+			WonModel wonModel, TimeModel timeModel, 
+			StatisticModel statisticModel, FileController fileController) {
 
 		this.boardModel = boardModel;
 		this.playModel = playModel;
 		this.wonModel = wonModel;
-		this.fileController = fileController;
+		this.statisticModel = statisticModel;
 		this.timeModel = timeModel;
+		this.fileController = fileController;
 
 	}
 	
@@ -25,8 +27,11 @@ public class DomainController {
 	private BoardModel boardModel;
 	private PlayModel playModel;
 	private WonModel wonModel;
-	private FileController fileController;
 	private TimeModel timeModel;
+	private StatisticModel statisticModel;
+	
+	//service object
+	private FileController fileController;
 
 		
 		//checks whether two cards are "the same" by comparing their pairIds
@@ -63,7 +68,16 @@ public class DomainController {
 					boardModel.getField()[playModel.getCurrentX()][playModel.getCurrentY()].setFound(true); //you get it now
 					boardModel.getField()[playModel.getLastX()][playModel.getLastY()].setFound(true); //...
 					if(boardModel.iswon()) { //tests if game is won
+						
+						statisticModel = new StatisticModel(boardModel.getHorizontalTiles(), //updating the statistic object
+								playModel.getPlayerModel()[0].getName(), 
+								timeModel.getCurrentTime(), 
+								playModel.getPlayerPoint(0), 
+								playModel.getRound());
+						fileController.create();
+						fileController.write(statisticModel.write(), "src/main/java/application/services/4x4stats.txt");
 						wonModel.setWon(true);	//yeah won -> firePropertyChange -> show stats (see boardview)
+						
 					}
 					playModel.setRound(playModel.getRound()+1); //total round +1
 					playModel.setTurn(0);						//turn starts at zero again, because "no card is open now"
@@ -105,8 +119,6 @@ public class DomainController {
 	 * 																|won 
 	 * 																v
 	 * 															show stats
-	 * 
-	 * 
 	 * 
 	 */																
 
@@ -187,6 +199,18 @@ public class DomainController {
 	public void setTimeModel(TimeModel timeModel) {
 		this.timeModel = timeModel;
 
+	}
+
+
+
+	public StatisticModel getStatisticModel() {
+		return statisticModel;
+	}
+
+
+
+	public void setStatisticModel(StatisticModel statisticModel) {
+		this.statisticModel = statisticModel;
 	}
 
 }

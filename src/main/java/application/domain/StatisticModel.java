@@ -2,6 +2,9 @@ package application.domain;
 
 public class StatisticModel {
 
+	//this class saves the info of the game stats for the services
+	public StatisticModel() {
+	}
 	
 	public StatisticModel(int boardSize, String name, int time, int points, int rounds) {
 		this.boardSize = boardSize;
@@ -20,12 +23,15 @@ public class StatisticModel {
 	private int rounds;
 	
 	
-	public void write() {
-		String entry = "E" + "." + boardSize +"." + name + "." + time + "." + points + "." + rounds;
+	//this method returns the entry as a string for the filewriter
+	public String write() {
+		String entry = boardSize +"." + name + "." + time + "." + points + "." + rounds +"\n";
 		System.out.println(entry);
+		return entry;
 	}
 	
 	
+	//getters and setters;
 	public int getBoardSize() {
 		return boardSize;
 	}
