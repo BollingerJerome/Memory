@@ -4,11 +4,14 @@ import javafx.scene.paint.Color;
 
 public class TileColors {
 
+	//just saving the colors here as a static array
 	public static Color[] Back = {
 			Color.BLACK,
 			Color.DARKGRAY
 	};
 
+	
+	//not used anymore
 	public static Color[] colortiles = {
 			Color.DARKGREEN,
 			Color.DARKBLUE,

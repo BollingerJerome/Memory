@@ -1,9 +1,11 @@
 package application.domain;
 
-public class Boardprops {
-
+public abstract class Boardprops {
+		
+		//constructor of this abstract class
+		//this is here to separate width and height variables from the boardModel
+		//might better be in presentation, because it depends on the screen
 	public Boardprops(double width, double height) {
-		super();
 		this.width = width;
 		this.height = height;
 	}

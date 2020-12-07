@@ -1,7 +1,9 @@
 package application.domain;
 
 public class PathStrings {
-
+	
+	
+		//Static String[] array for all photos paths of the profs
 	public static String[] profsFotos= {
 			"alard.png",
 			"bachmann.png",
@@ -22,7 +24,8 @@ public class PathStrings {
 			"ulrich.png",
 			"wennmacher.png"
 	};
-
+	
+	//Static String[] array for all photos paths of the Sehenswürdigkeiten
 	public static String[] SehenswuerdigkeitenFotos = {
 			"angkor_wat.png",
 			"arc_triomphe.png",
@@ -76,6 +79,8 @@ public class PathStrings {
 			"white_temple.png"
 	};
 
+	
+	//getters and setters
 	public static String[] getProfsFotos() {
 		return profsFotos;
 	}

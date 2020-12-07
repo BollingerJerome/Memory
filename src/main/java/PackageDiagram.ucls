@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="application" project="MemoryPraktikum" 
+    file="/MemoryPraktikum/src/main/java/application" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="504" width="786" x="92" y="76"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="application.domain" project="MemoryPraktikum" 
+    file="/MemoryPraktikum/src/main/java/application/domain" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="250" x="118" y="142"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="application.presentation" project="MemoryPraktikum" 
+    file="/MemoryPraktikum/src/main/java/application/presentation" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="250" x="115" y="348"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
