@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.PathStrings;
+import application.domain.StatisticModel;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -165,8 +166,14 @@ public class BoardView {
 
 		//if won, show stats
 		controller.getWonModel().addPropertyChangeListener(e ->{
+			
+			controller.getDomainController().setStatisticModel(new StatisticModel(controller.getDomainController().getPlayModel().getPlayerModel()[0].getName(), //updating the statistic object
+					controller.getDomainController().getTimeModel().getCurrentTime(), 
+					controller.getDomainController().getPlayModel().getRound()));
 			timeline.stop();
+			controller.getDomainController().getFileController().makeEntry(boardModel.getHorizontalTiles(), controller.getDomainController().getStatisticModel().write());
 			controller.showStats();
+		
 		});
 
 		
@@ -203,6 +210,13 @@ public class BoardView {
 		borderPane.setTop(top);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
+		
+		Button win = new Button("win");
+		win.setOnAction(e ->{
+			controller.getWonModel().setWon(true);
+		});
+		borderPane.setRight(win);
+		
 		//showing the gamefield
 		return new Scene(borderPane);
 	}

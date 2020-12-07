@@ -1,7 +1,10 @@
 package application.domain;
 
 
+import java.util.Vector;
+
 import application.services.FileController;
+import application.services.PlayerScore;
 
 public class DomainController {
 
@@ -69,13 +72,11 @@ public class DomainController {
 					boardModel.getField()[playModel.getLastX()][playModel.getLastY()].setFound(true); //...
 					if(boardModel.iswon()) { //tests if game is won
 						
-						statisticModel = new StatisticModel(boardModel.getHorizontalTiles(), //updating the statistic object
-								playModel.getPlayerModel()[0].getName(), 
+						/*statisticModel = new StatisticModel(playModel.getPlayerModel()[0].getName(), //updating the statistic object
 								timeModel.getCurrentTime(), 
-								playModel.getPlayerPoint(0), 
 								playModel.getRound());
-						fileController.create();
-						fileController.write(statisticModel.write(), "src/main/java/application/services/4x4stats.txt");
+						
+						fileController.makeEntry(boardModel.getHorizontalTiles(), statisticModel.write());*/
 						wonModel.setWon(true);	//yeah won -> firePropertyChange -> show stats (see boardview)
 						
 					}
@@ -122,6 +123,8 @@ public class DomainController {
 	 * 
 	 */																
 
+	
+	
 
 	public void setWon(boolean won) {
 		wonModel.setWon(won);

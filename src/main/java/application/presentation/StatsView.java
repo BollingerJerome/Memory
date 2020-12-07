@@ -3,7 +3,9 @@ package application.presentation;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class StatsView extends WindowProps {
@@ -17,6 +19,7 @@ public class StatsView extends WindowProps {
 	
 	public Scene showStatsView() {
 		
+		VBox vbox = new VBox();
 		GridPane gridPane = new GridPane(); //overall layout
 		
 		//how many players are there
@@ -65,6 +68,15 @@ public class StatsView extends WindowProps {
 			gridPane.add(playerPoints[i], 1, i+1);
 			
 		}
+		/*int size = controller.getDomainController().getFileController().read(controller.getDomainController().getBoardModel().getHorizontalTiles()).size();
+		
+		VBox scoreBox = new VBox();
+		Label[] scoreLabels = new Label[size];
+		for (int i = 0; i<size; i++) {
+			String score = controller.getDomainController().getFileController().read(controller.getDomainController().getBoardModel().getHorizontalTiles()).get(i).getScoreString();
+			scoreLabels[i] = new Label(score);
+			scoreBox.getChildren().add(scoreLabels[i]);
+		}*/
 		
 		//adding all elements
 		gridPane.add(back, 0,6);
@@ -73,7 +85,10 @@ public class StatsView extends WindowProps {
 		gridPane.add(time, 0, 8);
 		gridPane.add(turnsInTotal, 4, 1);
 		
+		vbox.getChildren().add(gridPane);
+		//vbox.getChildren().add(scoreBox);
+		
 		//superclass method which returns the gridpane as a scene with the colors and size
-		return getDefaultScene(gridPane);
+		return getDefaultScene(vbox);
 	}
 }

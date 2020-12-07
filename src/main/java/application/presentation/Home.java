@@ -37,7 +37,7 @@ public class Home extends WindowProps {
 		buttonSolo.setTranslateY(50);	//it is not really nice to do it like this
 		buttonSolo.setOnAction(e ->{		//lambda function "what happens when it is pressed?"
 			controller.setNumberOfPlayers(1);	//sets the number of players to one
-			controller.showBoardSizeView();		//makes the controller to show next window
+			controller.showInputPlayerNamesView();		//makes the controller to show next window
 		});
 		
 		//multiplayer button
