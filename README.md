@@ -125,9 +125,12 @@ Velocity: 40 StoryPoints pro Iteration
 
 ## UML Packagediagramm und Klassendiagramm
 
-Hier folgt noch das Package Diagramm und die 2 Klassendiagramme
-
 ![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
+
+Hier folgen noch die 2 Klassendiagramme...
+
+![Image for Classdiagram]()
+![Image for Classdiagram]()
 
 ## Dokumentation Sprint 1
 
