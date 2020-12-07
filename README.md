@@ -19,16 +19,16 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 7. [Bedienungsanleitung](#Bedienungsanleitung)
 8. [User Stories](#User-Stories)
 9. [Releaseplan](#Releaseplan)
-10. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
+10. [UML Packagediagramm und Klassendiagramm](#UML-Packagediagramm-und-Klassendiagramm)
+11. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
-    + [UML Packagediagramm und Klassendiagramm](#UML-Packagediagramm-und-Klassendiagramm)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
-11. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
+12. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
     + [Taskliste für die Umsetzung der Userstories Sprint 2](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-2)
     + [Dokumentation wichtiger Code Snippets Sprint 2](#Dokumentation-wichtiger-Code-Snippets-Sprint-2)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-2)
-12. [Dokumentation Sprint 3](#Dokumentation-Sprint-3)
+13. [Dokumentation Sprint 3](#Dokumentation-Sprint-3)
     + [Taskliste für die Umsetzung der Userstories Sprint 3](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-3)
     + [Dokumentation wichtiger Code Snippets Sprint 3](#Dokumentation-wichtiger-Code-Snippets-Sprint-3)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-3)
@@ -121,11 +121,11 @@ Velocity: 40 StoryPoints pro Iteration
 | | | |
 | **39 Story Points** | **45 Story Points** | **42 Story Points** |
 
+## UML Packagediagramm und Klassendiagramm
+
 ## Dokumentation Sprint 1
 
 ### Taskliste für die Umsetzung der User Stories Sprint 1
-
-### UML Packagediagramm und Klassendiagramm
 
 #### User Story 1, Akzeptanzkriterium
 1 Button um Spielmodus auszuwählen <br/>
