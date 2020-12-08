@@ -222,11 +222,8 @@ public class BoardView {
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
 		//TODO rangliste nur wenn einzelspieler
-		Button win = new Button("win");
-		win.setOnAction(e ->{
-			controller.getWonModel().setWon(true);
-		});
-		borderPane.setRight(win);
+		
+
 		
 		//showing the gamefield
 		return new Scene(borderPane);
