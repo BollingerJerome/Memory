@@ -48,7 +48,8 @@ public class InputPlayerNamesView extends WindowProps {
 		go.setOnAction(e -> {
 			for (int i = 0; i<players; i++) { 				//this for loop saves the names of the inputs to the playerModel
 				if(!input[i].getText().isEmpty()) {			 //each player has already a default name this means that those default name are only overwritten when player chooses to set a name
-					controller.setPlayerName(i, input[i].getText());
+					String[] test = input[i].getText().split("\\."); //I cannot allow a point in the name, so I delete the rest
+					controller.setPlayerName(i, test[0]);
 				}
 			}
 			controller.showBoardSizeView(); 				//showing the boardsize window

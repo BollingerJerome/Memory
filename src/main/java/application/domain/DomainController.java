@@ -1,17 +1,29 @@
 package application.domain;
 
-import java.beans.PropertyChangeListener;
+
+import java.util.Vector;
+
+import application.services.FileController;
+import application.services.PlayerScore;
 
 public class DomainController {
 
+
+
+
 		//domaincontrollerclass should contain all intern logic, which is independent of the graphics.
-	
 		//constructor containing models
-	public DomainController(BoardModel boardModel, PlayModel playModel, WonModel wonModel, TimeModel timeModel) {
+	public DomainController(BoardModel boardModel, PlayModel playModel, 
+			WonModel wonModel, TimeModel timeModel, 
+			StatisticModel statisticModel, FileController fileController) {
+
 		this.boardModel = boardModel;
 		this.playModel = playModel;
 		this.wonModel = wonModel;
+		this.statisticModel = statisticModel;
 		this.timeModel = timeModel;
+		this.fileController = fileController;
+
 	}
 	
 	//model objects
@@ -19,6 +31,10 @@ public class DomainController {
 	private PlayModel playModel;
 	private WonModel wonModel;
 	private TimeModel timeModel;
+	private StatisticModel statisticModel;
+	
+	//service object
+	private FileController fileController;
 
 		
 		//checks whether two cards are "the same" by comparing their pairIds
@@ -30,6 +46,7 @@ public class DomainController {
 			return false;
 		}
 	}
+
 
 	
 	//this is the main game logic. This Method controls the flow of each players turn and if they are allowed 
@@ -55,6 +72,7 @@ public class DomainController {
 					boardModel.getField()[playModel.getLastX()][playModel.getLastY()].setFound(true); //...
 					if(boardModel.iswon()) { //tests if game is won
 						wonModel.setWon(true);	//yeah won -> firePropertyChange -> show stats (see boardview)
+						
 					}
 					playModel.setRound(playModel.getRound()+1); //total round +1
 					playModel.setTurn(0);						//turn starts at zero again, because "no card is open now"
@@ -97,10 +115,10 @@ public class DomainController {
 	 * 																v
 	 * 															show stats
 	 * 
-	 * 
-	 * 
 	 */																
 
+	
+	
 
 	public void setWon(boolean won) {
 		wonModel.setWon(won);
@@ -146,6 +164,15 @@ public class DomainController {
 		return playModel.getPlayerModel();
 	}
 
+
+	public FileController getFileController() {
+		return fileController;
+	}
+
+	public void setFileController(FileController fileController) {
+		this.fileController = fileController;
+	}
+
 	public PlayModel getPlayModel() {
 		return playModel;
 	}
@@ -168,6 +195,19 @@ public class DomainController {
 
 	public void setTimeModel(TimeModel timeModel) {
 		this.timeModel = timeModel;
+
+	}
+
+
+
+	public StatisticModel getStatisticModel() {
+		return statisticModel;
+	}
+
+
+
+	public void setStatisticModel(StatisticModel statisticModel) {
+		this.statisticModel = statisticModel;
 	}
 
 }

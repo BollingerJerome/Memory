@@ -8,6 +8,8 @@ import java.util.TimerTask;
 import application.domain.BoardModel;
 import application.domain.Card;
 import application.domain.PathStrings;
+import application.domain.StatisticModel;
+import application.domain.WonModel;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -164,8 +166,24 @@ public class BoardView {
 		
 
 		//if won, show stats
+		
+		controller.getDomainController().setWonModel(new WonModel());
 		controller.getWonModel().addPropertyChangeListener(e ->{
+			//stop the timer
 			timeline.stop();
+			
+			//write score when singleplayer
+			if(controller.getNumberOfPlayers() == 1) {
+				controller.getDomainController().setStatisticModel(
+						new StatisticModel(controller.getDomainController().getPlayModel().getPlayerModel()[0].getName(), //updating the statistic object
+						controller.getDomainController().getTimeModel().getCurrentTime(), 
+						controller.getDomainController().getPlayModel().getRound()));
+				//creating the entry
+				controller.getDomainController().getFileController().makeEntry(
+						boardModel.getHorizontalTiles(), controller.getDomainController().getStatisticModel().write());
+			}
+			
+			//switch to next window
 			controller.showStats();
 		});
 
@@ -203,6 +221,13 @@ public class BoardView {
 		borderPane.setTop(top);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
+		//TODO rangliste nur wenn einzelspieler
+		Button win = new Button("win");
+		win.setOnAction(e ->{
+			controller.getWonModel().setWon(true);
+		});
+		borderPane.setRight(win);
+		
 		//showing the gamefield
 		return new Scene(borderPane);
 	}
@@ -236,7 +261,7 @@ public class BoardView {
 			playernames = new Label[numberOfPlayers];
 
 			for (int i = 0; i<numberOfPlayers; i++) {
-				playernames[i] = new Label(controller.getPlayerName(i));
+				playernames[i] = new Label(controller.getPlayerName(i)+": ");
 				playerPoints[i] = new Label(Integer.toString(controller.getPlayerPoint(i)));
 				gridPane.add(playernames[i], 0, i);
 				gridPane.add(playerPoints[i], 1, i);

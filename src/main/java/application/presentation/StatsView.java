@@ -1,9 +1,12 @@
 package application.presentation;
 
+import application.services.FileController;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class StatsView extends WindowProps {
@@ -17,6 +20,7 @@ public class StatsView extends WindowProps {
 	
 	public Scene showStatsView() {
 		
+		VBox vbox = new VBox();
 		GridPane gridPane = new GridPane(); //overall layout
 		
 		//how many players are there
@@ -53,9 +57,6 @@ public class StatsView extends WindowProps {
 			playerPoints[i].setTranslateX(30);
 			playerPoints[i].setTranslateY(20);
 			
-			if (players == 1) {
-				controller.setPlayerName(0, "You"); // when singleplayer, you is the name you get
-			}
 			
 			namesOfPlayers[i] = new Label(controller.getPlayerName(i));
 			namesOfPlayers[i].setTranslateX(10);
@@ -66,6 +67,9 @@ public class StatsView extends WindowProps {
 			
 		}
 		
+		
+		
+		
 		//adding all elements
 		gridPane.add(back, 0,6);
 		gridPane.add(player, 0, 0);
@@ -73,7 +77,40 @@ public class StatsView extends WindowProps {
 		gridPane.add(time, 0, 8);
 		gridPane.add(turnsInTotal, 4, 1);
 		
+		vbox.getChildren().add(gridPane);
+		
+		
+		//adding the highscore list
+		if(players == 1) {
+			
+			vbox.getChildren().add(getScoreBox());
+		}
+		
+		
 		//superclass method which returns the gridpane as a scene with the colors and size
-		return getDefaultScene(gridPane);
+		return getDefaultScene(vbox);
 	}
+	
+	
+	//creating the score box 
+	public VBox getScoreBox() {
+		VBox scoreBox = new VBox();
+		Label[] scoreLabels = new Label[10];
+		String[][] it = new String[10][3]; //will contain the txt information
+		it = controller.getDomainController().getFileController().	//will return the string with readfunctions
+				read(controller.getDomainController().getBoardModel().getHorizontalTiles());
+		for (int i = 0; i<10; i++) {
+			if(it[i][1] == null) {	//stop adding text if there is no content
+				break;
+			}
+			else {
+				String score = "Rang: " + (i+1) + "  name: " +it[i][0]+ " time: " + it[i][1] + " rounds: " + it[i][2];
+				scoreLabels[i] = new Label(score);
+				scoreBox.getChildren().add(scoreLabels[i]);
+			}
+		}
+		return scoreBox;
+	}
+	
+	
 }

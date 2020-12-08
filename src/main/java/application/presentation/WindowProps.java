@@ -8,6 +8,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public abstract class WindowProps {
@@ -33,6 +34,11 @@ public abstract class WindowProps {
 	
 		//does the same but it is necessary to have different methods for differen parameter types
 	public Scene getDefaultScene(BorderPane root) {
+		root.setBackground(new Background(new BackgroundFill(backgroundColor, CornerRadii.EMPTY, Insets.EMPTY)));
+		return new Scene(root, 300, 300, backgroundColor );	
+	}
+	
+	public Scene getDefaultScene(VBox root) {
 		root.setBackground(new Background(new BackgroundFill(backgroundColor, CornerRadii.EMPTY, Insets.EMPTY)));
 		return new Scene(root, 300, 300, backgroundColor );	
 	}

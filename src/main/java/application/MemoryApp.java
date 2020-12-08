@@ -5,6 +5,7 @@ import application.domain.DomainController;
 import application.domain.PlayModel;
 import application.domain.TimeModel;
 import application.domain.WonModel;
+import application.domain.StatisticModel;
 import application.presentation.BoardSizeView;
 import application.presentation.BoardView;
 import application.presentation.Controller;
@@ -12,6 +13,7 @@ import application.presentation.Home;
 import application.presentation.InputPlayerNamesView;
 import application.presentation.MultiplayerPlayersView;
 import application.presentation.StatsView;
+import application.services.FileController;
 import javafx.application.Application;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -30,19 +32,30 @@ public class MemoryApp extends Application{
 	private InputPlayerNamesView inputPlayerNamesView;
 	private StatsView statsView;
 	private WonModel wonModel;
+	private FileController fileController;
 	private TimeModel timeModel;
+	private StatisticModel statisticModel;
+
 	
-	@Override	//starts when programm is started
+	@Override	//starts when program is started
 	public void start(Stage primaryStage) {
 		
+		//adding the services controller 
+		fileController = new FileController();
+
 		//initializing all models and the domainController
+		statisticModel = new StatisticModel();
 		wonModel = new WonModel();
 		boardModel = new BoardModel(600,600);
 		playModel = new PlayModel();
 		timeModel = new TimeModel();
-		domainController = new DomainController(boardModel, playModel, wonModel, timeModel);
+		domainController = new DomainController(boardModel, playModel, wonModel, timeModel, statisticModel, fileController);
 		playModel.setDomainController(domainController);
+
 		
+	
+		
+
 		//assigning all Views and the controller
 		//every view needs an controller object
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);
