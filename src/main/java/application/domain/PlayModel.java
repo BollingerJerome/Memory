@@ -33,7 +33,7 @@ public class PlayModel {
 	public void setPlayerModel(int players) {
 		this.playerModel = new PlayerModel[players];	//I want an array of PlayerModels with length of players
 		for (int i = 0; i<players; i++) {
-			String defaultName = "Player " + (i+1) +": ";	//setting a default name for each player (those names can be overwritten in the MultiplayerPlayersview)
+			String defaultName = "Player " + (i+1);	//setting a default name for each player (those names can be overwritten in the MultiplayerPlayersview)
 			playerModel[i] = new PlayerModel(defaultName);	//each player has a name
 		}
 	}

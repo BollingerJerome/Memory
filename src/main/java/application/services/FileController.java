@@ -10,8 +10,9 @@ import java.util.Vector;
 public class FileController {
 
 
-	//manges the entry making and which file should be used or created
+	//This Class manages the entry making and which file should be used or created
 
+	//method to get the correct file
 	public String getPath(int size) {
 		String file4path = "src/main/java/application/services/4x4stats.txt";
 		String file6path = "src/main/java/application/services/6x6stats.txt";
@@ -37,9 +38,8 @@ public class FileController {
 		return neededPath;
 	}
 
+	//creates a file if necessary and makes the entry
 	public void makeEntry(int size, String entry) {
-
-
 		create(getPath(size));
 		write(getPath(size), entry);
 	}
@@ -51,21 +51,20 @@ public class FileController {
 		try {
 			File myObj = new File(file);
 			if (myObj.createNewFile()) {
-				System.out.println("file created" + file);
 				return true;
 			} 
 			else {
 				return false;
 			}
 		} catch (IOException e) {
-			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
 		return false;
 	}
 
+	
+	//this method reads first all entries and saves it on an array, puts the Score in the right spot and writes it down again
 	public void write(String path, String entry) {
-
 		try {
 
 			File myObj = new File(path);	//creating File object 
@@ -73,7 +72,6 @@ public class FileController {
 
 			//TODO playername cannot contain a "."
 			String[] newEntry = entry.split("\\.|\n");
-			System.out.println(newEntry[0] + newEntry[1] + newEntry[2]);
 			String[][] newTable = new String[10][3];
 			newTable = plsSortIt(read(path), newEntry);	
 
@@ -88,7 +86,6 @@ public class FileController {
 			myWriter.close();
 
 		} catch (IOException e) {
-			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
 	}
@@ -114,7 +111,6 @@ public class FileController {
 
 
 			if(oldBoard[i][2] == null) {
-				System.out.println("is empty");
 				boardLength = i;
 				break;
 			}
@@ -158,14 +154,8 @@ public class FileController {
 			String[][] reading = new String[10][3];
 
 			int counter = 0;
-			if(myReader.hasNextLine()) {
-				System.out.println("has a next line");
-			}
-			else {
-				System.out.println("has no next line");
-			}
+			
 			while (myReader.hasNextLine()) {		//as long as the txt goes
-				int[] points = new int[2];
 				String input = myReader.nextLine();	//saves the line on input
 				String[] data = input.split("\\.|\r");		//splits the info of the file
 				reading[counter][0] = data[0];
@@ -178,7 +168,6 @@ public class FileController {
 			return reading;
 
 		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
 			e.printStackTrace();
 			return null;
 		}
@@ -197,10 +186,8 @@ public class FileController {
 			int counter = 0;
 
 			if(myReader.hasNextLine()) {
-				System.out.println("has a next line");
 			}
 			else {
-				System.out.println("has no next line");
 			}
 			while (myReader.hasNextLine()) {		//as long as the .txt goes
 				String input = myReader.nextLine();	//saves the line on input
@@ -215,7 +202,6 @@ public class FileController {
 			return reading;
 
 		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
 			e.printStackTrace();
 			return null;
 		}

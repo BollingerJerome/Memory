@@ -34,6 +34,7 @@ public class WonModel {
 		if(won) { //when won, firepropertychange -> show stats (should be in boardView class)
 			changes.firePropertyChange("Won", oldWon, won);
 		}
+		
 	}
 
 }

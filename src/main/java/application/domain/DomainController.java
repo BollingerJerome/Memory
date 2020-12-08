@@ -71,12 +71,6 @@ public class DomainController {
 					boardModel.getField()[playModel.getCurrentX()][playModel.getCurrentY()].setFound(true); //you get it now
 					boardModel.getField()[playModel.getLastX()][playModel.getLastY()].setFound(true); //...
 					if(boardModel.iswon()) { //tests if game is won
-						
-						/*statisticModel = new StatisticModel(playModel.getPlayerModel()[0].getName(), //updating the statistic object
-								timeModel.getCurrentTime(), 
-								playModel.getRound());
-						
-						fileController.makeEntry(boardModel.getHorizontalTiles(), statisticModel.write());*/
 						wonModel.setWon(true);	//yeah won -> firePropertyChange -> show stats (see boardview)
 						
 					}
