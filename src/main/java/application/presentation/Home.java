@@ -71,6 +71,7 @@ public class Home extends WindowProps {
 		borderPane.setBottom(label2);
 		vbox.setSpacing(20);
 		
+		
 		return getDefaultScene(borderPane); //superclass method which returns the gridpane as a scene with the colors and size
 	}
 

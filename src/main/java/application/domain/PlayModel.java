@@ -33,6 +33,12 @@ public class PlayModel {
 		changes.removePropertyChangeListener( listener );
 	}
 	
+	public void reset() {
+		this.turn = 0;
+		this.round = 0;
+		this.playerTurn = 0;
+	}
+	
 	//updating the x an y coordinates of the cards
 	public void setPosition(Card card) {			
 		lastX = currentX;				
