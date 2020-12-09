@@ -302,4 +302,14 @@ Pausebildschirm erscheint wenn Spiel pausiert
 | 11.2 | Kontrollstruktur (Zeit anhalten/fortsetzen) | 1.5 |
 
 ### Dokumentation wichtiger Code Snippets Sprint 3
+
+#### Umsetzung der User Story 11, Spiel pausieren
+![Image for pause game](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Pause%20button.PNG)
+
+#### Umsetzung der Spielzeit aus User Story 3
+![Image for game time](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/The%20game%20timer.PNG)
+
+#### Zum Schluss folgte noch die Rangliste
+![Image for ranking](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/US8%20write%20method.PNG)
+
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3
