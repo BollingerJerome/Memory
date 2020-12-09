@@ -196,18 +196,20 @@ public class BoardView extends WindowProps{
 		
 		updatePlayerPoints();
 		
-		//TODO Pause button should not move when time changes
+		
 		Button pause = new Button("pause");
 		pause.setOnAction(e -> {
-			if(pause.getText().contentEquals("pause")) { //not pretty but the button makes two different things dependant on the button name
+			if(!controller.getDomainController().getTimeModel().isPause()) { //TimeModel has boolean for pause
 				timeline.stop();						//stopping the timer
 				pause.setText("continue");				//setting the button text to continue
 				lockGame(boardModel, eventHandler);		//calling function to remove eventhandler
+				controller.getDomainController().getTimeModel().setPause(true);
 			}	
 			else {										//when button text is not pause -> when its continue
 				timeline.play();						//continue counting
 				pause.setText("pause");					//setting button text to pause
 				continueGame(boardModel, eventHandler);	//adding eventhandlers again
+				controller.getDomainController().getTimeModel().setPause(false);
 			}
 		});
 		
@@ -221,7 +223,9 @@ public class BoardView extends WindowProps{
 	    timeline.play(); //start timer
 	    
 	    time.setMinWidth(150);
-		HBox top = new HBox(); //layout on top of the Borderpane (I have two labels next to each other)
+		
+	    
+	    HBox top = new HBox(); //layout on top of the Borderpane (I have two labels next to each other)
 		
 		Label round = new Label("round: ");
 		

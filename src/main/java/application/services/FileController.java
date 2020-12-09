@@ -80,7 +80,6 @@ public class FileController {
 				if(newTable[i][0] != null) {
 					myWriter.write(newTable[i][0] + "." + newTable[i][1] + "." + newTable[i][2] + "\n");
 				}
-
 			}
 
 			myWriter.close();
@@ -108,8 +107,6 @@ public class FileController {
 
 		//having a nice format for the points and knowing how many entries there are already
 		for(int i = 0; i<10; i++) {
-
-
 			if(oldBoard[i][2] == null) {
 				boardLength = i;
 				break;
@@ -117,9 +114,6 @@ public class FileController {
 			rounds[i] = Integer.parseInt(oldBoard[i][2]);
 			time[i] = Integer.parseInt(oldBoard[i][1]);
 		}
-
-
-
 		for(int i = 0; i<10; i++) {
 			if(rounds[i] >= newRounds || rounds[i] == 0 ) {
 				if(time[i] >= newTime  || time[i] == 0) {
