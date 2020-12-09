@@ -85,7 +85,9 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
 ## Bedienungsanleitung
 
-
+Wenn das Spiel gestartet und die Benutzeroberfläche erscheint, können Sie nicht mehr viel falsch machen. Wählen Sie zwischen Solo- und Multiplayerspiel aus, danach die Spielgrösse und schon kann das Spiel starten.
+Im Multiplayermodus haben Sie die Möglichkeit, die Spielanzahl zu wählen und dementsprechend auch die Option, Namen einzugeben.
+Das Funktionsprinzip von Memory erläutern wir an dieser Stelle nicht weiter, das sollte soweit klar sein.
 
 ## User Stories
 
@@ -122,6 +124,13 @@ Velocity: 40 StoryPoints pro Iteration
 | **39 Story Points** | **45 Story Points** | **42 Story Points** |
 
 ## UML Packagediagramm und Klassendiagramm
+
+![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
+
+Hier folgen noch die 2 Klassendiagramme...
+
+![Image for Classdiagram]()
+![Image for Classdiagram]()
 
 ## Dokumentation Sprint 1
 
@@ -293,4 +302,14 @@ Pausebildschirm erscheint wenn Spiel pausiert
 | 11.2 | Kontrollstruktur (Zeit anhalten/fortsetzen) | 1.5 |
 
 ### Dokumentation wichtiger Code Snippets Sprint 3
+
+#### Umsetzung der User Story 11, Spiel pausieren
+![Image for pause game](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Pause%20button.PNG)
+
+#### Umsetzung der Spielzeit aus User Story 3
+![Image for game time](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/The%20game%20timer.PNG)
+
+#### Zum Schluss folgte noch die Rangliste
+![Image for ranking](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/US8%20write%20method.PNG)
+
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3

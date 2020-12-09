@@ -8,12 +8,14 @@ public class TimeModel {
 		//constructor sets the current time on zero
 	public TimeModel() {
 		this.currentTime = 0;
+		this.pause = false;
 	}
 	
 	//only variable I need for the timer. 
 	//it is not the timer but every second while playing, a one gets added to this varible
 	//the real timer is in the boardview class
 	private int currentTime;
+	private boolean pause;
 	
 	//resets the time
 	public void reset() {
@@ -47,6 +49,14 @@ public class TimeModel {
 
 	public void setCurrentTime(int currentTime) {
 		this.currentTime = currentTime;
+	}
+
+	public boolean isPause() {
+		return pause;
+	}
+
+	public void setPause(boolean pause) {
+		this.pause = pause;
 	}
 
 }

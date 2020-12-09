@@ -4,7 +4,7 @@ package application.domain;
 import java.util.Vector;
 
 import application.services.FileController;
-import application.services.PlayerScore;
+
 
 public class DomainController {
 		//domaincontrollerclass should contain all intern logic, which is independent of the graphics.

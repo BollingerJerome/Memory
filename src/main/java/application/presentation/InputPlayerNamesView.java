@@ -1,11 +1,14 @@
 package application.presentation;
 
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -22,29 +25,26 @@ public class InputPlayerNamesView extends WindowProps {
 
 	public Scene getInputPlayerNamesViewScene() {
 		
-		GridPane gridPane = new GridPane(); //overall layout 
+		VBox vbox = new VBox();
 		
 		int players = controller.getNumberOfPlayers(); //getting the number of players from the playModel playersarray
 		
 		//most elements are arrays because this window adapts to the number of players
-		Label label3_1 = new Label("Enter the names"); //title
+		Label titleLabel = new Label("Enter your name:"); //title
 		
 		TextField[] input = new TextField[players];		//input textfields
-		Label[] playertext = new Label[players];		//player 1: , player 2: the labels on the left side
+		
 		
 		for (int i = 0; i<players; i++) { 				//sets the number of labels and textfields and giving the label a name
-			String text = "Player "+ (i+1) + ": ";
-			playertext[i] = new Label(text);
-			input[i] = new TextField();
+			String text = "Player "+ (i+1);
+			input[i] = new TextField(text);
 		}
 		
-		Button backButton= new Button("<< Back");			//back bbutton
+		Button backButton= new Button("Back");			//back bbutton
 		backButton.setOnAction(e -> controller.showHome());	//setting the scene to home
 		
 		Button go = new Button("Start");					//starting the game button
-		go.setTranslateX(230);
-		go.setTranslateY(30);
-		go.setMaxWidth(70);
+	
 		go.setOnAction(e -> {
 			for (int i = 0; i<players; i++) { 				//this for loop saves the names of the inputs to the playerModel
 				if(!input[i].getText().isEmpty()) {			 //each player has already a default name this means that those default name are only overwritten when player chooses to set a name
@@ -55,20 +55,29 @@ public class InputPlayerNamesView extends WindowProps {
 			controller.showBoardSizeView(); 				//showing the boardsize window
 		});
 		
-		
-
 
 		//adding all elements to the gridPane
-		gridPane.add(label3_1, 0, 0);
+		vbox.getChildren().add(titleLabel);
 		for (int i = 0; i<players; i++) {
-			gridPane.add(playertext[i], 0, i+1);
-			gridPane.add(input[i], 1, i+1);
+			input[i].setMaxWidth(80);;
+			vbox.getChildren().add(input[i]);
 		}
-		gridPane.add(go, 0, 6);
-		gridPane.add(backButton, 0, 7);
+		
+		
+		HBox hbox = new HBox();
+		hbox.getChildren().add(backButton);
+		hbox.getChildren().add(go);
+		hbox.setAlignment(Pos.CENTER);
+		vbox.getChildren().add(hbox);
 
+		vbox.setAlignment(Pos.CENTER);
+		vbox.setSpacing(10);
+		
+		
+		
+		
 		//superclass method which returns the gridpane as a scene with the colors and size
-		return getDefaultScene(gridPane);	
+		return getDefaultScene(vbox);	
 	}
 
 }
