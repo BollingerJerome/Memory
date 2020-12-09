@@ -7,10 +7,6 @@ import application.services.FileController;
 import application.services.PlayerScore;
 
 public class DomainController {
-
-
-
-
 		//domaincontrollerclass should contain all intern logic, which is independent of the graphics.
 		//constructor containing models
 	public DomainController(BoardModel boardModel, PlayModel playModel, 
@@ -48,7 +44,6 @@ public class DomainController {
 	}
 
 
-	
 	//this is the main game logic. This Method controls the flow of each players turn and if they are allowed 
 	public void turn(Card card) {		
 		switch(playModel.getTurn()) { //playmodels turn tells me which case we have: 0 -> no card is open, 1 -> one card is open, 2 -> two cards are open

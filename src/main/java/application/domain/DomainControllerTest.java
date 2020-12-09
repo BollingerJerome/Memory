@@ -1,9 +1,6 @@
 package application.domain;
 
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import application.services.FileController;
@@ -35,130 +32,35 @@ public class DomainControllerTest {
 	@Test
 	public void testTurnCorrectCase() { // This tests whether the correct turn is identified by the turn method		
 		// Initialise the game - this is the same thing as is done in the MemoryApp
-		
-		// THIS DOES NOT WORK
-		FileController fileController = new FileController();
-		StatisticModel statisticModel = new StatisticModel();
-		WonModel wonModel = new WonModel();
-		BoardModel boardModel = new BoardModel(600,600);
-		PlayModel playModel = new PlayModel();
-		TimeModel timeModel = new TimeModel();
-		DomainController domainController = new DomainController(boardModel, playModel, wonModel, timeModel, statisticModel, fileController);
+		BoardModel boardModel = new BoardModel(200,200);
+	    Card[][] fielde = new Card[2][2];
+	    fielde[0][0] = new Card(10, 10, false, false, 0, 0);
+	    fielde[0][1] = new Card(10, 10, false, false, 0, 1);
+	    fielde[1][0] = new Card(10, 10, false, false, 1, 0);
+	    fielde[1][1] = new Card(10, 10, false, false, 1, 1);
+	    boardModel.setField(fielde);
+	    PlayModel playModel = new PlayModel();
+	    
+	    WonModel wonModel = new WonModel();
+	    TimeModel timeModel = new TimeModel();
+	    StatisticModel statisticModel = new StatisticModel();
+	    FileController fileController = new FileController();
+	    
+	    DomainController domainController = new DomainController(boardModel, playModel, 
+			wonModel, timeModel, statisticModel, fileController);
+	    
 				
 		// Now we turn a card
-		Card card = new Card(10, 10, false, false, 10, 10);
-		domainController.turn(card);
+		domainController.turn(fielde[0][0]);
 		
 		// turn is 0, card is not open and not found. It should be the case that the turn then goes to 1	
 		assertEquals(playModel.getTurn(), 1);
+		
+		// FROM HERE DOESNT WORK BECAUSE HAVE NOT DEFINED PLAYERS
+		// Now we turn a second card
+		domainController.turn(fielde[0][1]);
+		
+		// turn is 1, card is not open and not found. IT should be the case that the turn then goes to 2
+		assertEquals(playModel.getTurn(), 2);
 	}
-
-	
-	/*
-	@Test
-	public void testSetWon() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testIswon() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetPlayerName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetBoardSize() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetBoardModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetBoardModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetNumberOfPlayers() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetNumberOfPlayers() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPlayerPoint() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPlayerName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPlayersModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetFileController() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetFileController() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPlayModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetPlayModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetWonModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetWonModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTimeModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetTimeModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetStatisticModel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetStatisticModel() {
-		fail("Not yet implemented");
-	}
-	*/
-
 }
