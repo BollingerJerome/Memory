@@ -123,14 +123,15 @@ Velocity: 40 StoryPoints pro Iteration
 | | | |
 | **39 Story Points** | **45 Story Points** | **42 Story Points** |
 
-## UML Packagediagramm und Klassendiagramm
+## UML Packagediagramm und Klassendiagramme
 
 ![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
 
-Hier folgen noch die 2 Klassendiagramme...
+![Image for Class Diagram Domain](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramDomain.png)
 
-![Image for Classdiagram]()
-![Image for Classdiagram]()
+![Image for Class Diagram Presentation](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramPresentation.png)
+
+![Image for Class Diagram Services ](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramServices.PNG)
 
 ## Dokumentation Sprint 1
 
@@ -196,13 +197,13 @@ Spiel wird verlassen
 ### Dokumentation wichtiger Code Snippets Sprint 1
 
 #### Im Sprint 1 wurde als erstes die Welcome Scene erstellt. Im Nachfolgenen Bild kann man den Code zu diesem Interface sehen
-![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Welcome%20Scene.PNG)
+![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Welcome%20Scene.PNG)
 
 #### Ein weiterer wichtiger Punkt im Sprint 1 war der EventHandler
-![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/eventHandler%20snippet.PNG)
+![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/eventHandler%20snippet.PNG)
 
 #### Ebenfalls wichtig in Sprint 1 waren die ganzen Attribute
-![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/boardClass%20attributes.PNG)
+![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/boardClass%20attributes.PNG)
 
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
@@ -259,13 +260,13 @@ Anzeige der Spielzeit, der gefundenen Paare und Anzahl Züge
 ### Dokumentation wichtiger Code Snippets Sprint 2
 
 #### Im Sprint 2 stand das Interface des Multiplayer-Modus im Release Plan. Dieses wurde wie folgt umgesetzt
-![Image for Multiplayer](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Multiplayer_snippet.PNG)
+![Image for Multiplayer](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Multiplayer_snippet.PNG)
 
 #### Wichtig in diesem Sprint auch der folgende Code des Sortieralgorithmus
-![Image for Sorting algorithm for randomize method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/sorting%20algorithm%20for%20randomize%20method.PNG)
+![Image for Sorting algorithm for randomize method](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/sorting%20algorithm%20for%20randomize%20method.PNG)
 
 #### Wichtig beim Memory sind auch die Bilder auf der verdeckten Seite der Karten
-![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/turning%20cards%20method.PNG)
+![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/turning%20cards%20method.PNG)
 
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
