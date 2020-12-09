@@ -125,11 +125,24 @@ Velocity: 40 StoryPoints pro Iteration
 
 ## UML Packagediagramm und Klassendiagramme
 
+Um eine höhere Auflösung der Bilder zu erhalten:
+
+1. Möglichkeit -  Bitte das Bild anklicken und herunterladen
+2. Möglichkeit - *.ucls Datei in Entwicklungsumgebung anschauen
+
+#### Package Diagram
+
 ![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
+
+#### Class Diagram Doamin
 
 ![Image for Class Diagram Domain](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramDomain.png)
 
+#### Class Diagram Presentation
+
 ![Image for Class Diagram Presentation](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramPresentation.png)
+
+#### Class Diagram Services
 
 ![Image for Class Diagram Services ](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramServices.PNG)
 
