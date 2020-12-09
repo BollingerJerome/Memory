@@ -85,7 +85,9 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
 ## Bedienungsanleitung
 
-
+Wenn das Spiel gestartet und die Benutzeroberfläche erscheint, können Sie nicht mehr viel falsch machen. Wählen Sie zwischen Solo- und Multiplayerspiel aus, danach die Spielgrösse und schon kann das Spiel starten.
+Im Multiplayermodus haben Sie die Möglichkeit, die Spielanzahl zu wählen und dementsprechend auch die Option, Namen einzugeben.
+Das Funktionsprinzip von Memory erläutern wir an dieser Stelle nicht weiter, das sollte soweit klar sein.
 
 ## User Stories
 
@@ -122,6 +124,13 @@ Velocity: 40 StoryPoints pro Iteration
 | **39 Story Points** | **45 Story Points** | **42 Story Points** |
 
 ## UML Packagediagramm und Klassendiagramm
+
+![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
+
+Hier folgen noch die 2 Klassendiagramme...
+
+![Image for Classdiagram]()
+![Image for Classdiagram]()
 
 ## Dokumentation Sprint 1
 
