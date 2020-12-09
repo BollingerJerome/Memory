@@ -1,5 +1,6 @@
 package application.presentation;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,15 +21,13 @@ public class BoardSizeView extends WindowProps{
 	
 	//method which returns the shown Scene
 	public Scene getScene() {
-		GridPane gridPane = new GridPane(); //overall Layout
+		VBox vbox = new VBox(); //overall Layout
 		
 		//title
 		Label label4= new Label("Please select the size of the board:");
 		
 		Button vier= new Button("4x4"); //button 4x4
-		vier.setMaxWidth(75);			//size
-		vier.setTranslateX(110);		//translate -> placement
-		vier.setTranslateY(20);
+		vier.setMaxWidth(60);
 		vier.setOnAction(e -> {
 			controller.setBoardSize(4);	//setting the size variable in  boardModel to 4 x 4
 			controller.showBoard();		//showing the game field
@@ -36,9 +35,7 @@ public class BoardSizeView extends WindowProps{
 		});
 		
 		Button sechs= new Button("6x6"); //same here
-		sechs.setMaxWidth(75);
-		sechs.setTranslateX(110);
-		sechs.setTranslateY(40);
+		sechs.setMaxWidth(60);
 		sechs.setOnAction(e -> {
 			controller.setBoardSize(6);
 			controller.showBoard();
@@ -47,9 +44,7 @@ public class BoardSizeView extends WindowProps{
 		
 		
 		Button acht= new Button("8x8");
-		acht.setMaxWidth(75);
-		acht.setTranslateX(110);
-		acht.setTranslateY(60);
+		acht.setMaxWidth(60);
 		acht.setOnAction(e -> {
 			controller.setBoardSize(8);
 			controller.showBoard();
@@ -57,9 +52,7 @@ public class BoardSizeView extends WindowProps{
 		});
 		
 		Button zehn= new Button("10x10");
-		zehn.setMaxWidth(75);
-		zehn.setTranslateX(110);
-		zehn.setTranslateY(80);
+		zehn.setMaxWidth(60);
 		zehn.setOnAction(e -> {
 			controller.setBoardSize(10);
 			controller.showBoard();
@@ -67,20 +60,21 @@ public class BoardSizeView extends WindowProps{
 		});
 		
 		//back button
-		Button backButton= new Button("<< Back");
-		backButton.setTranslateY(100);
+		Button backButton= new Button("Back");
 		backButton.setOnAction(e -> controller.showHome()); //set the home Scene 
 	
 		//adding all labels and buttons to the gridPane
-		gridPane.add(label4, 0, 0);
-		gridPane.add(vier, 0, 1);
-		gridPane.add(sechs, 0, 2);
-		gridPane.add(acht, 0, 3);
-		gridPane.add(zehn, 0, 4);
-		gridPane.add(backButton, 0, 5);
+		vbox.getChildren().add(label4);
+		vbox.getChildren().add(vier);
+		vbox.getChildren().add(sechs);
+		vbox.getChildren().add(acht);
+		vbox.getChildren().add(zehn);
+		vbox.getChildren().add(backButton);
+		vbox.setSpacing(10);
+		vbox.setAlignment(Pos.CENTER);
 		
 		//superclass method which returns the gridpane as a scene with the colors and size
-		return getDefaultScene(gridPane);
+		return getDefaultScene(vbox);
 	}
 
 	

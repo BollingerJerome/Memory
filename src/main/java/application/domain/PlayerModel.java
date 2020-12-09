@@ -34,7 +34,7 @@ public class PlayerModel {
 	}
 	
 	//firePropertychange when new point is set.
-	//in boardviewclass is defined what will happen, when point value is changed
+	//in controller class is defined what will happen, when point value is changed
 	public void setPoint(int point) {
 		int oldpoint = this.point;
 		this.point = point;

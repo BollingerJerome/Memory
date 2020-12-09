@@ -46,7 +46,7 @@ public class MemoryApp extends Application{
 		//initializing all models and the domainController
 		statisticModel = new StatisticModel();
 		wonModel = new WonModel();
-		boardModel = new BoardModel(600,600);
+		boardModel = new BoardModel(400,400);
 		playModel = new PlayModel();
 		timeModel = new TimeModel();
 		domainController = new DomainController(boardModel, playModel, wonModel, timeModel, statisticModel, fileController);
@@ -60,7 +60,7 @@ public class MemoryApp extends Application{
 		//every view needs an controller object
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);
 		boardSizeView = new BoardSizeView(300,300, Color.CORNFLOWERBLUE, controller);
-		boardView = new BoardView(controller);
+		boardView = new BoardView(controller, 800, 800, Color.CORNFLOWERBLUE);
 		home = new Home(300, 300, Color.CORNFLOWERBLUE, controller);
 		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.CORNFLOWERBLUE, controller);
 		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.CORNFLOWERBLUE, controller);

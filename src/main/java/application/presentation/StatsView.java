@@ -28,7 +28,6 @@ public class StatsView extends WindowProps {
 		
 		//back button
 		Button back = new Button("Back");
-		back.setTranslateY(180);
 		back.setOnAction(e -> {
 			controller.showHome();
 		});
@@ -37,30 +36,24 @@ public class StatsView extends WindowProps {
 		Label[] namesOfPlayers = new Label[players]; //playername display thingy
 		Label[] playerPoints = new Label[players];
 		
-		Label player = new Label("Player:");
-		player.setTranslateX(10);
-		player.setTranslateY(10);
+		Label player = new Label("Player");
+
 		
 		Label time = new Label(controller.getTimeModel().getTimeString()); //how long this game was
 		
 		//how many rounds were needed to complete the game
-		Label turnsInTotal = new Label("total turns: " + controller.getDomainController().getPlayModel().getRound());
-		
-		Label punkte = new Label("Points:");
-		punkte.setTranslateX(30);
-		punkte.setTranslateY(10);
+		Label turnsInTotal = new Label(Integer.toString(controller.getDomainController().getPlayModel().getRound()));
+		Label punkte = new Label("Points            ");
+		Label round = new Label("turns in total");
 		
 		
 		
 		for (int i = 0; i<players; i++) {
-			playerPoints[i] = new Label("   "+Integer.toString(controller.getPlayerPoint(i))); 	//text for label is points of players
-			playerPoints[i].setTranslateX(30);
-			playerPoints[i].setTranslateY(20);
+			playerPoints[i] = new Label(Integer.toString(controller.getPlayerPoint(i))); 	//text for label is points of players
 			
 			
 			namesOfPlayers[i] = new Label(controller.getPlayerName(i));
-			namesOfPlayers[i].setTranslateX(10);
-			namesOfPlayers[i].setTranslateY(20);
+
 			
 			gridPane.add(namesOfPlayers[i], 0, i+1);
 			gridPane.add(playerPoints[i], 1, i+1);
@@ -71,11 +64,12 @@ public class StatsView extends WindowProps {
 		
 		
 		//adding all elements
-		gridPane.add(back, 0,6);
 		gridPane.add(player, 0, 0);
 		gridPane.add(punkte, 1, 0);
+		gridPane.add(round, 2, 0);
 		gridPane.add(time, 0, 8);
 		gridPane.add(turnsInTotal, 4, 1);
+		
 		
 		vbox.getChildren().add(gridPane);
 		
@@ -85,7 +79,7 @@ public class StatsView extends WindowProps {
 			
 			vbox.getChildren().add(getScoreBox());
 		}
-		
+		vbox.getChildren().add(back);
 		
 		//superclass method which returns the gridpane as a scene with the colors and size
 		return getDefaultScene(vbox);
@@ -93,9 +87,20 @@ public class StatsView extends WindowProps {
 	
 	
 	//creating the score box 
-	public VBox getScoreBox() {
-		VBox scoreBox = new VBox();
-		Label[] scoreLabels = new Label[10];
+	public GridPane getScoreBox() {
+		GridPane scoreBox = new GridPane();
+		
+		Label title1 = new Label("Rang");
+		Label title2 = new Label("name"); 
+		Label title3 = new Label("time"); 
+		Label title4 = new Label("rounds"); 
+		
+		scoreBox.add(title1, 0, 0);
+		scoreBox.add(title2, 1, 0);
+		scoreBox.add(title3, 2, 0);
+		scoreBox.add(title4, 3, 0);
+		
+		
 		String[][] it = new String[10][3]; //will contain the txt information
 		it = controller.getDomainController().getFileController().	//will return the string with readfunctions
 				read(controller.getDomainController().getBoardModel().getHorizontalTiles());
@@ -104,9 +109,15 @@ public class StatsView extends WindowProps {
 				break;
 			}
 			else {
-				String score = "Rang: " + (i+1) + "  name: " +it[i][0]+ " time: " + it[i][1] + " rounds: " + it[i][2];
-				scoreLabels[i] = new Label(score);
-				scoreBox.getChildren().add(scoreLabels[i]);
+				Label rang = new Label(Integer.toString(i+1));
+				scoreBox.add(rang,0,i+1);
+				Label name = new Label(it[i][0]);
+				scoreBox.add(name,1,i+1);
+				Label time = new Label(it[i][1]);
+				scoreBox.add(time,2,i+1);
+				Label rounds = new Label(it[i][2]);
+				scoreBox.add(rounds,3,i+1);
+				
 			}
 		}
 		return scoreBox;

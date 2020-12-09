@@ -22,16 +22,20 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-public class BoardView {
+public class BoardView extends WindowProps{
 
 	
 
-	public BoardView(Controller controller) {
+
+
+	public BoardView(Controller controller, double width, double height, Color backgroundColor) {
+		super(width, height, backgroundColor);
 		this.controller = controller;
 		this.borderPane = new BorderPane();
 	}
@@ -116,6 +120,8 @@ public class BoardView {
 		for(int i = 0; i<numberOfHorizontalTiles; i++) {
 			for(int j = 0; j<numberOfVerticalTiles; j++) {
 				rectangles[i][j] = new Rectangle(i*width, j*height, width, height);
+				rectangles[i][j].setArcHeight(width/2);
+				rectangles[i][j].setArcWidth(width/2);
 				rectangles[i][j].addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
 			}
 		}
@@ -214,19 +220,29 @@ public class BoardView {
 	    timeline.setCycleCount(Animation.INDEFINITE);
 	    timeline.play(); //start timer
 	    
-	    
-		GridPane top = new GridPane(); //layout on top of the Borderpane (I have two labels next to each other)
-		top.add(time, 0, 0);
-		top.add(pause, 1, 0);
+	    time.setMinWidth(150);
+		HBox top = new HBox(); //layout on top of the Borderpane (I have two labels next to each other)
+		
+		Label round = new Label("round: ");
+		
+		controller.getDomainController().getPlayModel().addPropertyChangeListener(e -> {
+			round.setText("round: " + controller.getDomainController().getPlayModel().getRound());
+		});
+		 round.setMinWidth(150);
+		top.getChildren().add(pause);
+		top.getChildren().add(round);
+		top.getChildren().add(time);
+		
+		top.setSpacing(10);
 		borderPane.setTop(top);
 		borderPane.setCenter(board);
 		borderPane.setBottom(backButton);
-		//TODO rangliste nur wenn einzelspieler
+		
 		
 
 		
 		//showing the gamefield
-		return new Scene(borderPane);
+		return getDefaultScene(borderPane);
 	}
 	
 	public void lockGame(BoardModel boardModel, EventHandler eventHandler) { 	//It takes eventHandeler away of
@@ -248,6 +264,7 @@ public class BoardView {
 			}
 		}
 	}
+	
 	
 	public void updatePlayerPoints() {
 		if(controller.getNumberOfPlayers()>1) {

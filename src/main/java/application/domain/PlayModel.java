@@ -1,5 +1,8 @@
 package application.domain;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 public class PlayModel {
 
 	//constructor for new playModel.
@@ -19,7 +22,16 @@ public class PlayModel {
 	private PlayerModel[] playerModel;	//Array of PlayerModelClass objects
 	private int playerTurn;				//which player is currently playing each round
 	private DomainController domainController;	//domainController object
+	private final PropertyChangeSupport changes = new PropertyChangeSupport( this ); 
+	//changes will be fired when a new point is set 
 
+	//addPropertyChangelistener is probably called in Boardviewclass.
+	public void addPropertyChangeListener( PropertyChangeListener listener ) {
+		changes.addPropertyChangeListener( listener );
+	}
+	public void removePropertyChangeListener( PropertyChangeListener listener ) {
+		changes.removePropertyChangeListener( listener );
+	}
 	
 	//updating the x an y coordinates of the cards
 	public void setPosition(Card card) {			
@@ -51,7 +63,9 @@ public class PlayModel {
 		return round;
 	}
 	public void setRound(int round) {
+		int oldRound = this.round;
 		this.round = round;
+		changes.firePropertyChange("round", oldRound, round);
 	}
 
 	public PlayerModel[] getPlayerModel() {
