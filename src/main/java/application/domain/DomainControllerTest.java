@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import application.services.FileController;
+
 public class DomainControllerTest {
 	@Test
 	public void testIsTheSame() { // Check with two set cards whether this method works
@@ -29,35 +31,28 @@ public class DomainControllerTest {
 		// Assert that isTheSame must equal false
 		assertEquals(domainController.isTheSame(cardOne, cardTwo), false);
 	}
-	
+
 	@Test
 	public void testTurnCorrectCase() { // This tests whether the correct turn is identified by the turn method		
-		// Create a card which is open and found
-		Card cardOne = new Card(10, 10, false, false, 10, 10);
+		// Initialise the game - this is the same thing as is done in the MemoryApp
 		
-		// Create a PlayModel and set turn to 0 (i.e. no card is open)
-		PlayModel playModel = new PlayModel(); 
-		playModel.setTurn(0);
+		// THIS DOES NOT WORK
+		FileController fileController = new FileController();
+		StatisticModel statisticModel = new StatisticModel();
+		WonModel wonModel = new WonModel();
+		BoardModel boardModel = new BoardModel(600,600);
+		PlayModel playModel = new PlayModel();
+		TimeModel timeModel = new TimeModel();
+		DomainController domainController = new DomainController(boardModel, playModel, wonModel, timeModel, statisticModel, fileController);
+				
+		// Now we turn a card
+		Card card = new Card(10, 10, false, false, 10, 10);
+		domainController.turn(card);
 		
-		// Add the card to the PlayModel
-		playModel.setPosition(cardOne);
-		
-		// Create BoardModel
-		BoardModel boardModel = new BoardModel(10, 10);
-		
-		// Now create a DomainController class with this PlayModel and BoardModel
-		DomainController domainController = new DomainController(boardModel, playModel, null, null, null, null);
-		
-		// Execute method turn on the card. The playModel should increase turns because the condition is  met
-		domainController.turn(cardOne);
-		
-		// Check to make sure the turn is still at 0
-		assertEquals(playModel.getTurn(),1);
-		
-		// Change the card characteristics to not open and found
-		
-		
+		// turn is 0, card is not open and not found. It should be the case that the turn then goes to 1	
+		assertEquals(playModel.getTurn(), 1);
 	}
+
 	
 	/*
 	@Test
