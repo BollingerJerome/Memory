@@ -98,6 +98,7 @@ public class BoardView extends WindowProps{
 			startTimer();
 			updatePlayerPoints();
 			addTopBar();
+			
 			borderPane.setCenter(board);
 			borderPane.setBottom(backButton);
 

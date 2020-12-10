@@ -60,7 +60,7 @@ public class MemoryApp extends Application{
 		//every view needs an controller object
 		controller = new Controller(primaryStage, domainController, boardSizeView, multiplayerPlayersView, boardView, inputPlayerNamesView, statsView, home);
 		boardSizeView = new BoardSizeView(300,300, Color.CORNFLOWERBLUE, controller);
-		boardView = new BoardView(controller, 800, 800, Color.CORNFLOWERBLUE);
+		boardView = new BoardView(controller, 500, 500, Color.CORNFLOWERBLUE);
 		home = new Home(300, 300, Color.CORNFLOWERBLUE, controller);
 		multiplayerPlayersView = new MultiplayerPlayersView(300,300, Color.CORNFLOWERBLUE, controller);
 		inputPlayerNamesView = new InputPlayerNamesView(300,300, Color.CORNFLOWERBLUE, controller);
