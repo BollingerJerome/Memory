@@ -35,8 +35,7 @@ public class BoardView extends WindowProps{
 		this.controller = controller;
 		this.borderPane = new BorderPane();
 		this.eventHandler = getEventHandler();
-		this.time = new Label("Time: ");
-		time.setMinWidth(150);
+		
 	}
 
 	//private BoardModel boardModel;
@@ -67,9 +66,8 @@ public class BoardView extends WindowProps{
 			BoardModel boardModel = controller.getBoardModel(); 				//getting boardModel object.
 			int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
 			int numberOfVerticalTiles = boardModel.getVerticalTiles();			//variables to save cpu. 
-			cardsFront = new ImagePattern[numberOfHorizontalTiles][numberOfVerticalTiles];
-			cardsBack = new Color[numberOfHorizontalTiles][numberOfVerticalTiles];
-			rectangles = new Rectangle[numberOfHorizontalTiles][numberOfVerticalTiles];
+			
+			
 			
 			fillRectangles(); 	//filling the private rectangles with Rectangle object
 			setCardsImage();	//filling the private CardsFront and CardsBack array
@@ -134,10 +132,12 @@ public class BoardView extends WindowProps{
 	
 
 	public void fillRectangles() {
+		
 		int hortiles = controller.getBoardModel().getHorizontalTiles();
 		int vertiles = controller.getBoardModel().getVerticalTiles();
 		int cardWidth = (int) controller.getBoardModel().getField()[0][0].getWidht();
 		int cardHeigth = (int) controller.getBoardModel().getField()[0][0].getHeight();
+		rectangles = new Rectangle[hortiles][vertiles];
 		//create all Rectangle objects
 		for(int i = 0; i < hortiles; i++) {
 			for(int j = 0; j<vertiles; j++) {
@@ -158,6 +158,8 @@ public class BoardView extends WindowProps{
 		int numberOfHorizontalTiles = boardModel.getHorizontalTiles();		//BoardModel informations are saved to local 
 		int numberOfVerticalTiles = boardModel.getVerticalTiles();			//variables to save cpu. 
 		int tiles = numberOfHorizontalTiles*numberOfVerticalTiles;
+		cardsFront = new ImagePattern[numberOfHorizontalTiles][numberOfVerticalTiles];
+		cardsBack = new Color[numberOfHorizontalTiles][numberOfVerticalTiles];
 		String path, which;													//Color and Picture variables
 		String[] ofWhich;													//paths leading to profs or Sehenswürdigkeiten
 		Color[] backColors = TileColors.getBack();
@@ -287,6 +289,8 @@ public class BoardView extends WindowProps{
 	
 	//top borderpane labels
 	public void addTopBar() {
+		this.time = new Label("Time: ");
+		this.time.setMinWidth(150);
 		//top of the window
 		HBox top = new HBox(); //layout in the top field of this Borderpane 
 		
@@ -326,6 +330,42 @@ public class BoardView extends WindowProps{
 			}
 			borderPane.setLeft(gridPane);
 		}
+	}
+
+
+
+	public Rectangle[][] getRectangles() {
+		return rectangles;
+	}
+
+
+
+	public void setRectangles(Rectangle[][] rectangles) {
+		this.rectangles = rectangles;
+	}
+
+
+
+	public ImagePattern[][] getCardsFront() {
+		return cardsFront;
+	}
+
+
+
+	public void setCardsFront(ImagePattern[][] cardsFront) {
+		this.cardsFront = cardsFront;
+	}
+
+
+
+	public Color[][] getCardsBack() {
+		return cardsBack;
+	}
+
+
+
+	public void setCardsBack(Color[][] cardsBack) {
+		this.cardsBack = cardsBack;
 	}
 
 }

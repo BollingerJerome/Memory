@@ -62,7 +62,7 @@ public class FileController {
 		return false;
 	}
 
-	
+
 	//this method reads first all entries and saves it on an array, puts the Score in the right spot and writes it down again
 	public void write(String path, String entry) {
 		try {
@@ -91,13 +91,8 @@ public class FileController {
 
 
 	public String[][] plsSortIt(String[][] oldBoard, String[] newEntry) {
-		/*
-		 * 	making new highscore
-		 *oldBoard[10][3]
-		 * 
-		 */
-		String[][] finalString = new String[10][3];
 
+		String[][] newBoard = new String[10][3];
 		int[] rounds = new int[10];
 		int[] time = new int[10];
 		int boardLength = 0;
@@ -111,29 +106,47 @@ public class FileController {
 				boardLength = i;
 				break;
 			}
+			newBoard[i][0] = oldBoard[i][0];
+			newBoard[i][1] = oldBoard[i][1];
+			newBoard[i][2] = oldBoard[i][2];
 			rounds[i] = Integer.parseInt(oldBoard[i][2]);
 			time[i] = Integer.parseInt(oldBoard[i][1]);
 		}
 		for(int i = 0; i<10; i++) {
-			if(rounds[i] >= newRounds || rounds[i] == 0 ) {
-				if(time[i] >= newTime  || time[i] == 0) {
+			if( newRounds < rounds[i] || rounds[i] == 0 ) {
+				for(int j=9; j>i; j--) {
+					// um 1 verschieben
+					if(oldBoard[j-1][0] != null) {
+						newBoard[j][0] = oldBoard[j-1][0];
+						newBoard[j][1] = oldBoard[j-1][1];
+						newBoard[j][2] = oldBoard[j-1][2];
+					}
+				}
+				newBoard[i][0] = newEntry[0];
+				newBoard[i][1] = newEntry[1];
+				newBoard[i][2] = newEntry[2];
+				return newBoard;
+
+			}
+			else if(newRounds == rounds[i]) {
+				if(newTime <= time[i]  || time[i] == 0) {
 					for(int j=9; j>i; j--) {
 						// um 1 verschieben
 						if(oldBoard[j-1][0] != null) {
-							oldBoard[j][0] = oldBoard[j-1][0];
-							oldBoard[j][1] = oldBoard[j-1][1];
-							oldBoard[j][2] = oldBoard[j-1][2];
+							newBoard[j][0] = oldBoard[j-1][0];
+							newBoard[j][1] = oldBoard[j-1][1];
+							newBoard[j][2] = oldBoard[j-1][2];
 						}
-						
 					}
-					oldBoard[i][0] = newEntry[0];
-					oldBoard[i][1] = newEntry[1];
-					oldBoard[i][2] = newEntry[2];
-					return oldBoard;
+					newBoard[i][0] = newEntry[0];
+					newBoard[i][1] = newEntry[1];
+					newBoard[i][2] = newEntry[2];
+					return newBoard;
 				}
 			}
 		}
-		return oldBoard;
+
+		return newBoard;
 	}
 
 
@@ -148,7 +161,7 @@ public class FileController {
 			String[][] reading = new String[10][3];
 
 			int counter = 0;
-			
+
 			while (myReader.hasNextLine()) {		//as long as the txt goes
 				String input = myReader.nextLine();	//saves the line on input
 				String[] data = input.split("\\.|\r");		//splits the info of the file
