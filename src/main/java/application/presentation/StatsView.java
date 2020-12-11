@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -95,12 +96,21 @@ public class StatsView extends WindowProps {
 		Label title3 = new Label("time"); 
 		Label title4 = new Label("rounds"); 
 		
+		ColumnConstraints column = new ColumnConstraints(40);
+        scoreBox.getColumnConstraints().add(column);
+		
+		for (int i = 0; i < 3; i++) {
+			column = new ColumnConstraints(80);
+	        scoreBox.getColumnConstraints().add(column);
+	     }
+		
+		
 		scoreBox.add(title1, 0, 0);
 		scoreBox.add(title2, 1, 0);
 		scoreBox.add(title3, 2, 0);
 		scoreBox.add(title4, 3, 0);
-		
-		
+	
+	
 		String[][] it = new String[10][3]; //will contain the txt information
 		it = controller.getDomainController().getFileController().	//will return the string with readfunctions
 				read(controller.getDomainController().getBoardModel().getHorizontalTiles());
