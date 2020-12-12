@@ -51,11 +51,7 @@ public class StatsView extends WindowProps {
 		
 		for (int i = 0; i<players; i++) {
 			playerPoints[i] = new Label(Integer.toString(controller.getPlayerPoint(i))); 	//text for label is points of players
-			
-			
 			namesOfPlayers[i] = new Label(controller.getPlayerName(i));
-
-			
 			gridPane.add(namesOfPlayers[i], 0, i+1);
 			gridPane.add(playerPoints[i], 1, i+1);
 			
@@ -69,7 +65,7 @@ public class StatsView extends WindowProps {
 		gridPane.add(punkte, 1, 0);
 		gridPane.add(round, 2, 0);
 		gridPane.add(time, 0, 8);
-		gridPane.add(turnsInTotal, 4, 1);
+		gridPane.add(turnsInTotal, 2, 1);
 		
 		
 		vbox.getChildren().add(gridPane);
@@ -86,7 +82,7 @@ public class StatsView extends WindowProps {
 		return getDefaultScene(vbox);
 	}
 	
-	
+
 	//creating the score box 
 	public GridPane getScoreBox() {
 		GridPane scoreBox = new GridPane();
