@@ -23,6 +23,7 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 11. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
+	+ [Code Snippet vom Testing](#Code-Snippet-vom-Testing)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
 12. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
     + [Taskliste für die Umsetzung der Userstories Sprint 2](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-2)
@@ -218,6 +219,9 @@ Spiel wird verlassen
 #### Ebenfalls wichtig in Sprint 1 waren die ganzen Attribute
 ![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/boardClass%20attributes.PNG)
 
+#### Code Snippet vom Testing
+
+![Image for Testing](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/memory%20testing.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
 
