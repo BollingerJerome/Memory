@@ -5,6 +5,7 @@ import java.beans.PropertyChangeSupport;
 
 public class Card {
 	
+	//Constructor
 	public Card(double widht, double height, boolean open, boolean found, int x, int y) {
 		this.widht = widht;
 		this.height = height;
@@ -14,13 +15,15 @@ public class Card {
 		this.y = y;
 	}
 	
-	private int pairId;
-	private int x,y;
-	private double widht, height;
-	private boolean open;
-	private boolean found;
+	private int pairId;	//two cards have the same Id
+	private int x,y;	//array[][] coordinates
+	private double widht, height;	//size of the cards
+	private boolean open;	//whether they are currently open or not 
+	private boolean found;	//whether they have been found by the player or not
 	private final PropertyChangeSupport changes = new PropertyChangeSupport( this );
-
+	//if there is a change in a variable (used in open)
+	
+	//methods for adding and removing the propertychangelistener
 	public void addPropertyChangeListener( PropertyChangeListener listener ) {
 		changes.addPropertyChangeListener( listener );
 	}
@@ -28,6 +31,17 @@ public class Card {
 	public void removePropertyChangeListener( PropertyChangeListener listener ) {
 		changes.removePropertyChangeListener( listener );
 	}
+	
+	
+	//getters and setters
+	
+	public void setOpen(boolean open) {
+		boolean oldOpen = this.open;
+		this.open = open;
+		changes.firePropertyChange( "open", oldOpen, open );
+		//do something when the open-value is changed -> update the gamefield (name of method: turnCards() in BoardView)
+	}
+	
 	
 	public double getWidht() {
 		return widht;
@@ -44,11 +58,7 @@ public class Card {
 	public boolean isOpen() {
 		return open;
 	}
-	public void setOpen(boolean open) {
-		boolean oldOpen = this.open;
-		this.open = open;
-		changes.firePropertyChange( "open", oldOpen, open );
-	}
+	
 	public boolean isFound() {
 		return found;
 	}

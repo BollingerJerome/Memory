@@ -23,6 +23,7 @@ Gruppenarbeit Mechatronik Trinational, Promotion Eiffel, Herbstsemester 2020
 11. [Dokumentation Sprint 1](#Dokumentation-Sprint-1)
     + [Taskliste für die Umsetzung der Userstories Sprint 1](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-1)
     + [Dokumentation wichtiger Code Snippets Sprint 1](#Dokumentation-wichtiger-Code-Snippets-Sprint-1)
+	+ [Code Snippet vom Testing](#Code-Snippet-vom-Testing)
     + [Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1](#Herleitung-der-Testfälle-aus-den-Akzeptanzkriterien-der-User-Stories-Sprint-1)
 12. [Dokumentation Sprint 2](#Dokumentation-Sprint-2)
     + [Taskliste für die Umsetzung der Userstories Sprint 2](#Taskliste-für-die-Umsetzung-der-User-Stories-Sprint-2)
@@ -85,7 +86,9 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 
 ## Bedienungsanleitung
 
-
+Wenn das Spiel gestartet und die Benutzeroberfläche erscheint, können Sie nicht mehr viel falsch machen. Wählen Sie zwischen Solo- und Multiplayerspiel aus, danach die Spielgrösse und schon kann das Spiel starten.
+Im Multiplayermodus haben Sie die Möglichkeit, die Spielanzahl zu wählen und dementsprechend auch die Option, Namen einzugeben.
+Das Funktionsprinzip von Memory erläutern wir an dieser Stelle nicht weiter, das sollte soweit klar sein.
 
 ## User Stories
 
@@ -98,8 +101,8 @@ Beispiel: java -jar C:\Users\Max Mustermann\Downloads\trinat\memory.jar
 | 5 | Als Spieler möchte ich die Spieleranzahl auswählen um die Spielgrösse festzulegen | 3 Buttons zur Wahl der Spieleranzahl (2, 3, 4 Spieler) <br/><br/> Startet Spiel mit der gewählten Anzahl an Spielern | 5 | 3 |
 | 6 | Als Spieler möchte ich die Spielgrösse auswählen um das Spiel zu starten | min. 3 Buttons zur Spielfeldgrösse (6x6, 8x8, 10x10) <br/><br/> Spiel startet mit entsprechender Grösse | 5 | 3 |
 | 7 | Als Spieler möchte ich meinen Namen eingeben um im Multiplayermodus zu sehen, wer am Zug ist | Entsprechende Anzahl an TextFields gemäss der Spieleranzahl <br/><br/> Anzeige des Spielernamens während des Spieles | 8 | 2 |
-| 8 | Als Spieler möchte ich die Rangliste sehen um im Multiplayermodus meine Platzierung zu sehen | Anzeige der besten 10 Resultate am Spielende | 21 | 4 |
-| 9 |Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern | 1 Button welcher auf jedem Interface zu sehen ist <br/><br/> Hauptmenü wird angezeigt | 3 | 2 |
+| 8 | Als Spieler möchte ich nach einem Solospiel eine Rangliste mit den besten Ergebnissen sehen | Anzeige der besten 10 Resultate am Spielende eines Solospiels | 21 | 4 |
+| 9 | Als Spieler möchte ich zu jedem Zeitpunkt ins Hauptmenü zurück um die Spieleinstellungen zu ändern | 1 Button welcher auf jedem Interface zu sehen ist <br/><br/> Hauptmenü wird angezeigt | 3 | 2 |
 | 10 | Als Spieler möchte ich Memory mit Bildern spielen um eine schönere Oberfläche zu haben | Min 50 Bilder für Spielgrösse 10x10  <br/><br/> Jede Karte ist wenn sie aufgedeckt wird ein Bild <br/><br/> Spielbrett verhält sich wie Memory | 8 | 2 |
 | 11 | Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, wenn ich vom Spiel weg muss | 1 Button um Spiel zu pausieren <br/><br/> Pausebildschirm erscheint wenn Spiel pausiert | 8 | 4 |
 | 12 | Als Spieler möchte ich eine Karte umdrehen um zu sehen was sich auf der Karte befindet | Ansicht der zugedeckten Karten <br/><br/> Memoryverhalten | 21 | 1 |
@@ -121,7 +124,30 @@ Velocity: 40 StoryPoints pro Iteration
 | | | |
 | **39 Story Points** | **45 Story Points** | **42 Story Points** |
 
-## UML Packagediagramm und Klassendiagramm
+
+## UML Packagediagramm und Klassendiagramme
+
+Um eine höhere Auflösung der Bilder zu erhalten, haben Sie 2 Möglichkeiten:
+
+1. Bitte das Bild anklicken und herunterladen
+2. *.ucls Datei in Entwicklungsumgebung anschauen
+
+#### Package Diagram
+
+![Image for Package Diagram](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Package_diagram.PNG)
+
+#### Class Diagram Domain package
+
+![Image for Class Diagram Domain](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramDomain.png)
+
+#### Class Diagram Presentation package
+
+![Image for Class Diagram Presentation](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramPresentation.png)
+
+#### Class Diagram Services package
+
+![Image for Class Diagram Services ](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/ClassDiagramServices.PNG)
+
 
 ## Dokumentation Sprint 1
 
@@ -187,16 +213,24 @@ Spiel wird verlassen
 ### Dokumentation wichtiger Code Snippets Sprint 1
 
 #### Im Sprint 1 wurde als erstes die Welcome Scene erstellt. Im Nachfolgenen Bild kann man den Code zu diesem Interface sehen
-![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Welcome%20Scene.PNG)
+![Image for Welcome Scene](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Welcome%20Scene.PNG)
 
 #### Ein weiterer wichtiger Punkt im Sprint 1 war der EventHandler
-![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/eventHandler%20snippet.PNG)
+![Image for EventHandler](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/eventHandler%20snippet.PNG)
 
 #### Ebenfalls wichtig in Sprint 1 waren die ganzen Attribute
-![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/boardClass%20attributes.PNG)
+![Image for Board Class Attributes](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/boardClass%20attributes.PNG)
 
+#### Code Snippet vom Testing
+
+![Image for Testing](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/memory%20testing.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
+
+In diesem Sprint wurden folgende Tests durchgeführt:
+1. Hier wurde die US2 getestet. Mit dem Test wurde erfolgreich überprüft, ob das Spielfeld mit der ausgewählten Grösse richtig startet
+2. Erfolgreiche Überprüfung der US5. Das Spiel startet mit der gewünschten Spieleranzahl
+3. User Story 12 wurde in mehreren Punkten erfolgreich geprüft. Wenn 2 gleiche Karten aufgedeckt sind, bleiben sie offen liegen. Beim Neustart des Spiels wird das Feld neu generiert. Ebenfalls wurde überprüft, ob die Karten sich bei zwei ungleichen auch wieder kehren. 
 
 ## Dokumentation Sprint 2
 
@@ -250,31 +284,34 @@ Anzeige der Spielzeit, der gefundenen Paare und Anzahl Züge
 ### Dokumentation wichtiger Code Snippets Sprint 2
 
 #### Im Sprint 2 stand das Interface des Multiplayer-Modus im Release Plan. Dieses wurde wie folgt umgesetzt
-![Image for Multiplayer](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/Multiplayer_snippet.PNG)
+![Image for Multiplayer](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Multiplayer_snippet.PNG)
 
 #### Wichtig in diesem Sprint auch der folgende Code des Sortieralgorithmus
-![Image for Sorting algorithm for randomize method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/sorting%20algorithm%20for%20randomize%20method.PNG)
+![Image for Sorting algorithm for randomize method](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/sorting%20algorithm%20for%20randomize%20method.PNG)
 
 #### Wichtig beim Memory sind auch die Bilder auf der verdeckten Seite der Karten
-![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/master/src/main/resources/Documentation/turning%20cards%20method.PNG)
-
+![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/turning%20cards%20method.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
+
+1. Überprüfung der User Story 7, damit die richtige Anzahl Textfields erscheint und die Kontrolle ob auch Namen eingegben wurden
+2. Erfolgreicher Test der US10. Es sind immer 2 Bildpaare auf dem Spielfeld
 
 ## Dokumentation Sprint 3
 
 ### Taskliste für die Umsetzung der User Stories Sprint 3
 
-#### User Story 3
-Als Spieler möchte ich meine Spielzeiten sehen um im Solospiel meine Zeiten mit vorangegangenen zu vergleichen
+#### User Story 3, Akzeptanzkriterium
+Zeit wird fortlaufend im Spiel angezeigt <br/>
+Zeit ist korrekt
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
 | 3.1 | Zeit im GUI anzeigen | 0.5 |
 | 3.2 | Zeit messen/berechnen | 1 |
 
-#### User Story 8
-Als Spieler möchte ich die Rangliste sehen um im Multiplayermodus meine Platzierung zu sehen
+#### User Story 8, Akzeptanzkriterium
+Anzeige der besten 10 Resultate am Spielende eines Solospiels
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -282,8 +319,9 @@ Als Spieler möchte ich die Rangliste sehen um im Multiplayermodus meine Platzie
 | 8.2 | Spielstatistiken der vergangenen Spiele lesen | 1.5 |
 | 8.3 | Spielstatistiken der vergangenen Spiele ausgeben | 1.5 |
 
-#### User Story 11
-Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, wenn ich vom Spiel weg muss
+#### User Story 11, Akzeptanzkriterium
+1 Button um Spiel zu pausieren <br/>
+Pausebildschirm erscheint wenn Spiel pausiert
 
 | **Task** |   **Beschreibung** | **Zeitaufwand in Stunden**  |
 | :-: | - | :-: |
@@ -291,4 +329,17 @@ Als Spieler möchte ich mein Spiel pausieren um die Spielzeit gering zu halten, 
 | 11.2 | Kontrollstruktur (Zeit anhalten/fortsetzen) | 1.5 |
 
 ### Dokumentation wichtiger Code Snippets Sprint 3
+
+#### Umsetzung der User Story 11, Spiel pausieren
+![Image for pause game](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/Pause%20button.PNG)
+
+#### Umsetzung der Spielzeit aus User Story 3
+![Image for game time](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/The%20game%20timer.PNG)
+
+#### Zum Schluss folgte noch die Rangliste
+![Image for ranking](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/US8%20write%20method.PNG)
+
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3
+
+1. Test, ob das Spiel wenn alle Paare aufgedeckt sind, endet
+2. Überprüfung, der Spielpunkte wurde erfolgreich durchgeführt
