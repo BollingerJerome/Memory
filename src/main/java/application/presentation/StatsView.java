@@ -59,8 +59,8 @@ public class StatsView extends WindowProps {
 		
 		
 		
-		
-		//adding all elements
+	
+		//adding all elements 
 		gridPane.add(player, 0, 0);
 		gridPane.add(punkte, 1, 0);
 		gridPane.add(round, 2, 0);
