@@ -225,6 +225,11 @@ Spiel wird verlassen
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 1
 
+In diesem Sprint wurden folgende Tests durchgeführt:
+1. Hier wurde die US2 getestet. Mit dem Test wurde erfolgreich überprüft, ob das Spielfeld mit der ausgewählten Grösse richtig startet
+2. Erfolgreiche Überprüfung der US5. Das Spiel startet mit der gewünschten Spieleranzahl
+3. User Story 12 wurde in mehreren Punkten erfolgreich geprüft. Wenn 2 gleiche Karten aufgedeckt sind, bleiben sie offen liegen. Beim Neustart des Spiels wird das Feld neu generiert. Ebenfalls wurde überprüft, ob die Karten sich bei zwei ungleichen auch wieder kehren. 
+
 ## Dokumentation Sprint 2
 
 ### Taskliste für die Umsetzung der User Stories Sprint 2
@@ -285,8 +290,10 @@ Anzeige der Spielzeit, der gefundenen Paare und Anzahl Züge
 #### Wichtig beim Memory sind auch die Bilder auf der verdeckten Seite der Karten
 ![Image for Turning cards method](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/turning%20cards%20method.PNG)
 
-
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 2
+
+1. Überprüfung der User Story 7, damit die richtige Anzahl Textfields erscheint und die Kontrolle ob auch Namen eingegben wurden
+2. Erfolgreicher Test der US10. Es sind immer 2 Bildpaare auf dem Spielfeld
 
 ## Dokumentation Sprint 3
 
@@ -331,3 +338,6 @@ Pausebildschirm erscheint wenn Spiel pausiert
 ![Image for ranking](https://github.com/BollingerJerome/Memory/blob/documentation/src/main/resources/Documentation/US8%20write%20method.PNG)
 
 ### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories Sprint 3
+
+1. Test, ob das Spiel wenn alle Paare aufgedeckt sind, endet
+2. Überprüfung, der Spielpunkte wurde erfolgreich durchgeführt
