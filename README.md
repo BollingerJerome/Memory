@@ -42,7 +42,7 @@ Wir haben uns dazu entschieden, Memory, ein in der Praxis sehr einfaches Spiel z
 
 ## Ziel
 
-Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den gelernten Stoff durch die Implemetierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Apllikation auf die individuellen Vorkenntnisse der Stidierenden abgestimmt.
+Im Rahmen des Modules Software Engineering und Informatik II entwickeln wir Studierenden eine etwas komplexere Software, um den gelernten Stoff durch die Implemetierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation auf die individuellen Vorkenntnisse der Studierenden abgestimmt.
 
 ## Randbedingungen
 
